@@ -1,0 +1,27 @@
+::-webkit-scrollbar {
+  display: none; }
+
+@media screen and (max-width: 768px) {
+  .gallery .gallery-container {
+    padding: 20px; }
+    .gallery .gallery-container img {
+      width: 100%;
+      margin-bottom: 20px; } }
+
+@media screen and (min-width: 768px) {
+  .gallery {
+    position: absolute;
+    top: 15vh;
+    height: 80vh;
+    width: 100%;
+    overflow: scroll; }
+    .gallery .gallery-container {
+      white-space: nowrap;
+      overflow: auto;
+      height: 100%;
+      padding: 0 15vw; }
+      .gallery .gallery-container img {
+        height: 100%;
+        margin-right: 12px; }
+        .gallery .gallery-container img:last-child {
+          margin-right: 0; } }

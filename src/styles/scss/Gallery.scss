@@ -1,0 +1,43 @@
+::-webkit-scrollbar {
+  display: none;
+}
+
+$mobile-break: 768px;
+
+.gallery {
+  @media screen and (max-width: $mobile-break) {
+    .gallery-container {
+      padding: 20px;
+
+      img {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  @media screen and (min-width: $mobile-break) {
+    position: absolute;
+    top: 15vh;
+    height: 80vh;
+    width: 100%;
+    overflow: scroll;
+
+    .gallery-container {
+      white-space: nowrap;
+      overflow: auto;
+      height: 100%;
+      padding: 0 15vw;
+
+      img {
+        height: 100%;
+        margin-right: 12px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+}

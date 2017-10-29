@@ -1,15 +1,12 @@
 @font-face(Futura, fonts/Futura);
+$mobile-break: 768px;
 
 .App {
+  font-family: Futura, Helvetica;
   min-height: 100vh;
   min-width: 100vw;
-  font-family: Futura, Helvetica;
 
   .navbar {
-    position: fixed;
-    bottom: 10vh;
-    left: 10vw;
-    width: 300px;
     background: #fff;
     padding: 20px 40px;
     line-height: 20px;
@@ -50,5 +47,23 @@
       }
     }
   }
+
+  @media screen and (max-width: $mobile-break) {
+    .navbar {
+      padding: 20px 40px;
+      width: 100%;
+    }
+  }
+
+  @media screen and (min-width: $mobile-break) {
+    .navbar {
+      position: fixed;
+      bottom: 10vh;
+      left: 10vw;
+      width: 220px;
+      z-index: 1;
+    }
+  }
+
 }
 

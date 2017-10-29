@@ -1,13 +1,9 @@
 @font-face (Futura, fonts/Futura);
 .App {
+  font-family: Futura, Helvetica;
   min-height: 100vh;
-  min-width: 100vw;
-  font-family: Futura, Helvetica; }
+  min-width: 100vw; }
   .App .navbar {
-    position: fixed;
-    bottom: 10vh;
-    left: 10vw;
-    width: 300px;
     background: #fff;
     padding: 20px 40px;
     line-height: 20px; }
@@ -33,3 +29,14 @@
           font-weight: 300; }
           .App .navbar ul li a:hover {
             color: #a8a8a8; }
+  @media screen and (max-width: 768px) {
+    .App .navbar {
+      padding: 20px 40px;
+      width: 100%; } }
+  @media screen and (min-width: 768px) {
+    .App .navbar {
+      position: fixed;
+      bottom: 10vh;
+      left: 10vw;
+      width: 220px;
+      z-index: 1; } }

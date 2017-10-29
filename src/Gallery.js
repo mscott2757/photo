@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import './Gallery.css';
+import './styles/css/Gallery.css';
 
 class Gallery extends Component {
   componentDidUpdate() {
     this.refs.gallery.scrollLeft = 0;
+    window.scrollTo(0, 0);
   }
 
   render() {
