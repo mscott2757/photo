@@ -1,0 +1,54 @@
+@font-face(Futura, fonts/Futura);
+
+.App {
+  min-height: 100vh;
+  min-width: 100vw;
+  font-family: Futura, Helvetica;
+
+  .navbar {
+    position: fixed;
+    bottom: 10vh;
+    left: 10vw;
+    width: 300px;
+    background: #fff;
+    padding: 20px 40px;
+    line-height: 20px;
+
+    h1 {
+      color: #333;
+      font-weight: normal;
+      letter-spacing: 2px;
+      margin-bottom: 30px;
+    }
+
+    a {
+      text-decoration: none;
+      color: #333;
+    }
+
+    ul {
+      padding: 0;
+      line-height: 16px;
+      letter-spacing: 1px;
+
+      li {
+        list-style-type: none;
+
+        .active {
+          color: #a8a8a8;
+          cursor: default;
+        }
+
+        a {
+          font-size: 12px;
+          font-weight: 300;
+
+          &:hover {
+            color: #a8a8a8;
+          }
+        }
+      }
+    }
+  }
+}
+

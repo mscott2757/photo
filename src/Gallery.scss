@@ -1,0 +1,27 @@
+::-webkit-scrollbar {
+  display: none;
+}
+
+.gallery {
+  position: absolute;
+  top: 15vh;
+  height: 80vh;
+  width: 100%;
+  overflow: scroll;
+
+  .gallery-container {
+    white-space: nowrap;
+    overflow: auto;
+    height: 100%;
+    padding: 0 15vw;
+
+    img {
+      height: 100%;
+      margin-right: 12px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
