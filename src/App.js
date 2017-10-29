@@ -9,13 +9,13 @@ class App extends Component {
     return (
       <div className="App">
         <Switch>
-          <Route exact path='/' render={(props) => (
+          <Route exact path='/photo' render={(props) => (
             <Gallery pictures={content.home} {...props} />
           )} />
-          <Route exact path='/sf' render={(props) => (
+          <Route exact path='/photo/sf' render={(props) => (
             <Gallery pictures={content.sf} {...props} />
           )} />
-          <Route exact path='/la' render={(props) => (
+          <Route exact path='/photo/la' render={(props) => (
             <Gallery pictures={content.la} {...props} />
           )} />
         </Switch>
