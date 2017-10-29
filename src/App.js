@@ -20,12 +20,12 @@ class App extends Component {
           )} />
         </Switch>
         <div className="navbar">
-          <NavLink to='/'>
+          <NavLink to='/photo'>
             <h1>Mason Chan</h1>
           </NavLink>
           <ul>
-            <li><NavLink activeClassName="active" to='/sf'>San Francisco</NavLink></li>
-            <li><NavLink activeClassName="active" to='/la'>Los Angeles</NavLink></li>
+            <li><NavLink activeClassName="active" to='/photo/sf'>San Francisco</NavLink></li>
+            <li><NavLink activeClassName="active" to='/photo/la'>Los Angeles</NavLink></li>
           </ul>
         </div>
       </div>
