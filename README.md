@@ -1,1 +1,1 @@
-My photo portfolio build with React JS
+My photo portfolio built with React JS
