@@ -12,7 +12,10 @@ class Gallery extends Component {
       <div className="gallery">
         <div className="gallery-container" ref="gallery">
           {this.props.pictures.map((picture, index) =>
-            <img key={index} src={picture} alt=""/>
+            <img key={index}
+                 src={picture}
+                 alt=""
+            />
           )}
         </div>
       </div>

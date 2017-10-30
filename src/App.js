@@ -3,6 +3,7 @@ import { Switch, Route, NavLink } from 'react-router-dom';
 import content from './Content';
 import './styles/css/App.css';
 import Gallery from './Gallery';
+import Social from './Social';
 
 class App extends Component {
   render() {
@@ -28,6 +29,7 @@ class App extends Component {
             <Gallery pictures={content.la} {...props} />
           )} />
         </Switch>
+        <Social accounts={content.accounts} />
       </div>
     );
   }

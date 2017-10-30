@@ -1,0 +1,38 @@
+$mobile-break: 768px;
+
+.social {
+  padding: 25px 40px;
+  @media screen and (max-width: $mobile-break) {
+    text-align: center;
+    padding-top: 0;
+  }
+
+  @media screen and (min-width: $mobile-break) {
+    text-align: right;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  ul {
+    padding: 0;
+
+    li {
+      list-style-type: none;
+      display: inline-block;
+      margin-right: 15px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      a {
+        color: #333;
+
+        &:hover {
+          color: #a8a8a8;
+        }
+      }
+    }
+  }
+}
