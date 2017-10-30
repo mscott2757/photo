@@ -2,6 +2,7 @@ $mobile-break: 768px;
 
 .social {
   padding: 25px 40px;
+
   @media screen and (max-width: $mobile-break) {
     text-align: center;
     padding-top: 0;
