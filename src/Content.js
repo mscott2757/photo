@@ -1,28 +1,28 @@
 const content = {
   home: [
-    require("./images/sf/civic.jpg"),
-    require("./images/la/echo.jpg"),
-    require("./images/sf/ocean.jpg")
+    { url: require("./images/sf/civic.jpg"), aspect: "2-by-3" },
+    { url: require("./images/la/echo.jpg"),  aspect: "2-by-3" },
+    { url: require("./images/sf/ocean.jpg"), aspect: "2-by-3" }
   ],
   sf: [
-    require("./images/sf/sunset.jpg"),
-    require("./images/sf/civic.jpg"),
-    require("./images/sf/muni.jpg"),
-    require("./images/sf/ucsf.jpg"),
-    require("./images/sf/bernal.jpg"),
-    require("./images/sf/richmond.jpg"),
-    require("./images/sf/fireescape.jpg"),
-    require("./images/sf/bart.jpg"),
-    require("./images/sf/ocean.jpg")
+    { url: require("./images/sf/sunset.jpg"),     aspect: "3-by-2" },
+    { url: require("./images/sf/civic.jpg"),      aspect: "2-by-3" },
+    { url: require("./images/sf/muni.jpg"),       aspect: "2-by-3" },
+    { url: require("./images/sf/ucsf.jpg"),       aspect: "2-by-3" },
+    { url: require("./images/sf/bernal.jpg"),     aspect: "3-by-2" },
+    { url: require("./images/sf/richmond.jpg"),   aspect: "2-by-3" },
+    { url: require("./images/sf/fireescape.jpg"), aspect: "2-by-3" },
+    { url: require("./images/sf/bart.jpg"),       aspect: "2-by-3" },
+    { url: require("./images/sf/ocean.jpg"),      aspect: "2-by-3" }
   ],
   la: [
-    require("./images/la/echo.jpg"),
-    require("./images/la/newspaper.jpg"),
-    require("./images/la/silver.jpg"),
-    require("./images/la/pasadena.jpg"),
-    require("./images/la/hands.jpg"),
-    require("./images/la/lake.jpg"),
-    require("./images/la/venice.jpg")
+    { url: require("./images/la/echo.jpg"),      aspect: "2-by-3" },
+    { url: require("./images/la/newspaper.jpg"), aspect: "2-by-3" },
+    { url: require("./images/la/silver.jpg"),    aspect: "3-by-2" },
+    { url: require("./images/la/pasadena.jpg"),  aspect: "3-by-2" },
+    { url: require("./images/la/hands.jpg"),     aspect: "3-by-2" },
+    { url: require("./images/la/lake.jpg"),      aspect: "3-by-2" },
+    { url: require("./images/la/venice.jpg"),    aspect: "3-by-2" }
   ],
   nyc: [],
   chicago: [],

@@ -1,0 +1,62 @@
+$mobile-break: 768px;
+$height: 80vh;
+$width: 90vw;
+
+.image {
+  @media screen and (max-width: $mobile-break) {
+    margin-bottom: 20px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    img {
+      width: 90vw;
+    }
+
+    .aspect {
+      &--2-by-3 {
+        height: $width * 3/2;
+        width: $width;
+      }
+
+      &--3-by-2 {
+        height: $width * 2/3;
+        width: $width;
+      }
+    }
+  }
+
+  @media screen and (min-width: $mobile-break) {
+    margin-right: 12px;
+    height: 100%;
+    display: inline-block;
+    vertical-align: top;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    img {
+      height: 100%;
+    }
+
+    .aspect {
+      &--2-by-3 {
+        height: $height;
+        width: $height * 2/3;
+      }
+
+      &--3-by-2 {
+        height: $height;
+        width: $height * 3/2;
+      }
+    }
+  }
+
+  .image-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
