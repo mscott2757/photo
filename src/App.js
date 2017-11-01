@@ -16,6 +16,7 @@ class App extends Component {
           <ul>
             <li><NavLink activeClassName="active" to='/photo/sf'>San Francisco</NavLink></li>
             <li><NavLink activeClassName="active" to='/photo/la'>Los Angeles</NavLink></li>
+            <li><NavLink activeClassName="active" to='/photo/nyc'>New York</NavLink></li>
           </ul>
         </div>
         <Switch>
@@ -27,6 +28,9 @@ class App extends Component {
           )} />
           <Route exact path='/photo/la' render={(props) => (
             <Gallery pictures={content.la} {...props} />
+          )} />
+          <Route exact path='/photo/nyc' render={(props) => (
+            <Gallery pictures={content.nyc} {...props} />
           )} />
         </Switch>
         <Social accounts={content.accounts} />

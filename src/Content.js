@@ -1,18 +1,18 @@
 const content = {
   home: [
-    { url: require("./images/sf/civic.jpg"), aspect: "2-by-3" },
-    { url: require("./images/la/echo.jpg"),  aspect: "2-by-3" },
-    { url: require("./images/sf/ocean.jpg"), aspect: "2-by-3" }
+    { url: require("./images/sf/civic.jpg"),          aspect: "2-by-3" },
+    { url: require("./images/la/echo.jpg"),           aspect: "2-by-3" },
+    { url: require("./images/sf/ocean.jpg"),          aspect: "2-by-3" },
+    { url: require("./images/nyc/soho-crossing.jpg"), aspect: "2-by-3" },
   ],
   sf: [
     { url: require("./images/sf/sunset.jpg"),     aspect: "3-by-2" },
     { url: require("./images/sf/civic.jpg"),      aspect: "2-by-3" },
     { url: require("./images/sf/muni.jpg"),       aspect: "2-by-3" },
-    { url: require("./images/sf/ucsf.jpg"),       aspect: "2-by-3" },
-    { url: require("./images/sf/bernal.jpg"),     aspect: "3-by-2" },
-    { url: require("./images/sf/richmond.jpg"),   aspect: "2-by-3" },
     { url: require("./images/sf/fireescape.jpg"), aspect: "2-by-3" },
+    { url: require("./images/sf/bernal.jpg"),     aspect: "3-by-2" },
     { url: require("./images/sf/bart.jpg"),       aspect: "2-by-3" },
+    { url: require("./images/sf/richmond.jpg"),   aspect: "2-by-3" },
     { url: require("./images/sf/ocean.jpg"),      aspect: "2-by-3" }
   ],
   la: [
@@ -22,9 +22,17 @@ const content = {
     { url: require("./images/la/pasadena.jpg"),  aspect: "3-by-2" },
     { url: require("./images/la/hands.jpg"),     aspect: "3-by-2" },
     { url: require("./images/la/lake.jpg"),      aspect: "3-by-2" },
-    { url: require("./images/la/venice.jpg"),    aspect: "3-by-2" }
   ],
-  nyc: [],
+  nyc: [
+    { url: require("./images/nyc/fifty-seven.jpg"),   aspect: "3-by-2" },
+    { url: require("./images/nyc/soho-crossing.jpg"), aspect: "2-by-3" },
+    { url: require("./images/nyc/soho-foot.jpg"),     aspect: "3-by-2" },
+    { url: require("./images/nyc/soho-woman.jpg"),    aspect: "2-by-3" },
+    { url: require("./images/nyc/subway-woman.jpg"),  aspect: "3-by-2" },
+    { url: require("./images/nyc/greenwich.jpg"),     aspect: "2-by-3" },
+    { url: require("./images/nyc/couple.jpg"),        aspect: "2-by-3" }
+
+  ],
   chicago: [],
   berkeley: [],
   personal: [],
