@@ -10,26 +10,26 @@ class App extends Component {
     return (
       <div className="App">
         <div className="navbar">
-          <NavLink to='/photo'>
+          <NavLink to='/'>
             <h1>Mason Chan</h1>
           </NavLink>
           <ul>
-            <li><NavLink activeClassName="active" to='/photo/sf'>San Francisco</NavLink></li>
-            <li><NavLink activeClassName="active" to='/photo/la'>Los Angeles</NavLink></li>
-            <li><NavLink activeClassName="active" to='/photo/nyc'>New York</NavLink></li>
+            <li><NavLink activeClassName="active" to='/sf'>San Francisco</NavLink></li>
+            <li><NavLink activeClassName="active" to='/la'>Los Angeles</NavLink></li>
+            <li><NavLink activeClassName="active" to='/nyc'>New York</NavLink></li>
           </ul>
         </div>
         <Switch>
-          <Route exact path='/photo' render={(props) => (
+          <Route exact path='/' render={(props) => (
             <Gallery pictures={content.home} {...props} />
           )} />
-          <Route exact path='/photo/sf' render={(props) => (
+          <Route exact path='/sf' render={(props) => (
             <Gallery pictures={content.sf} {...props} />
           )} />
-          <Route exact path='/photo/la' render={(props) => (
+          <Route exact path='/la' render={(props) => (
             <Gallery pictures={content.la} {...props} />
           )} />
-          <Route exact path='/photo/nyc' render={(props) => (
+          <Route exact path='/nyc' render={(props) => (
             <Gallery pictures={content.nyc} {...props} />
           )} />
         </Switch>
