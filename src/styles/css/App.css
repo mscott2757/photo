@@ -31,8 +31,7 @@
             color: #a8a8a8; }
   @media screen and (max-width: 768px) {
     .App .navbar {
-      padding: 20px 40px;
-      width: 100%; } }
+      padding: 20px 40px; } }
   @media screen and (min-width: 768px) {
     .App .navbar {
       position: fixed;
