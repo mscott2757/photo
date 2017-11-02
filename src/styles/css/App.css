@@ -1,6 +1,10 @@
 @font-face (Futura, fonts/Futura);
+@font-face {
+  font-family: "Circular";
+  src: url("../../fonts/Circular.otf") format("opentype"); }
+
 .App {
-  font-family: Futura, Helvetica;
+  font-family: Circular, Futura, Helvetica;
   min-height: 100vh;
   min-width: 100vw; }
   .App .navbar {
@@ -10,7 +14,7 @@
     .App .navbar h1 {
       color: #333;
       font-weight: normal;
-      letter-spacing: 2px;
+      letter-spacing: 1px;
       margin-bottom: 30px; }
     .App .navbar a {
       text-decoration: none;
