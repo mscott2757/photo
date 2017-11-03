@@ -1,6 +1,4 @@
-$mobile-break: 768px;
-$height: 80vh;
-$width: 90vw;
+@import "variables";
 
 .image {
   @media screen and (max-width: $mobile-break) {
@@ -11,7 +9,7 @@ $width: 90vw;
     }
 
     img {
-      width: 90vw;
+      width: 85vw;
     }
 
     .aspect {

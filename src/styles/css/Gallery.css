@@ -4,12 +4,7 @@
 @media screen and (max-width: 768px) {
   .gallery .gallery-container {
     padding: 20px;
-    text-align: center; }
-    .gallery .gallery-container img {
-      width: 90vw;
-      margin-bottom: 20px; }
-      .gallery .gallery-container img:last-child {
-        margin-bottom: 0; } }
+    text-align: center; } }
 
 @media screen and (min-width: 768px) {
   .gallery {
@@ -22,9 +17,4 @@
       white-space: nowrap;
       overflow: auto;
       height: 100%;
-      padding: 0 15vw; }
-      .gallery .gallery-container img {
-        height: 100%;
-        margin-right: 12px; }
-        .gallery .gallery-container img:last-child {
-          margin-right: 0; } }
+      padding: 0 15vw; } }

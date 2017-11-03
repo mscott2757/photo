@@ -4,13 +4,13 @@
     .image:last-child {
       margin-bottom: 0; }
     .image img {
-      width: 90vw; }
+      width: 85vw; }
     .image .aspect--2-by-3 {
-      height: 135vw;
-      width: 90vw; }
+      height: 127.5vw;
+      width: 85vw; }
     .image .aspect--3-by-2 {
-      height: 60vw;
-      width: 90vw; } }
+      height: 56.66667vw;
+      width: 85vw; } }
 
 @media screen and (min-width: 768px) {
   .image {

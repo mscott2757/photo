@@ -1,10 +1,9 @@
+@import "variables";
 @font-face(Futura, fonts/Futura);
 @font-face {
   font-family: "Circular";
   src: url("../../fonts/Circular.otf") format("opentype");
 }
-
-$mobile-break: 768px;
 
 .App {
   font-family: Circular, Futura, Helvetica;
@@ -64,7 +63,7 @@ $mobile-break: 768px;
       position: fixed;
       bottom: 10vh;
       left: 10vw;
-      width: 220px;
+      width: 200px;
       z-index: 1;
     }
   }
