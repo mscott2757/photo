@@ -1,24 +1,24 @@
 .navbar-container {
   background: #fff;
-  padding: 20px 40px;
   line-height: 20px; }
   .navbar-container a, .navbar-container p {
     text-decoration: none;
     color: #333; }
   .navbar-container p {
-    font-size: 12px; }
+    font-size: 12px;
+    font-weight: 300; }
     .navbar-container p:first-child {
       margin-top: 0; }
     .navbar-container p:last-child {
       margin-bottom: 0; }
-  .navbar-container h1 {
+  .navbar-container .navbar h1 {
     color: #333;
     font-weight: normal;
     letter-spacing: 1px;
     margin-bottom: 30px; }
   .navbar-container .navbar .about-link {
     font-size: 12px;
-    font-weight: 200; }
+    font-weight: 300; }
   .navbar-container .navbar ul {
     margin-top: 0;
     padding: 0;
@@ -37,47 +37,78 @@
 
 @media screen and (max-width: 768px) {
   .navbar-container {
-    padding: 20px 40px; }
+    padding: 20px; }
     .navbar-container span {
       margin-left: 5px; }
     .navbar-container .about {
-      margin-top: 30px; }
-      .navbar-container .about .hide-about-wrapper {
+      margin-top: 30px;
+      display: none; }
+      .navbar-container .about--show {
+        display: block; }
+      .navbar-container .about .hide-about-btn__wrapper {
         display: none; } }
 
 @media screen and (min-width: 768px) {
   .navbar-container {
+    background-color: transparent;
     position: fixed;
     bottom: 10vh;
     left: 10vw;
-    width: 200px;
-    z-index: 1; }
+    width: 290px;
+    z-index: 1;
+    opacity: 1;
+    -webkit-transition: opacity 0.15s ease-in-out;
+    -moz-transition: opacity 0.15s ease-in-out;
+    -ms-transition: opacity 0.15s ease-in-out;
+    -o-transition: opacity 0.15s ease-in-out;
+    transition: opacity 0.15s ease-in-out; }
     .navbar-container .fa-caret-down {
       display: none; }
-    .navbar-container--show-about {
-      width: 600px; }
-      .navbar-container--show-about .navbar-body {
-        display: flex;
-        flex-direction: row; }
-        .navbar-container--show-about .navbar-body .navbar {
-          box-sizing: border-box;
-          width: 40%; }
-        .navbar-container--show-about .navbar-body .about {
-          box-sizing: border-box;
-          width: 60%;
-          position: relative; }
-          .navbar-container--show-about .navbar-body .about .hide-about-wrapper {
-            position: absolute;
-            top: -81px;
-            right: -24px;
-            height: 12px;
+    .navbar-container--hide-nav {
+      opacity: 0; }
+    .navbar-container--hide-nav-full {
+      display: none; }
+    .navbar-container .navbar-body {
+      display: flex;
+      flex-direction: row; }
+      .navbar-container .navbar-body .navbar {
+        background-color: #fff;
+        padding: 20px 40px;
+        width: 100%; }
+      .navbar-container .navbar-body .about {
+        width: 50%;
+        position: relative;
+        background-color: #fff;
+        padding: 91px 40px 20px 0;
+        opacity: 0;
+        display: none;
+        -webkit-transition: opacity 0.15s ease-in-out;
+        -moz-transition: opacity 0.15s ease-in-out;
+        -ms-transition: opacity 0.15s ease-in-out;
+        -o-transition: opacity 0.15s ease-in-out;
+        transition: opacity 0.15s ease-in-out; }
+        .navbar-container .navbar-body .about--show {
+          display: block; }
+        .navbar-container .navbar-body .about--show-full {
+          opacity: 1; }
+        .navbar-container .navbar-body .about .hide-about-btn__wrapper {
+          position: absolute;
+          top: 0;
+          right: 0;
+          height: 12px;
+          width: 12px;
+          margin-top: 10px;
+          margin-right: 14px;
+          display: flex;
+          align-items: center;
+          justify-content: center; }
+          .navbar-container .navbar-body .about .hide-about-btn__wrapper:hover {
+            cursor: pointer; }
+          .navbar-container .navbar-body .about .hide-about-btn__wrapper .hide-about-btn {
             width: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center; }
-            .navbar-container--show-about .navbar-body .about .hide-about-wrapper:hover {
-              cursor: pointer; }
-            .navbar-container--show-about .navbar-body .about .hide-about-wrapper .hide-about {
-              width: 12px;
-              height: 2px;
-              background-color: #333; } }
+            height: 2px;
+            background-color: #333; }
+    .navbar-container--show-about {
+      width: 580px; }
+      .navbar-container--show-about .navbar-body .navbar {
+        width: 50%; } }

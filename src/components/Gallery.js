@@ -3,10 +3,26 @@ import Image from './Image';
 import '../styles/css/Gallery.css';
 
 class Gallery extends Component {
-  componentDidUpdate() {
-    console.log("something happened...");
-    this.refs.gallery.scrollLeft = 0;
-    window.scrollTo(0, 0);
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      scrollPosition: 0
+    }
+  }
+
+  componentDidMount() {
+    this.setState({ scrollPosition: this.refs.gallery.scrollLeft });
+
+    this.refs.gallery.addEventListener("scroll", () => {
+      let newScrollPosition = this.refs.gallery.scrollLeft;
+      if (newScrollPosition > this.state.scrollPosition) {
+        this.props.handleHideNav();
+      } else {
+        this.props.handleShowNav();
+      }
+      this.setState({ scrollPosition: newScrollPosition });
+    }, false);
   }
 
   render() {

@@ -1,8 +1,18 @@
 @import "variables";
+@mixin transition($duration) {
+  -webkit-transition: opacity $duration ease-in-out;
+  -moz-transition: opacity $duration ease-in-out;
+  -ms-transition: opacity $duration ease-in-out;
+  -o-transition: opacity $duration ease-in-out;
+  transition: opacity $duration ease-in-out;
+}
+@mixin bodyText() {
+  font-size: 12px;
+  font-weight: 300;
+}
 
 .navbar-container {
   background: #fff;
-  padding: 20px 40px;
   line-height: 20px;
 
   a, p {
@@ -11,7 +21,7 @@
   }
 
   p {
-    font-size: 12px;
+    @include bodyText();
 
     &:first-child {
       margin-top: 0;
@@ -22,17 +32,17 @@
     }
   }
 
-  h1 {
-    color: #333;
-    font-weight: normal;
-    letter-spacing: 1px;
-    margin-bottom: 30px;
-  }
 
   .navbar{
+    h1 {
+      color: #333;
+      font-weight: normal;
+      letter-spacing: 1px;
+      margin-bottom: 30px;
+    }
+
     .about-link {
-      font-size: 12px;
-      font-weight: 200;
+      @include bodyText();
     }
 
     ul {
@@ -50,8 +60,7 @@
         }
 
         a {
-          font-size: 12px;
-          font-weight: 300;
+          @include bodyText();
 
           &:hover {
             color: #a8a8a8;
@@ -64,7 +73,7 @@
 
 @media screen and (max-width: $mobile-break) {
   .navbar-container {
-    padding: 20px 40px;
+    padding: 20px;
 
     span {
       margin-left: 5px;
@@ -72,8 +81,13 @@
 
     .about {
       margin-top: 30px;
+      display: none;
 
-      .hide-about-wrapper {
+      &--show {
+        display: block;
+      }
+
+      .hide-about-btn__wrapper {
         display: none;
       }
     }
@@ -82,55 +96,88 @@
 
 @media screen and (min-width: $mobile-break) {
   .navbar-container {
+    background-color: transparent;
     position: fixed;
     bottom: 10vh;
     left: 10vw;
-    width: 200px;
+    width: 290px;
     z-index: 1;
+    opacity: 1;
+    @include transition(0.15s);
 
     .fa-caret-down {
       display: none;
     }
 
-    &--show-about {
-      width: 600px;
+    &--hide-nav {
+      opacity: 0;
+    }
 
-      .navbar-body {
-        display: flex;
-        flex-direction: row;
+    &--hide-nav-full {
+      display: none;
+    }
 
-        .navbar {
-          box-sizing: border-box;
-          width: 40%;
+    .navbar-body {
+      display: flex;
+      flex-direction: row;
+
+      .navbar {
+        background-color: #fff;
+        padding: 20px 40px;
+        width: 100%;
+      }
+
+      .about {
+        width: 50%;
+        position: relative;
+        background-color: #fff;
+        padding: 91px 40px 20px 0;
+        opacity: 0;
+        display: none;
+        @include transition(0.15s);
+
+        &--show {
+          display: block;
         }
 
-        .about {
-          box-sizing: border-box;
-          width: 60%;
-          position: relative;
+        &--show-full {
+          opacity: 1;
+        }
 
-          .hide-about-wrapper {
-            position: absolute;
-            top: -81px;
-            right: -24px;
-            height: 12px;
-            width: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .hide-about-btn__wrapper {
+          position: absolute;
+          top: 0;
+          right: 0;
+          height: 12px;
+          width: 12px;
+          margin-top: 10px;
+          margin-right: 14px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
 
-            &:hover {
-              cursor: pointer;
-            }
-
-            .hide-about {
-              width: 12px;
-              height: 2px;
-              background-color: #333;
-            }
+          &:hover {
+            cursor: pointer;
           }
+
+          .hide-about-btn {
+            width: 12px;
+            height: 2px;
+            background-color: #333;
+          }
+        }
+      }
+    }
+
+    &--show-about {
+      width: 580px;
+
+      .navbar-body {
+        .navbar {
+          width: 50%;
         }
       }
     }
   }
 }
+

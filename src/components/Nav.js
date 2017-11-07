@@ -8,23 +8,37 @@ class Nav extends Component {
     super(props);
 
     this.state = {
-      showAbout: false
+      showAbout: false,
+      showAboutFull: false
     }
   }
 
   toggleAbout(e) {
     e.preventDefault();
-    this.setState({ showAbout: !this.state.showAbout })
+    if (this.state.showAbout) {
+      this.setState({ showAboutFull: false })
+      setTimeout(() => {
+        this.setState({ showAbout: false })
+      }, 150);
+    } else {
+      this.setState({ showAbout: true })
+      setTimeout(() => {
+        this.setState({ showAboutFull: true })
+      }, 150);
+    }
   }
 
   render() {
     return (
-      <div className={"navbar-container " + (this.state.showAbout ? "navbar-container--show-about" : "")}>
-        <NavLink to='/'>
-          <h1>Mason Chan</h1>
-        </NavLink>
+      <div className={"navbar-container"
+                      + (!this.props.showNav ? " navbar-container--hide-nav" : "")
+                      + (!this.props.showNavFull ? " navbar-container--hide-nav-full" : "")
+                      + (this.state.showAbout ? " navbar-container--show-about" : "")}>
         <div className="navbar-body">
           <div className="navbar">
+            <NavLink to='/'>
+              <h1>Mason Chan</h1>
+            </NavLink>
             <ul>
               <li><NavLink activeClassName="active" to='/sf'>San Francisco</NavLink></li>
               <li><NavLink activeClassName="active" to='/berkeley'>Berkeley</NavLink></li>
@@ -43,16 +57,16 @@ class Nav extends Component {
               }
             </a>
           </div>
-          {this.state.showAbout &&
-            <div className="about">
-              <p>Hello, I'm Mason.</p>
-              <p>I find great joy in capturing humanity in its rawest form through the medium of photography.</p>
-              <div className="hide-about-wrapper" onClick={this.toggleAbout.bind(this)}>
-                <div className="hide-about"></div>
-              </div>
-              <p>I also maintain a fascination for urban landscapes and public transportation.</p>
+          <div className={"about"
+                           + (this.state.showAbout ? " about--show" : "")
+                           + (this.state.showAboutFull ? " about--show-full" : "")}>
+            <p>Hello, I'm Mason.</p>
+            <p>I find great joy in capturing humanity in its rawest form through the medium of photography.</p>
+            <div className="hide-about-btn__wrapper" onClick={this.toggleAbout.bind(this)}>
+              <div className="hide-about-btn"></div>
             </div>
-          }
+            <p>I also maintain a fascination for urban landscapes and public transportation.</p>
+          </div>
         </div>
       </div>
     );

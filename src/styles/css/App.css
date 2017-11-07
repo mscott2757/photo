@@ -4,6 +4,9 @@
   src: url("../../fonts/Circular.otf") format("opentype"); }
 
 .App {
-  font-family: Circular, Futura, Helvetica;
   min-height: 100vh;
-  min-width: 100vw; }
+  min-width: 100vw;
+  font-family: Circular, Futura, Helvetica; }
+
+* {
+  box-sizing: border-box; }
