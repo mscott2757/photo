@@ -1,0 +1,136 @@
+@import "variables";
+
+.navbar-container {
+  background: #fff;
+  padding: 20px 40px;
+  line-height: 20px;
+
+  a, p {
+    text-decoration: none;
+    color: #333;
+  }
+
+  p {
+    font-size: 12px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  h1 {
+    color: #333;
+    font-weight: normal;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+  }
+
+  .navbar{
+    .about-link {
+      font-size: 12px;
+      font-weight: 200;
+    }
+
+    ul {
+      margin-top: 0;
+      padding: 0;
+      line-height: 16px;
+      letter-spacing: 1px;
+
+      li {
+        list-style-type: none;
+
+        .active {
+          color: #a8a8a8;
+          cursor: default;
+        }
+
+        a {
+          font-size: 12px;
+          font-weight: 300;
+
+          &:hover {
+            color: #a8a8a8;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $mobile-break) {
+  .navbar-container {
+    padding: 20px 40px;
+
+    span {
+      margin-left: 5px;
+    }
+
+    .about {
+      margin-top: 30px;
+
+      .hide-about-wrapper {
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $mobile-break) {
+  .navbar-container {
+    position: fixed;
+    bottom: 10vh;
+    left: 10vw;
+    width: 200px;
+    z-index: 1;
+
+    .fa-caret-down {
+      display: none;
+    }
+
+    &--show-about {
+      width: 600px;
+
+      .navbar-body {
+        display: flex;
+        flex-direction: row;
+
+        .navbar {
+          box-sizing: border-box;
+          width: 40%;
+        }
+
+        .about {
+          box-sizing: border-box;
+          width: 60%;
+          position: relative;
+
+          .hide-about-wrapper {
+            position: absolute;
+            top: -81px;
+            right: -24px;
+            height: 12px;
+            width: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &:hover {
+              cursor: pointer;
+            }
+
+            .hide-about {
+              width: 12px;
+              height: 2px;
+              background-color: #333;
+            }
+          }
+        }
+      }
+    }
+  }
+}

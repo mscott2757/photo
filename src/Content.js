@@ -36,7 +36,6 @@ const content = {
   chicago: [],
   berkeley: [],
   personal: [],
-  grad: [],
   accounts: [
     { className: "fa-instagram", url: "https://www.instagram.com/masonchan_/" },
     { className: "fa-facebook", url: "https://www.facebook.com/profile.php?id=100000034912802" },
