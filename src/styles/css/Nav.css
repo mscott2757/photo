@@ -15,6 +15,7 @@
     color: #333;
     font-weight: normal;
     letter-spacing: 1px;
+    margin-top: 20px;
     margin-bottom: 30px; }
   .navbar-container .navbar .about-link {
     font-size: 12px;
@@ -80,7 +81,7 @@
         width: 50%;
         position: relative;
         background-color: #fff;
-        padding: 91px 40px 20px 0;
+        padding: 90px 40px 20px 0;
         opacity: 0;
         display: none;
         -webkit-transition: opacity 0.18s ease-in-out;
