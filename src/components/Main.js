@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { withRouter, Switch, Route } from 'react-router-dom';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import Gallery from './Gallery';
 import Nav from './Nav';
 import Social from './Social';
@@ -35,21 +36,29 @@ class Main extends Component {
           showNav={this.state.showNav}
           showNavFull={this.state.showNavFull}
         />
-        <Switch>
-          {this.props.content.pages.map((page, index) =>
-            <Route exact key={index} path={page.path} render={(props) => (
-              <Gallery
-                pictures={page.photos}
-                handleShowNav={this.showNav.bind(this)}
-                handleHideNav={this.hideNav.bind(this)}
-                {...props} />
-            )} />
-          )}
-        </Switch>
+        <TransitionGroup>
+          <CSSTransition
+            key={this.props.location.key}
+            timeout={240}
+            classNames='gallery'
+          >
+            <Switch location={this.props.location}>
+              {this.props.content.pages.map((page, index) =>
+                <Route exact key={index} path={page.path} render={(props) => (
+                  <Gallery
+                    pictures={page.photos}
+                    handleShowNav={this.showNav.bind(this)}
+                    handleHideNav={this.hideNav.bind(this)}
+                    {...props} />
+                )} />
+              )}
+            </Switch>
+          </CSSTransition>
+        </TransitionGroup>
         <Social accounts={this.props.content.accounts} />
       </div>
     );
   }
 }
 
-export default Main;
+export default withRouter(Main);

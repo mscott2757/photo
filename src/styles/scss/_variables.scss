@@ -1,3 +1,16 @@
 $mobile-break: 768px;
 $height: 80vh;
 $width: 85vw;
+
+@mixin transition($duration) {
+  -webkit-transition: opacity $duration ease-in-out;
+  -moz-transition: opacity $duration ease-in-out;
+  -ms-transition: opacity $duration ease-in-out;
+  -o-transition: opacity $duration ease-in-out;
+  transition: opacity $duration ease-in-out;
+}
+
+@mixin bodyFontStyles() {
+  font-size: 12px;
+  font-weight: 300;
+}

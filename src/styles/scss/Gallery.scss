@@ -4,7 +4,26 @@
   display: none;
 }
 
+
 .gallery {
+  &-enter {
+    opacity: 0;
+  }
+
+  &-enter-active {
+    opacity: 1;
+  }
+
+  &-exit {
+    opacity: 1;
+  }
+
+  &-exit-active {
+    opacity: 0;
+
+  }
+  @include transition(0.24s);
+
   @media screen and (max-width: $mobile-break) {
     .gallery-container {
       padding: 20px;
