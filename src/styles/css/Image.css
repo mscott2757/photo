@@ -10,6 +10,12 @@
       width: 85vw; }
     .image .aspect--3-by-2 {
       height: 56.66667vw;
+      width: 85vw; }
+    .image .aspect--6-by-7 {
+      height: 99.16667vw;
+      width: 85vw; }
+    .image .aspect--7-by-6 {
+      height: 72.85714vw;
       width: 85vw; } }
 
 @media screen and (min-width: 768px) {
@@ -27,7 +33,13 @@
       width: 53.33333vh; }
     .image .aspect--3-by-2 {
       height: 80vh;
-      width: 120vh; } }
+      width: 120vh; }
+    .image .aspect--6-by-7 {
+      height: 80vh;
+      width: 68.57143vh; }
+    .image .aspect--7-by-6 {
+      height: 80vh;
+      width: 93.33333vh; } }
 
 .image .image-loading {
   display: flex;

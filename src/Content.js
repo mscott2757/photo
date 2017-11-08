@@ -46,7 +46,12 @@ const content = {
       photos: []
     },{
       path: "/berkeley",
-      photos: []
+      photos: [
+        { url: require("./images/berkeley/hearst.jpg"),   aspect: "2-by-3" },
+        { url: require("./images/berkeley/newspaper.jpg"),   aspect: "7-by-6" },
+        { url: require("./images/berkeley/durant.jpg"),   aspect: "6-by-7" },
+        { url: require("./images/berkeley/roof.jpg"),   aspect: "6-by-7" }
+      ]
     },{
       path: "/personal",
       photos: []

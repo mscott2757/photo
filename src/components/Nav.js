@@ -3,6 +3,8 @@ import { NavLink } from 'react-router-dom';
 import '../styles/css/Nav.css';
 import 'font-awesome/css/font-awesome.min.css';
 
+const classNames = require('classnames');
+
 class Nav extends Component {
   constructor(props) {
     super(props);
@@ -29,11 +31,25 @@ class Nav extends Component {
   }
 
   render() {
+    let navbarContainerClasses = classNames(
+      'navbar-container',
+      {
+        'navbar-container--hide-nav': !this.props.showNav,
+        'navbar-container--hide-nav-full': !this.props.showNavFull,
+        'navbar-container--show-about': this.state.showAbout
+      }
+    );
+
+    let aboutClasses = classNames(
+      'about',
+      {
+        'about--show': this.state.showAbout,
+        'about--show-full': this.state.showAboutFull
+      }
+    );
+
     return (
-      <div className={"navbar-container"
-                      + (!this.props.showNav ? " navbar-container--hide-nav" : "")
-                      + (!this.props.showNavFull ? " navbar-container--hide-nav-full" : "")
-                      + (this.state.showAbout ? " navbar-container--show-about" : "")}>
+      <div className={navbarContainerClasses}>
         <div className="navbar-body">
           <div className="navbar">
             <NavLink to='/'>
@@ -57,9 +73,7 @@ class Nav extends Component {
               }
             </a>
           </div>
-          <div className={"about"
-                           + (this.state.showAbout ? " about--show" : "")
-                           + (this.state.showAboutFull ? " about--show-full" : "")}>
+          <div className={aboutClasses}>
             <p>Hello, I'm Mason.</p>
             <p>I find great joy in capturing humanity in its rawest form through the medium of photography.</p>
             <div className="hide-about-btn__wrapper" onClick={this.toggleAbout.bind(this)}>

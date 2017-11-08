@@ -22,6 +22,16 @@
         height: $width * 2/3;
         width: $width;
       }
+
+      &--6-by-7 {
+        height: $width * 7/6;
+        width: $width;
+      }
+
+      &--7-by-6 {
+        height: $width * 6/7;
+        width: $width;
+      }
     }
   }
 
@@ -48,6 +58,16 @@
       &--3-by-2 {
         height: $height;
         width: $height * 3/2;
+      }
+
+      &--6-by-7 {
+        height: $height;
+        width: $height * 6/7;
+      }
+
+      &--7-by-6 {
+        height: $height;
+        width: $height * 7/6;
       }
     }
   }
