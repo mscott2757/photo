@@ -18,12 +18,12 @@
     margin-bottom: 30px; }
   .navbar-container .navbar .about-link {
     font-size: 12px;
-    font-weight: 300; }
+    font-weight: 300;
+    letter-spacing: 1px; }
   .navbar-container .navbar ul {
     margin-top: 0;
     padding: 0;
-    line-height: 16px;
-    letter-spacing: 1px; }
+    line-height: 16px; }
     .navbar-container .navbar ul li {
       list-style-type: none; }
       .navbar-container .navbar ul li .active {
@@ -31,7 +31,8 @@
         cursor: default; }
       .navbar-container .navbar ul li a {
         font-size: 12px;
-        font-weight: 300; }
+        font-weight: 300;
+        letter-spacing: 1px; }
         .navbar-container .navbar ul li a:hover {
           color: #a8a8a8; }
 
@@ -57,11 +58,11 @@
     width: 290px;
     z-index: 1;
     opacity: 1;
-    -webkit-transition: opacity 0.15s ease-in-out;
-    -moz-transition: opacity 0.15s ease-in-out;
-    -ms-transition: opacity 0.15s ease-in-out;
-    -o-transition: opacity 0.15s ease-in-out;
-    transition: opacity 0.15s ease-in-out; }
+    -webkit-transition: opacity 0.18s ease-in-out;
+    -moz-transition: opacity 0.18s ease-in-out;
+    -ms-transition: opacity 0.18s ease-in-out;
+    -o-transition: opacity 0.18s ease-in-out;
+    transition: opacity 0.18s ease-in-out; }
     .navbar-container .fa-caret-down {
       display: none; }
     .navbar-container--hide-nav {
@@ -82,11 +83,11 @@
         padding: 91px 40px 20px 0;
         opacity: 0;
         display: none;
-        -webkit-transition: opacity 0.15s ease-in-out;
-        -moz-transition: opacity 0.15s ease-in-out;
-        -ms-transition: opacity 0.15s ease-in-out;
-        -o-transition: opacity 0.15s ease-in-out;
-        transition: opacity 0.15s ease-in-out; }
+        -webkit-transition: opacity 0.18s ease-in-out;
+        -moz-transition: opacity 0.18s ease-in-out;
+        -ms-transition: opacity 0.18s ease-in-out;
+        -o-transition: opacity 0.18s ease-in-out;
+        transition: opacity 0.18s ease-in-out; }
         .navbar-container .navbar-body .about--show {
           display: block; }
         .navbar-container .navbar-body .about--show-full {

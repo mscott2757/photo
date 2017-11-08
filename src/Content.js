@@ -15,6 +15,7 @@ const content = {
       photos: [
         { url: require("./images/sf/sunset.jpg"),     aspect: "3-by-2" },
         { url: require("./images/sf/civic.jpg"),      aspect: "2-by-3" },
+        { url: require("./images/sf/mission.jpg"),    aspect: "3-by-2" },
         { url: require("./images/sf/muni.jpg"),       aspect: "2-by-3" },
         { url: require("./images/sf/fireescape.jpg"), aspect: "2-by-3" },
         { url: require("./images/sf/bernal.jpg"),     aspect: "3-by-2" },
@@ -25,12 +26,12 @@ const content = {
     },{
       path: "/la",
       photos: [
+        { url: require("./images/la/vinyl.jpg"),     aspect: "3-by-2" },
         { url: require("./images/la/echo.jpg"),      aspect: "2-by-3" },
-        { url: require("./images/la/newspaper.jpg"), aspect: "2-by-3" },
         { url: require("./images/la/silver.jpg"),    aspect: "3-by-2" },
+        { url: require("./images/la/newspaper.jpg"), aspect: "2-by-3" },
         { url: require("./images/la/pasadena.jpg"),  aspect: "3-by-2" },
         { url: require("./images/la/hands.jpg"),     aspect: "3-by-2" },
-        { url: require("./images/la/lake.jpg"),      aspect: "3-by-2" }
       ]
     },{
       path: "/nyc",
@@ -65,7 +66,14 @@ const content = {
       ]
     },{
       path: "/personal",
-      photos: []
+      photos: [
+        { url: require("./images/personal/deyoung.jpg"),   aspect: "3-by-2" },
+        { url: require("./images/personal/waves2.jpg"),    aspect: "2-by-3" },
+        { url: require("./images/personal/waves.jpg"),     aspect: "3-by-2" },
+        { url: require("./images/personal/christine.jpg"), aspect: "2-by-3" },
+        { url: require("./images/personal/liz.jpg"),       aspect: "3-by-2" },
+        { url: require("./images/personal/michael.jpg"),   aspect: "3-by-2" }
+      ]
     }
   ],
   accounts: [

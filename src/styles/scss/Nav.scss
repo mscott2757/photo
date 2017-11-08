@@ -6,7 +6,7 @@
   -o-transition: opacity $duration ease-in-out;
   transition: opacity $duration ease-in-out;
 }
-@mixin bodyText() {
+@mixin bodyFontStyles() {
   font-size: 12px;
   font-weight: 300;
 }
@@ -21,7 +21,7 @@
   }
 
   p {
-    @include bodyText();
+    @include bodyFontStyles();
 
     &:first-child {
       margin-top: 0;
@@ -42,14 +42,14 @@
     }
 
     .about-link {
-      @include bodyText();
+      @include bodyFontStyles();
+      letter-spacing: 1px;
     }
 
     ul {
       margin-top: 0;
       padding: 0;
       line-height: 16px;
-      letter-spacing: 1px;
 
       li {
         list-style-type: none;
@@ -60,7 +60,8 @@
         }
 
         a {
-          @include bodyText();
+          @include bodyFontStyles();
+          letter-spacing: 1px;
 
           &:hover {
             color: #a8a8a8;
@@ -103,7 +104,7 @@
     width: 290px;
     z-index: 1;
     opacity: 1;
-    @include transition(0.15s);
+    @include transition(0.18s);
 
     .fa-caret-down {
       display: none;
@@ -134,7 +135,7 @@
         padding: 91px 40px 20px 0;
         opacity: 0;
         display: none;
-        @include transition(0.15s);
+        @include transition(0.18s);
 
         &--show {
           display: block;

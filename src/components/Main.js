@@ -18,14 +18,14 @@ class Main extends Component {
     this.setState({ showNavFull: true });
     setTimeout(() => {
       this.setState({ showNav: true })
-    }, 150);
+    }, 180);
   }
 
   hideNav() {
     this.setState({ showNav: false });
     setTimeout(() => {
       this.setState({ showNavFull: false })
-    }, 150);
+    }, 180);
   }
 
   render() {

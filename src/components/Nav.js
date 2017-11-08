@@ -21,12 +21,12 @@ class Nav extends Component {
       this.setState({ showAboutFull: false })
       setTimeout(() => {
         this.setState({ showAbout: false })
-      }, 150);
+      }, 200);
     } else {
       this.setState({ showAbout: true })
       setTimeout(() => {
         this.setState({ showAboutFull: true })
-      }, 150);
+      }, 200);
     }
   }
 
