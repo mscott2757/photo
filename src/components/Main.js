@@ -4,6 +4,15 @@ import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import Gallery from './Gallery';
 import Nav from './Nav';
 import Social from './Social';
+import ReactGA from 'react-ga';
+
+ReactGA.initialize('UA-109516063-1');
+
+const logPageView = () => {
+    ReactGA.set({ page: window.location.pathname });
+    ReactGA.pageview(window.location.pathname);
+    return null;
+};
 
 class Main extends Component {
   constructor(props) {
@@ -36,6 +45,7 @@ class Main extends Component {
           showNav={this.state.showNav}
           showNavFull={this.state.showNavFull}
         />
+        <Route component={logPageView} />
         <TransitionGroup>
           <CSSTransition
             key={this.props.location.key}
