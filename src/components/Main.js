@@ -6,10 +6,12 @@ import Nav from './Nav';
 import Social from './Social';
 import ReactGA from 'react-ga';
 
+ReactGA.initialize('UA-109516063-1');
+
 const logPageView = () => {
-    ReactGA.set({ page: window.location.pathname });
-    ReactGA.pageview(window.location.pathname);
-    return null;
+  ReactGA.set({ page: window.location.pathname });
+  ReactGA.pageview(window.location.pathname);
+  return null;
 };
 
 class Main extends Component {
