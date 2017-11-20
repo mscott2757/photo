@@ -1,3 +1,6 @@
+.image .hide-img {
+  display: none; }
+
 @media screen and (max-width: 768px) {
   .image {
     margin-bottom: 17px; }

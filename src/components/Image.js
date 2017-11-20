@@ -23,6 +23,7 @@ class Image extends Component {
           </div>
         }
         <img src={this.props.picture.url}
+             className={(this.state.loading ? "hide-img" : "")}
              onLoad={this.hideLoader.bind(this)}
              alt=""
         />
