@@ -68,7 +68,7 @@ class Nav extends Component {
                 </NavDropdown>
               </li>
               <li>
-                <NavDropdown title="Previously">
+                <NavDropdown title="Places">
                   <ul>
                     <li><NavLink activeClassName="active" to='/la'>Los Angeles</NavLink></li>
                     <li><NavLink activeClassName="active" to='/nyc'>New York</NavLink></li>
