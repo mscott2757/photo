@@ -36,6 +36,11 @@
         height: $width * 6/7;
         width: $width;
       }
+
+      &--6-by-6 {
+        height: $width;
+        width: $width;
+      }
     }
   }
 
@@ -72,6 +77,11 @@
       &--7-by-6 {
         height: $height;
         width: $height * 7/6;
+      }
+
+      &--6-by-6 {
+        height: $height;
+        width: $height;
       }
     }
   }

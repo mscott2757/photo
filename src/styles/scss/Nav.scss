@@ -59,6 +59,21 @@
         }
       }
     }
+
+    .nav-dropdown {
+      .children-container {
+
+        li {
+          margin-left: 10px;
+        }
+
+        display: none;
+        &--show {
+          display: block;
+
+        }
+      }
+    }
   }
 }
 
@@ -92,6 +107,7 @@
     bottom: 10vh;
     left: 10vw;
     width: 290px;
+    height: 305px;
     z-index: 1;
     opacity: 1;
     @include transition(0.18s);
@@ -111,11 +127,18 @@
     .navbar-body {
       display: flex;
       flex-direction: row;
+      height: 100%;
 
       .navbar {
         background-color: #fff;
         padding: 20px 40px;
         width: 100%;
+
+        .about-link {
+          position: absolute;
+          bottom: 0;
+          margin-bottom: 20px;
+        }
       }
 
       .about {
