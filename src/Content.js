@@ -4,22 +4,21 @@ const content = {
       path: "/",
       photos: [
         { url: require("./images/sf/civic.jpg"),          aspect: "2-by-3" },
+        { url: require("./images/sf/market.jpg"),     aspect: "6-by-6" },
         { url: require("./images/berkeley/newspaper.jpg"),   aspect: "7-by-6" },
         { url: require("./images/la/echo.jpg"),           aspect: "2-by-3" },
         { url: require("./images/sf/ocean.jpg"),          aspect: "2-by-3" },
-        { url: require("./images/chicago/caught-before.jpg"),   aspect: "3-by-2" },
-        { url: require("./images/nyc/soho-crossing.jpg"), aspect: "2-by-3" },
       ]
     },{
       path: "/sf",
       photos: [
         { url: require("./images/sf/sunset.jpg"),     aspect: "3-by-2" },
         { url: require("./images/sf/civic.jpg"),      aspect: "2-by-3" },
+        { url: require("./images/sf/market.jpg"),     aspect: "6-by-6" },
         { url: require("./images/sf/mission.jpg"),    aspect: "3-by-2" },
         { url: require("./images/sf/muni.jpg"),       aspect: "2-by-3" },
         { url: require("./images/sf/fireescape.jpg"), aspect: "2-by-3" },
         { url: require("./images/sf/bernal.jpg"),     aspect: "3-by-2" },
-        { url: require("./images/sf/bart.jpg"),       aspect: "2-by-3" },
         { url: require("./images/sf/richmond.jpg"),   aspect: "2-by-3" },
         { url: require("./images/sf/ocean.jpg"),      aspect: "2-by-3" }
       ]
@@ -65,14 +64,26 @@ const content = {
         { url: require("./images/berkeley/roof.jpg"),      aspect: "6-by-7" }
       ]
     },{
-      path: "/personal",
+      path: "/paris",
       photos: [
-        { url: require("./images/personal/deyoung.jpg"),   aspect: "3-by-2" },
-        { url: require("./images/personal/waves2.jpg"),    aspect: "2-by-3" },
-        { url: require("./images/personal/waves.jpg"),     aspect: "3-by-2" },
-        { url: require("./images/personal/christine.jpg"), aspect: "2-by-3" },
-        { url: require("./images/personal/liz.jpg"),       aspect: "3-by-2" },
-        { url: require("./images/personal/michael.jpg"),   aspect: "3-by-2" }
+        { url: require("./images/paris/subway.jpg"),      aspect: "3-by-2" },
+        { url: require("./images/paris/birhakeim.jpg"),   aspect: "2-by-3" },
+        { url: require("./images/paris/accordian.jpg"),   aspect: "3-by-2" },
+        { url: require("./images/paris/ladefense.jpg"),   aspect: "3-by-2" },
+        { url: require("./images/paris/canal.jpg"),       aspect: "2-by-3" },
+        { url: require("./images/paris/fumer.jpg"),       aspect: "3-by-2" },
+        { url: require("./images/paris/canalcouple.jpg"), aspect: "3-by-2" },
+        { url: require("./images/paris/pompidou.jpg"),       aspect: "3-by-2" },
+      ]
+    },{
+      path: "/portraits",
+      photos: [
+        { url: require("./images/portraits/sunny.jpg"),     aspect: "6-by-7" },
+        { url: require("./images/portraits/estell.jpg"),    aspect: "6-by-7" },
+        { url: require("./images/portraits/waves2.jpg"),    aspect: "2-by-3" },
+        { url: require("./images/portraits/waves.jpg"),     aspect: "3-by-2" },
+        { url: require("./images/portraits/deyoung.jpg"),   aspect: "3-by-2" },
+        { url: require("./images/portraits/christine.jpg"), aspect: "2-by-3" },
       ]
     }
   ],
