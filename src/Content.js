@@ -7,7 +7,7 @@ const content = {
         { url: require("./images/sf/market.jpg"),     aspect: "6-by-6" },
         { url: require("./images/berkeley/newspaper.jpg"),   aspect: "7-by-6" },
         { url: require("./images/la/echo.jpg"),           aspect: "2-by-3" },
-        { url: require("./images/sf/ocean.jpg"),          aspect: "2-by-3" },
+        { url: require("./images/sf/ocean.jpg"),      aspect: "2-by-3" }
       ]
     },{
       path: "/sf",
@@ -20,7 +20,6 @@ const content = {
         { url: require("./images/sf/fireescape.jpg"), aspect: "2-by-3" },
         { url: require("./images/sf/bernal.jpg"),     aspect: "3-by-2" },
         { url: require("./images/sf/richmond.jpg"),   aspect: "2-by-3" },
-        { url: require("./images/sf/ocean.jpg"),      aspect: "2-by-3" }
       ]
     },{
       path: "/la",
@@ -90,6 +89,7 @@ const content = {
       photos: [
         { url: require("./images/landscapes/tam1.jpg"), aspect: "6-by-7" },
         { url: require("./images/landscapes/tam2.jpg"), aspect: "7-by-6" },
+        { url: require("./images/sf/ocean.jpg"),        aspect: "2-by-3" },
       ]
     }
   ],
