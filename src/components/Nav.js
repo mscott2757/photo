@@ -64,13 +64,13 @@ class Nav extends Component {
                   <ul>
                     <li><NavLink activeClassName="active" to='/sf'>San Francisco</NavLink></li>
                     <li><NavLink activeClassName="active" to='/berkeley'>Berkeley</NavLink></li>
+                    <li><NavLink activeClassName="active" to='/la'>Los Angeles</NavLink></li>
                   </ul>
                 </NavDropdown>
               </li>
               <li>
-                <NavDropdown title="Places">
+                <NavDropdown title="Travel">
                   <ul>
-                    <li><NavLink activeClassName="active" to='/la'>Los Angeles</NavLink></li>
                     <li><NavLink activeClassName="active" to='/nyc'>New York</NavLink></li>
                     <li><NavLink activeClassName="active" to='/chicago'>Chicago</NavLink></li>
                     <li><NavLink activeClassName="active" to='/paris'>Paris</NavLink></li>
@@ -79,6 +79,7 @@ class Nav extends Component {
 
               </li>
               <li><NavLink activeClassName="active" to='/portraits'>Portraits</NavLink></li>
+              <li><NavLink activeClassName="active" to='/landscapes'>Landscapes</NavLink></li>
             </ul>
             <a className="about-link"
                href="js-about"

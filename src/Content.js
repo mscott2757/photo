@@ -85,6 +85,12 @@ const content = {
         { url: require("./images/portraits/deyoung.jpg"),   aspect: "3-by-2" },
         { url: require("./images/portraits/christine.jpg"), aspect: "2-by-3" },
       ]
+    },{
+      path: "/landscapes",
+      photos: [
+        { url: require("./images/landscapes/tam1.jpg"), aspect: "6-by-7" },
+        { url: require("./images/landscapes/tam2.jpg"), aspect: "7-by-6" },
+      ]
     }
   ],
   accounts: [
