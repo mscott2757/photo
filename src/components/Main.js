@@ -24,14 +24,14 @@ class Main extends Component {
     }
   }
 
-  showNav() {
+  showNav = () => {
     this.setState({ showNavFull: true });
     setTimeout(() => {
       this.setState({ showNav: true })
     }, 180);
   }
 
-  hideNav() {
+  hideNav = () => {
     this.setState({ showNav: false });
     setTimeout(() => {
       this.setState({ showNavFull: false })
@@ -57,8 +57,8 @@ class Main extends Component {
                 <Route exact key={index} path={page.path} render={(props) => (
                   <Gallery
                     pictures={page.photos}
-                    handleShowNav={this.showNav.bind(this)}
-                    handleHideNav={this.hideNav.bind(this)}
+                    handleShowNav={this.showNav}
+                    handleHideNav={this.hideNav}
                     {...props} />
                 )} />
               )}

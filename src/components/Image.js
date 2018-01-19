@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import 'font-awesome/css/font-awesome.min.css';
-import '../styles/css/Image.css';
 
 class Image extends Component {
   constructor(props) {

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../styles/css/Nav.css';
 
 const classNames = require('classnames');
 

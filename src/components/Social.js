@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import '../styles/css/Social.css';
-import 'font-awesome/css/font-awesome.min.css';
 
 class Social extends Component {
   render() {

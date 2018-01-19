@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-import '../styles/css/Nav.css';
-import 'font-awesome/css/font-awesome.min.css';
 import NavDropdown from './NavDropdown';
 
 const classNames = require('classnames');
