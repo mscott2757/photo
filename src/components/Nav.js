@@ -57,15 +57,7 @@ class Nav extends Component {
               <h1>Mason Chan</h1>
             </NavLink>
             <ul>
-              <li>
-                <NavDropdown title="The Current Issue">
-                  <ul>
-                    <li><NavLink activeClassName="active" to='/sf'>San Francisco</NavLink></li>
-                    <li><NavLink activeClassName="active" to='/berkeley'>Berkeley</NavLink></li>
-                    <li><NavLink activeClassName="active" to='/la'>Los Angeles</NavLink></li>
-                  </ul>
-                </NavDropdown>
-              </li>
+              <li><NavLink exact activeClassName="active" to='/'>The Current Issue</NavLink></li>
               <li>
                 <NavDropdown title="Travel">
                   <ul>

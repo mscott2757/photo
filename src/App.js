@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { createStore } from 'redux';
-import content from './Content';
+import content from './content/Content';
 import Main from './components/Main';
 import './styles/css/App.css';
 
