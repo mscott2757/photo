@@ -56,7 +56,7 @@ class Main extends Component {
               {this.props.content.pages.map((page, index) =>
                 <Route exact key={index} path={page.path} render={(props) => (
                   <Gallery
-                    pictures={page.photos}
+                    content={page.content}
                     handleShowNav={this.showNav}
                     handleHideNav={this.hideNav}
                     {...props} />

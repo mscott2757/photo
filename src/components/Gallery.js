@@ -25,11 +25,16 @@ class Gallery extends Component {
   }
 
   render() {
+    const { title, photos } = this.props.content;
+
     return (
       <div className="gallery">
+        <div className="gallery-title">
+          <p>{title}</p>
+        </div>
         <div className="gallery-container" ref="gallery">
-          {this.props.pictures.map((picture, index) =>
-            <Image picture={picture} key={index} />
+          {photos.map((photo, index) =>
+            <Image picture={photo} key={index} />
           )}
         </div>
       </div>

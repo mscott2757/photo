@@ -61,6 +61,10 @@ class Nav extends Component {
               <li>
                 <NavDropdown title="Travel">
                   <ul>
+                    <li><NavLink activeClassName="active" to='/tokyo'>Tokyo</NavLink></li>
+                    <li><NavLink activeClassName="active" to='/kyoto'>Kyoto</NavLink></li>
+                    <li><NavLink activeClassName="active" to='/osaka'>Osaka</NavLink></li>
+                    <li><NavLink activeClassName="active" to='/taiwan'>Taiwan</NavLink></li>
                     <li><NavLink activeClassName="active" to='/nyc'>New York</NavLink></li>
                     <li><NavLink activeClassName="active" to='/chicago'>Chicago</NavLink></li>
                     <li><NavLink activeClassName="active" to='/paris'>Paris</NavLink></li>
