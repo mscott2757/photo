@@ -21,41 +21,23 @@ const initialState = {
 const photoApp = (state = initialState, action) => {
   switch (action.type) {
     case SHOW_NAV:
-      return Object.assign({}, state, {
-        showNav: true
-      });
+      return {...state, showNav: true }
     case SHOW_NAV_FULL:
-      return Object.assign({}, state, {
-        showNavFull: true
-      });
+      return {...state, showNavFull: true }
     case HIDE_NAV:
-      return Object.assign({}, state, {
-        showNav: false
-      });
+      return {...state, showNav: false }
     case HIDE_NAV_FULL:
-      return Object.assign({}, state, {
-        showNavFull: false
-      });
+      return { ...state, showNavFull: false }
     case SHOW_ABOUT:
-      return Object.assign({}, state, {
-        showAbout: true
-      });
+      return { ...state, showAbout: true }
     case SHOW_ABOUT_FULL:
-      return Object.assign({}, state, {
-        showAboutFull: true
-      });
+      return { ...state, showAboutFull: true }
     case HIDE_ABOUT:
-      return Object.assign({}, state, {
-        showAbout: false
-      });
+      return { ...state, showAbout: false }
     case HIDE_ABOUT_FULL:
-      return Object.assign({}, state, {
-        showAboutFull: false
-      });
+      return { ...state, showAboutFull: false }
     case SET_SCROLL_POSITION:
-      return Object.assign({}, state, {
-        scrollPosition: action.scrollPosition
-      });
+      return { ...state, scrollPosition: action.scrollPosition }
     default:
       return state;
   }
