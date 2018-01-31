@@ -2,25 +2,17 @@ import React, { Component } from 'react';
 import Image from './Image';
 
 class Gallery extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      scrollPosition: 0
-    }
-  }
-
   componentDidMount() {
-    this.setState({ scrollPosition: this.refs.gallery.scrollLeft });
+    this.props.setScrollPosition(this.refs.gallery.scrollLeft);
 
     this.refs.gallery.addEventListener("scroll", () => {
       let newScrollPosition = this.refs.gallery.scrollLeft;
-      if (newScrollPosition > this.state.scrollPosition) {
-        this.props.handleHideNav();
+      if (newScrollPosition > this.props.scrollPosition) {
+        this.props.onScrollRight();
       } else {
-        this.props.handleShowNav();
+        this.props.onScrollLeft();
       }
-      this.setState({ scrollPosition: newScrollPosition });
+      this.props.setScrollPosition(newScrollPosition);
     }, false);
   }
 
@@ -40,10 +32,6 @@ class Gallery extends Component {
       </div>
     );
   }
-}
-
-Gallery.defaultProps = {
-  pictures: []
 }
 
 export default Gallery;

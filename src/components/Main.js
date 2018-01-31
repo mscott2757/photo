@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { withRouter, Switch, Route } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
-import Gallery from './Gallery';
-import Nav from './Nav';
+import GalleryContainer from '../containers/GalleryContainer';
+import NavContainer from '../containers/NavContainer';
 import Social from './Social';
 import ReactGA from 'react-ga';
 
@@ -15,36 +15,10 @@ const logPageView = () => {
 };
 
 class Main extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      showNav: true,
-      showNavFull: true
-    }
-  }
-
-  showNav = () => {
-    this.setState({ showNavFull: true });
-    setTimeout(() => {
-      this.setState({ showNav: true })
-    }, 180);
-  }
-
-  hideNav = () => {
-    this.setState({ showNav: false });
-    setTimeout(() => {
-      this.setState({ showNavFull: false })
-    }, 180);
-  }
-
   render() {
     return (
       <div className="main">
-        <Nav
-          showNav={this.state.showNav}
-          showNavFull={this.state.showNavFull}
-        />
+        <NavContainer />
         <Route component={logPageView} />
         <TransitionGroup>
           <CSSTransition
@@ -55,11 +29,10 @@ class Main extends Component {
             <Switch location={this.props.location}>
               {this.props.content.pages.map((page, index) =>
                 <Route exact key={index} path={page.path} render={(props) => (
-                  <Gallery
+                  <GalleryContainer
                     content={page.content}
-                    handleShowNav={this.showNav}
-                    handleHideNav={this.hideNav}
-                    {...props} />
+                    {...props}
+                  />
                 )} />
               )}
             </Switch>

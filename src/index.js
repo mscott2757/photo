@@ -5,9 +5,17 @@ import './styles/css/index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
+import photoApp from './reducers';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+
+let store = createStore(photoApp);
+
 ReactDOM.render((
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
+  <Provider store={store}>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </Provider>
 ), document.getElementById('root'));
 registerServiceWorker();

@@ -5,29 +5,12 @@ import NavDropdown from './NavDropdown';
 const classNames = require('classnames');
 
 class Nav extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      showAbout: false,
-      showAboutFull: false
-    }
-  }
-
-  toggleAbout(e) {
+  toggleAbout = (e) => {
     e.preventDefault();
-    if (this.state.showAbout) {
-      this.setState({ showAboutFull: false }, () => {
-        setTimeout(() => {
-          this.setState({ showAbout: false })
-        }, 200);
-      });
+    if (this.props.showAbout) {
+      this.props.onHideAbout();
     } else {
-      this.setState({ showAbout: true }, () => {
-        setTimeout(() => {
-          this.setState({ showAboutFull: true })
-        }, 200);
-      });
+      this.props.onShowAbout();
     }
   }
 
@@ -37,17 +20,22 @@ class Nav extends Component {
       {
         'navbar-container--hide-nav': !this.props.showNav,
         'navbar-container--hide-nav-full': !this.props.showNavFull,
-        'navbar-container--show-about': this.state.showAbout
+        'navbar-container--show-about': this.props.showAbout
       }
     );
 
     let aboutClasses = classNames(
       'about',
       {
-        'about--show': this.state.showAbout,
-        'about--show-full': this.state.showAboutFull
+        'about--show': this.props.showAbout,
+        'about--show-full': this.props.showAboutFull
       }
     );
+
+    let aboutDropdownBtn = null;
+    if (this.props.showAbout) {
+      aboutDropdownBtn = <span className="fa fa-caret-down"></span>;
+    }
 
     return (
       <div className={navbarContainerClasses}>
@@ -61,13 +49,13 @@ class Nav extends Component {
               <li>
                 <NavDropdown title="Travel">
                   <ul>
-                    <li><NavLink activeClassName="active" to='/tokyo'>Tokyo</NavLink></li>
-                    <li><NavLink activeClassName="active" to='/kyoto'>Kyoto</NavLink></li>
-                    <li><NavLink activeClassName="active" to='/osaka'>Osaka</NavLink></li>
-                    <li><NavLink activeClassName="active" to='/taiwan'>Taiwan</NavLink></li>
-                    <li><NavLink activeClassName="active" to='/nyc'>New York</NavLink></li>
-                    <li><NavLink activeClassName="active" to='/chicago'>Chicago</NavLink></li>
-                    <li><NavLink activeClassName="active" to='/paris'>Paris</NavLink></li>
+                    <li><NavLink exact activeClassName="active" to='/tokyo'>Tokyo</NavLink></li>
+                    <li><NavLink exact activeClassName="active" to='/kyoto'>Kyoto</NavLink></li>
+                    <li><NavLink exact activeClassName="active" to='/osaka'>Osaka</NavLink></li>
+                    <li><NavLink exact activeClassName="active" to='/taiwan'>Taiwan</NavLink></li>
+                    <li><NavLink exact activeClassName="active" to='/nyc'>New York</NavLink></li>
+                    <li><NavLink exact activeClassName="active" to='/chicago'>Chicago</NavLink></li>
+                    <li><NavLink exact activeClassName="active" to='/paris'>Paris</NavLink></li>
                   </ul>
                 </NavDropdown>
 
@@ -77,18 +65,16 @@ class Nav extends Component {
             </ul>
             <a className="about-link"
                href="js-about"
-               onClick={this.toggleAbout.bind(this)}
+               onClick={this.toggleAbout}
             >
               About
-              {this.state.showAbout &&
-                <span className="fa fa-caret-down"></span>
-              }
+              {aboutDropdownBtn}
             </a>
           </div>
           <div className={aboutClasses}>
             <p>Hello, I'm Mason.</p>
             <p>I find great joy in capturing humanity in its rawest form through the medium of film photography.</p>
-            <div className="hide-about-btn__wrapper" onClick={this.toggleAbout.bind(this)}>
+            <div className="hide-about-btn__wrapper" onClick={this.toggleAbout}>
               <div className="hide-about-btn"></div>
             </div>
             <p>I also maintain a fascination for urban landscapes and public transportation.</p>
