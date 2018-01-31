@@ -47,19 +47,18 @@ class Nav extends Component {
             <ul>
               <li><NavLink exact activeClassName="active" to='/'>The Current Issue</NavLink></li>
               <li>
-                <NavDropdown title="Travel">
+                <NavDropdown title="Japan">
                   <ul>
                     <li><NavLink exact activeClassName="active" to='/tokyo'>Tokyo</NavLink></li>
                     <li><NavLink exact activeClassName="active" to='/kyoto'>Kyoto</NavLink></li>
                     <li><NavLink exact activeClassName="active" to='/osaka'>Osaka</NavLink></li>
-                    <li><NavLink exact activeClassName="active" to='/taiwan'>Taiwan</NavLink></li>
-                    <li><NavLink exact activeClassName="active" to='/nyc'>New York</NavLink></li>
-                    <li><NavLink exact activeClassName="active" to='/chicago'>Chicago</NavLink></li>
-                    <li><NavLink exact activeClassName="active" to='/paris'>Paris</NavLink></li>
                   </ul>
                 </NavDropdown>
-
               </li>
+              <li><NavLink exact activeClassName="active" to='/taiwan'>Taiwan</NavLink></li>
+              <li><NavLink exact activeClassName="active" to='/nyc'>New York</NavLink></li>
+              <li><NavLink exact activeClassName="active" to='/chicago'>Chicago</NavLink></li>
+              <li><NavLink exact activeClassName="active" to='/paris'>Paris</NavLink></li>
               <li><NavLink activeClassName="active" to='/portraits'>Portraits</NavLink></li>
               <li><NavLink activeClassName="active" to='/landscapes'>Landscapes</NavLink></li>
             </ul>
