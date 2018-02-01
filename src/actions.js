@@ -47,12 +47,18 @@ export function setScrollPosition(scrollPosition) {
   }
 }
 
-const galleryNotFound = { title: 'Page Not Found', photos: [] };
+const galleryNotFound = {
+  id: '',
+  gallery: {
+    title: 'Page Not Found',
+    photos: []
+  }
+};
 
-export function getVisibleGallery(content, id) {
-  let visibleGallery = content.find((gallery) => {
+export function getCurrentGallery(content, id) {
+  let currentGallery = content.find((gallery) => {
     return gallery.id === id;
   });
-  return visibleGallery ? visibleGallery.gallery : galleryNotFound;
+  return currentGallery || galleryNotFound;
 }
 

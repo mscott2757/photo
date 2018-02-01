@@ -17,8 +17,7 @@ class Gallery extends Component {
   }
 
   render() {
-    const { title, photos } = this.props.content;
-
+    const { title, photos } = this.props.content.gallery;
     return (
       <div className="gallery">
         <div className="gallery-title">

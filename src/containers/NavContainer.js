@@ -18,17 +18,19 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onShowAbout: () => {
-      dispatch(showAbout());
-      setTimeout(() => {
-        dispatch(showAboutFull());
-      }, 200);
-    },
-    onHideAbout: () => {
-      dispatch(hideAboutFull());
-      setTimeout(() => {
-        dispatch(hideAbout());
-      }, 200);
+    toggleAbout: (aboutVisible) => {
+      if (aboutVisible) {
+        dispatch(hideAboutFull());
+        setTimeout(() => {
+          dispatch(hideAbout());
+        }, 200);
+      } else {
+        dispatch(showAbout());
+        setTimeout(() => {
+          dispatch(showAboutFull());
+        }, 200);
+
+      }
     }
   }
 }

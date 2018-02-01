@@ -5,19 +5,15 @@ import NavDropdown from './NavDropdown';
 const classNames = require('classnames');
 
 class Nav extends Component {
-  toggleAbout = (e) => {
+  onToggleAbout = (e) => {
     e.preventDefault();
-    if (this.props.showAbout) {
-      this.props.onHideAbout();
-    } else {
-      this.props.onShowAbout();
-    }
+    const {showAbout} = this.props;
+    this.props.toggleAbout(showAbout);
   }
 
   render() {
     let navbarContainerClasses = classNames(
-      'navbar-container',
-      {
+      'navbar-container', {
         'navbar-container--hide-nav': !this.props.showNav,
         'navbar-container--hide-nav-full': !this.props.showNavFull,
         'navbar-container--show-about': this.props.showAbout
@@ -25,8 +21,7 @@ class Nav extends Component {
     );
 
     let aboutClasses = classNames(
-      'about',
-      {
+      'about', {
         'about--show': this.props.showAbout,
         'about--show-full': this.props.showAboutFull
       }
@@ -64,7 +59,7 @@ class Nav extends Component {
             </ul>
             <a className="about-link"
                href="js-about"
-               onClick={this.toggleAbout}
+               onClick={this.onToggleAbout}
             >
               About
               {aboutDropdownBtn}
@@ -73,7 +68,7 @@ class Nav extends Component {
           <div className={aboutClasses}>
             <p>Hello, I'm Mason.</p>
             <p>I find great joy in capturing humanity in its rawest form through the medium of film photography.</p>
-            <div className="hide-about-btn__wrapper" onClick={this.toggleAbout}>
+            <div className="hide-about-btn__wrapper" onClick={this.onToggleAbout}>
               <div className="hide-about-btn"></div>
             </div>
             <p>I also maintain a fascination for urban landscapes and public transportation.</p>

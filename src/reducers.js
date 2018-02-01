@@ -22,7 +22,6 @@ const initialState = {
 }
 
 const photoApp = (state = initialState, action) => {
-  console.log(state);
   switch (action.type) {
     case SHOW_NAV:
       return {...state, showNav: true }

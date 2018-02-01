@@ -18,7 +18,6 @@ class App extends Component {
     return (
       <div className="App">
         <Route component={logPageView} />
-
         <TransitionGroup>
           <CSSTransition
             key={this.props.location.key}
