@@ -1,11 +1,9 @@
 import Current from './Current';
 import NewYork from './NewYork';
 import Chicago from './Chicago';
+import { Tokyo, Kyoto, Osaka } from './Japan';
 import Paris from './Paris';
 import Taiwan from './Taiwan';
-import Tokyo from './Tokyo';
-import Kyoto from './Kyoto';
-import Osaka from './Osaka';
 import Portraits from './Portraits';
 import Landscapes from './Landscapes';
 
