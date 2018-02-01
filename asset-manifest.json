@@ -1,8 +1,8 @@
 {
   "main.css": "static/css/main.aa6e48ef.css",
   "main.css.map": "static/css/main.aa6e48ef.css.map",
-  "main.js": "static/js/main.883ba888.js",
-  "main.js.map": "static/js/main.883ba888.js.map",
+  "main.js": "static/js/main.dfcb2fb9.js",
+  "main.js.map": "static/js/main.dfcb2fb9.js.map",
   "static/media/Circular.otf": "static/media/Circular.6365c40a.otf",
   "static/media/accordian.jpg": "static/media/accordian.59c9caf4.jpg",
   "static/media/akihabara.jpg": "static/media/akihabara.c268b920.jpg",
@@ -61,6 +61,7 @@
   "static/media/man-subway.jpg": "static/media/man-subway.fa25fe8e.jpg",
   "static/media/market.jpg": "static/media/market.0a622b89.jpg",
   "static/media/mission.jpg": "static/media/mission.88260d73.jpg",
+  "static/media/muni-night.jpg": "static/media/muni-night.6c967bab.jpg",
   "static/media/muni.jpg": "static/media/muni.23141cb0.jpg",
   "static/media/ocean.jpg": "static/media/ocean.1b6144bd.jpg",
   "static/media/old-couple.jpg": "static/media/old-couple.26f8099c.jpg",
