@@ -43,6 +43,14 @@ export function hideAboutFull() {
 export function setScrollPosition(scrollPosition) {
   return {
     type: SET_SCROLL_POSITION,
-    scrollPosition: scrollPosition
+    scrollPosition
   }
 }
+
+export function getVisibleGallery(content, id) {
+  let visibleGallery = content.find((g) => {
+    return g.id === id;
+  });
+  return visibleGallery ? visibleGallery.gallery : { title: 'Page Not Found', photos: [] };
+}
+

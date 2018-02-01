@@ -15,14 +15,20 @@ class Image extends Component {
   }
 
   render() {
+    const { aspect, url } = this.props.picture;
+    let imgLoading = null;
+    if (this.state.loading) {
+      imgLoading = (
+        <div className={"image-loading aspect--" + aspect}>
+          <i className="fa fa-circle-o-notch fa-spin"></i>
+        </div>
+      );
+    }
+
     return (
       <div className="image">
-        {this.state.loading &&
-          <div className={"image-loading aspect--" + this.props.picture.aspect}>
-            <i className="fa fa-circle-o-notch fa-spin"></i>
-          </div>
-        }
-        <img src={this.props.picture.url}
+        {imgLoading}
+        <img src={url}
              className={(this.state.loading ? "hide-img" : "")}
              onLoad={this.hideLoader.bind(this)}
              alt=""

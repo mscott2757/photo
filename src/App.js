@@ -1,18 +1,36 @@
 import React, { Component } from 'react';
-import content from './content/Content';
 import Main from './components/Main';
 import './styles/css/App.css';
+import { withRouter, Route } from 'react-router-dom';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
+import ReactGA from 'react-ga';
 
+ReactGA.initialize('UA-109516063-1');
 
+const logPageView = () => {
+  ReactGA.set({ page: window.location.pathname });
+  ReactGA.pageview(window.location.pathname);
+  return null;
+};
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Main content={content} />
+        <Route component={logPageView} />
+
+        <TransitionGroup>
+          <CSSTransition
+            key={this.props.location.key}
+            timeout={400}
+            classNames='main'
+          >
+            <Route path="/:id?" component={Main} />
+          </CSSTransition>
+        </TransitionGroup>
       </div>
     );
   }
 }
 
-export default App;
+export default withRouter(App);

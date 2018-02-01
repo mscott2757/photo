@@ -190,44 +190,32 @@
 ::-webkit-scrollbar {
   display: none; }
 
-.gallery {
-  -webkit-transition: opacity 0.24s ease-in-out;
-  -moz-transition: opacity 0.24s ease-in-out;
-  -ms-transition: opacity 0.24s ease-in-out;
-  -o-transition: opacity 0.24s ease-in-out;
-  transition: opacity 0.24s ease-in-out; }
-  .gallery .gallery-title {
-    height: 4vh; }
-    .gallery .gallery-title p {
-      font-size: 12px;
-      font-weight: 300;
-      letter-spacing: 1px;
-      text-align: center;
-      margin: 0; }
-  .gallery-enter {
-    opacity: 0; }
-  .gallery-enter-active {
-    opacity: 1; }
-  .gallery-exit {
-    opacity: 1; }
-  .gallery-exit-active {
-    opacity: 0; }
-  @media screen and (max-width: 768px) {
+.gallery .gallery-title {
+  height: 4vh; }
+  .gallery .gallery-title p {
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-align: center;
+    margin: 0; }
+
+@media screen and (max-width: 768px) {
+  .gallery .gallery-container {
+    padding: 20px;
+    text-align: center; } }
+
+@media screen and (min-width: 768px) {
+  .gallery {
+    position: absolute;
+    top: 15vh;
+    height: 80vh;
+    width: 100%;
+    overflow: scroll; }
     .gallery .gallery-container {
-      padding: 20px;
-      text-align: center; } }
-  @media screen and (min-width: 768px) {
-    .gallery {
-      position: absolute;
-      top: 15vh;
-      height: 80vh;
-      width: 100%;
-      overflow: scroll; }
-      .gallery .gallery-container {
-        white-space: nowrap;
-        overflow: auto;
-        height: 76vh;
-        padding: 0 15vw; } }
+      white-space: nowrap;
+      overflow: auto;
+      height: 76vh;
+      padding: 0 15vw; } }
 
 .social {
   padding: 25px 40px; }
@@ -253,6 +241,21 @@
         color: #333; }
         .social ul li a:hover {
           color: #a8a8a8; }
+
+.main {
+  -webkit-transition: opacity 0.4s ease-in-out;
+  -moz-transition: opacity 0.4s ease-in-out;
+  -ms-transition: opacity 0.4s ease-in-out;
+  -o-transition: opacity 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out; }
+  .main-enter {
+    opacity: 0; }
+  .main-enter-active {
+    opacity: 1; }
+  .main-exit {
+    opacity: 1; }
+  .main-exit-active {
+    opacity: 0; }
 
 @font-face (Futura, fonts/Futura);
 @font-face {

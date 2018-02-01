@@ -7,18 +7,22 @@ import {
   SHOW_ABOUT_FULL,
   HIDE_ABOUT,
   HIDE_ABOUT_FULL,
-  SET_SCROLL_POSITION
+  SET_SCROLL_POSITION,
 } from './actions'
+
+import PhotoContent from './content/PhotoContent';
 
 const initialState = {
     showNav: true,
     showNavFull: true,
     showAbout: false,
     showAboutFull: false,
-    scrollPosition: 0
+    scrollPosition: 0,
+    content: PhotoContent
 }
 
 const photoApp = (state = initialState, action) => {
+  console.log(state);
   switch (action.type) {
     case SHOW_NAV:
       return {...state, showNav: true }

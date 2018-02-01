@@ -3,7 +3,8 @@ import {
   showNavFull,
   hideNav,
   hideNavFull,
-  setScrollPosition
+  setScrollPosition,
+  getVisibleGallery,
 } from '../actions';
 
 import { connect } from 'react-redux';
@@ -12,7 +13,7 @@ import Gallery from '../components/Gallery';
 const mapStateToProps = (state, ownProps) => {
   return {
     scrollPosition: state.scrollPosition,
-    ...ownProps
+    content: getVisibleGallery(state.content, ownProps.id)
   }
 }
 
