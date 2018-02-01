@@ -13,23 +13,21 @@ const logPageView = () => {
   return null;
 };
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <Route component={logPageView} />
-        <TransitionGroup>
-          <CSSTransition
-            key={this.props.location.key}
-            timeout={400}
-            classNames='main'
-          >
-            <Route path="/:id?" component={Main} />
-          </CSSTransition>
-        </TransitionGroup>
-      </div>
-    );
-  }
+const App = ({ location: { key }}) => {
+  return (
+    <div className="App">
+      <Route component={logPageView} />
+      <TransitionGroup>
+        <CSSTransition
+          key={key}
+          timeout={400}
+          classNames='main'
+        >
+          <Route path="/:id?" component={Main} />
+        </CSSTransition>
+      </TransitionGroup>
+    </div>
+  );
 }
 
 export default withRouter(App);
