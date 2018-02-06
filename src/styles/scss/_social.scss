@@ -18,6 +18,15 @@
   ul {
     padding: 0;
 
+    &:hover {
+      li {
+        a {
+          opacity: 0.5;
+          @include transition(0.12s);
+        }
+      }
+    }
+
     li {
       list-style-type: none;
       display: inline-block;
@@ -28,10 +37,12 @@
       }
 
       a {
-        color: #333;
+        color: $black;
+        @include transition(0.12s);
 
         &:hover {
-          color: #a8a8a8;
+          opacity: 1;
+          @include transition(0.12s);
         }
       }
     }

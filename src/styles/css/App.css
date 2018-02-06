@@ -231,6 +231,13 @@
       right: 0; } }
   .social ul {
     padding: 0; }
+    .social ul:hover li a {
+      opacity: 0.5;
+      -webkit-transition: opacity 0.12s ease-in-out;
+      -moz-transition: opacity 0.12s ease-in-out;
+      -ms-transition: opacity 0.12s ease-in-out;
+      -o-transition: opacity 0.12s ease-in-out;
+      transition: opacity 0.12s ease-in-out; }
     .social ul li {
       list-style-type: none;
       display: inline-block;
@@ -238,9 +245,19 @@
       .social ul li:last-child {
         margin-right: 0; }
       .social ul li a {
-        color: #333; }
+        color: #333;
+        -webkit-transition: opacity 0.12s ease-in-out;
+        -moz-transition: opacity 0.12s ease-in-out;
+        -ms-transition: opacity 0.12s ease-in-out;
+        -o-transition: opacity 0.12s ease-in-out;
+        transition: opacity 0.12s ease-in-out; }
         .social ul li a:hover {
-          color: #a8a8a8; }
+          opacity: 1;
+          -webkit-transition: opacity 0.12s ease-in-out;
+          -moz-transition: opacity 0.12s ease-in-out;
+          -ms-transition: opacity 0.12s ease-in-out;
+          -o-transition: opacity 0.12s ease-in-out;
+          transition: opacity 0.12s ease-in-out; }
 
 .main {
   -webkit-transition: opacity 0.4s ease-in-out;
