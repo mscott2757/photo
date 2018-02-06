@@ -49,6 +49,15 @@ const Nav = ({ toggleAbout, showAbout, showAboutFull, showNav, showNavFull }) =>
               </NavDropdown>
             </li>
             <li><NavLink exact activeClassName="active" to='/taiwan'>Taiwan</NavLink></li>
+            <li>
+              <NavDropdown title="California">
+                <ul>
+                  <li><NavLink exact activeClassName="active" to='/sf'>San Francisco</NavLink></li>
+                  <li><NavLink exact activeClassName="active" to='/berkeley'>Berkeley</NavLink></li>
+                  <li><NavLink exact activeClassName="active" to='/la'>Los Angeles</NavLink></li>
+                </ul>
+              </NavDropdown>
+            </li>
             <li><NavLink exact activeClassName="active" to='/nyc'>New York</NavLink></li>
             <li><NavLink exact activeClassName="active" to='/chicago'>Chicago</NavLink></li>
             <li><NavLink exact activeClassName="active" to='/paris'>Paris</NavLink></li>
