@@ -55,6 +55,13 @@ export function setScrollPosition(scrollPosition) {
   }
 }
 
+export function dispatchWithTimeout(dispatch, firstAction, secondAction, duration) {
+  dispatch(firstAction);
+  setTimeout(() => {
+    dispatch(secondAction);
+  }, duration);
+}
+
 const galleryNotFound = {
   id: '',
   gallery: {

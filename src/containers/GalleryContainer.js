@@ -4,7 +4,8 @@ import {
   hideNav,
   hideNavFull,
   setScrollPosition,
-  getCurrentGallery
+  getCurrentGallery,
+  dispatchWithTimeout
 } from '../actions';
 
 import { connect } from 'react-redux';
@@ -23,18 +24,20 @@ const mapDispatchToProps = dispatch => {
       dispatch(setScrollPosition(scrollPosition));
     },
     onScrollRight: () => {
-      dispatch(hideNav());
-
-      setTimeout(() => {
-        dispatch(hideNavFull());
-      }, 180);
+      dispatchWithTimeout(
+        dispatch,
+        hideNav(),
+        hideNavFull(),
+        150
+      );
     },
     onScrollLeft: () => {
-      dispatch(showNavFull());
-
-      setTimeout(() => {
-        dispatch(showNav());
-      }, 180);
+      dispatchWithTimeout(
+        dispatch,
+        showNavFull(),
+        showNav(),
+        150
+      );
     }
   }
 }

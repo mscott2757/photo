@@ -3,7 +3,8 @@ import {
   showAbout,
   showAboutFull,
   hideAbout,
-  hideAboutFull
+  hideAboutFull,
+  dispatchWithTimeout
 } from '../actions';
 import Nav from '../components/Nav';
 
@@ -20,16 +21,19 @@ const mapDispatchToProps = dispatch => {
   return {
     toggleAbout: (aboutVisible) => {
       if (aboutVisible) {
-        dispatch(hideAboutFull());
-        setTimeout(() => {
-          dispatch(hideAbout());
-        }, 200);
+        dispatchWithTimeout(
+          dispatch,
+          hideAboutFull(),
+          hideAbout(),
+          100
+        );
       } else {
-        dispatch(showAbout());
-        setTimeout(() => {
-          dispatch(showAboutFull());
-        }, 200);
-
+        dispatchWithTimeout(
+          dispatch,
+          showAbout(),
+          showAboutFull(),
+          100
+        );
       }
     }
   }
