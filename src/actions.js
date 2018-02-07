@@ -7,6 +7,7 @@ export const SHOW_ABOUT = 'SHOW_ABOUT';
 export const SHOW_ABOUT_FULL = 'SHOW_ABOUT_FULL';
 export const HIDE_ABOUT = 'HIDE_ABOUT';
 export const HIDE_ABOUT_FULL = 'HIDE_ABOUT_FULL';
+export const TOGGLE_NAV_DROPDOWN = 'TOGGLE_NAV_DROPDOWN';
 
 export function showNav() {
   return { type: SHOW_NAV }
@@ -38,6 +39,13 @@ export function hideAbout() {
 
 export function hideAboutFull() {
   return { type: HIDE_ABOUT_FULL }
+}
+
+export function toggleDropdown(id) {
+  return {
+    type: TOGGLE_NAV_DROPDOWN,
+    id
+  }
 }
 
 export function setScrollPosition(scrollPosition) {

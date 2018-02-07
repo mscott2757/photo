@@ -1,8 +1,7 @@
 import React from 'react';
+import classNames from 'classnames';
 import { NavLink } from 'react-router-dom';
-import NavDropdown from './NavDropdown';
-
-const classNames = require('classnames');
+import NavDropdownContainer from '../containers/NavDropdownContainer';
 
 const Nav = ({ toggleAbout, showAbout, showAboutFull, showNav, showNavFull }) => {
   const onToggleAbout = (e) => {
@@ -25,10 +24,7 @@ const Nav = ({ toggleAbout, showAbout, showAboutFull, showNav, showNavFull }) =>
     }
   );
 
-  let aboutDropdownBtn = null;
-  if (showAbout) {
-    aboutDropdownBtn = <span className="fa fa-caret-down"></span>;
-  }
+  let aboutDropdownBtn = showAbout ? <span className="fa fa-caret-down"></span> : null;
 
   return (
     <div className={navbarContainerClasses}>
@@ -40,23 +36,23 @@ const Nav = ({ toggleAbout, showAbout, showAboutFull, showNav, showNavFull }) =>
           <ul>
             <li><NavLink exact activeClassName="active" to='/'>The Current Issue</NavLink></li>
             <li>
-              <NavDropdown title="Japan">
+              <NavDropdownContainer id='japan' title="Japan">
                 <ul>
                   <li><NavLink exact activeClassName="active" to='/tokyo'>Tokyo</NavLink></li>
                   <li><NavLink exact activeClassName="active" to='/kyoto'>Kyoto</NavLink></li>
                   <li><NavLink exact activeClassName="active" to='/osaka'>Osaka</NavLink></li>
                 </ul>
-              </NavDropdown>
+              </NavDropdownContainer>
             </li>
             <li><NavLink exact activeClassName="active" to='/taiwan'>Taiwan</NavLink></li>
             <li>
-              <NavDropdown title="California">
+              <NavDropdownContainer id='california' title="California">
                 <ul>
                   <li><NavLink exact activeClassName="active" to='/sf'>San Francisco</NavLink></li>
                   <li><NavLink exact activeClassName="active" to='/berkeley'>Berkeley</NavLink></li>
                   <li><NavLink exact activeClassName="active" to='/la'>Los Angeles</NavLink></li>
                 </ul>
-              </NavDropdown>
+              </NavDropdownContainer>
             </li>
             <li><NavLink exact activeClassName="active" to='/nyc'>New York</NavLink></li>
             <li><NavLink exact activeClassName="active" to='/chicago'>Chicago</NavLink></li>

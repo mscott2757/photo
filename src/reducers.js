@@ -8,6 +8,7 @@ import {
   HIDE_ABOUT,
   HIDE_ABOUT_FULL,
   SET_SCROLL_POSITION,
+  TOGGLE_NAV_DROPDOWN
 } from './actions'
 
 import PhotoContent from './content/PhotoContent';
@@ -18,7 +19,8 @@ const initialState = {
     showAbout: false,
     showAboutFull: false,
     scrollPosition: 0,
-    content: PhotoContent
+    content: PhotoContent,
+    activeDropdown: ''
 }
 
 const photoApp = (state = initialState, action) => {
@@ -40,7 +42,15 @@ const photoApp = (state = initialState, action) => {
     case HIDE_ABOUT_FULL:
       return { ...state, showAboutFull: false }
     case SET_SCROLL_POSITION:
-      return { ...state, scrollPosition: action.scrollPosition }
+      return {
+        ...state,
+        scrollPosition: action.scrollPosition
+      }
+    case TOGGLE_NAV_DROPDOWN:
+      return {
+        ...state,
+        activeDropdown: action.id === state.activeDropdown ? '' : action.id
+      }
     default:
       return state;
   }

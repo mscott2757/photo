@@ -37,9 +37,7 @@ const mapDispatchToProps = dispatch => {
 
 const NavContainer = connect(
   mapStateToProps,
-  mapDispatchToProps,
-  null,
-  { pure: false }
+  mapDispatchToProps
 )(Nav)
 
 export default NavContainer;

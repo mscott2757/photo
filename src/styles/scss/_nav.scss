@@ -1,12 +1,12 @@
 @import "shared";
 
 .navbar-container {
-  background: #fff;
+  background: $white;
   line-height: 20px;
 
   a, p {
     text-decoration: none;
-    color: #333;
+    color: $black;
   }
 
   p {
@@ -24,7 +24,7 @@
 
   .navbar{
     h1 {
-      color: #333;
+      color: $black;
       font-weight: normal;
       letter-spacing: 1px;
       margin-top: 20px;
@@ -45,7 +45,7 @@
         list-style-type: none;
 
         .active {
-          color: #a8a8a8;
+          opacity: 0.5;
           cursor: default;
         }
 
@@ -54,7 +54,7 @@
           letter-spacing: 1px;
 
           &:hover {
-            color: #a8a8a8;
+            opacity: 0.5;
           }
         }
       }
@@ -110,7 +110,7 @@
     bottom: 10vh;
     left: 10vw;
     width: 290px;
-    height: 420px;
+    height: 380px;
     z-index: 1;
     opacity: 1;
     @include transition(0.18s);
@@ -133,7 +133,7 @@
       height: 100%;
 
       .navbar {
-        background-color: #fff;
+        background-color: $white;
         padding: 20px 40px;
         width: 100%;
 
@@ -141,13 +141,17 @@
           position: absolute;
           bottom: 0;
           margin-bottom: 20px;
+
+          &:hover {
+            opacity: 0.5;
+          }
         }
       }
 
       .about {
         width: 50%;
         position: relative;
-        background-color: #fff;
+        background-color: $white;
         padding: 90px 40px 20px 0;
         opacity: 0;
         display: none;
@@ -175,12 +179,16 @@
 
           &:hover {
             cursor: pointer;
+
+            .hide-about-btn {
+              opacity: 0.5;
+            }
           }
 
           .hide-about-btn {
             width: 12px;
             height: 2px;
-            background-color: #333;
+            background-color: $black;
           }
         }
       }

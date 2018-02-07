@@ -3,6 +3,7 @@ $height: 80vh;
 $width: 85vw;
 $light-grey: #a8a8a8;
 $black: #333;
+$white: #fff;
 
 @mixin transition($duration) {
   -webkit-transition: opacity $duration ease-in-out;

@@ -22,7 +22,7 @@
       li {
         a {
           opacity: 0.5;
-          @include transition(0.12s);
+          @include transition(0.1s);
         }
       }
     }
@@ -38,11 +38,11 @@
 
       a {
         color: $black;
-        @include transition(0.12s);
+        @include transition(0.1s);
 
         &:hover {
           opacity: 1;
-          @include transition(0.12s);
+          @include transition(0.1s);
         }
       }
     }

@@ -41,9 +41,7 @@ const mapDispatchToProps = dispatch => {
 
 const GalleryContainer = connect(
   mapStateToProps,
-  mapDispatchToProps,
-  null,
-  { pure: false }
+  mapDispatchToProps
 )(Gallery)
 
 export default GalleryContainer;

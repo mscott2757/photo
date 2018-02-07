@@ -1,44 +1,33 @@
-import React, { Component } from 'react';
+import React from 'react';
+import classNames from 'classnames';
 
-const classNames = require('classnames');
-
-class NavDropdown extends Component {
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      show: false,
-      showFull: false
-    }
-  }
-
-  toggleDropdown(e) {
+const NavDropdown = ({ id, active, onToggleDropdown, title, children }) => {
+  const toggleDropdown = (e) => {
     e.preventDefault();
-    this.setState({ show: !this.state.show });
+    onToggleDropdown(id);
   }
 
-  render() {
-    let childrenContainerClasses = classNames(
-      'children-container',
-      {
-        'children-container--show': this.state.show,
-        'children-container--show-full': this.state.showFull
-      }
+  let childrenContainerClasses = classNames(
+    'children-container',
+    {
+      'children-container--show': active,
+      'children-container--show-full': false
+    }
 
-    );
-    return (
-      <div className="nav-dropdown">
-        <a href="dropdownLink"
-           onClick={this.toggleDropdown.bind(this)}
-        >
-          {this.props.title}
-        </a>
-        <div className={childrenContainerClasses}>
-          {this.props.children}
-        </div>
+  );
+
+  return (
+    <div className="nav-dropdown">
+      <a href="dropdownLink"
+         onClick={toggleDropdown}
+      >
+        {title}
+      </a>
+      <div className={childrenContainerClasses}>
+        {children}
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 export default NavDropdown;

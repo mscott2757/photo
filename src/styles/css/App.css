@@ -29,14 +29,14 @@
     .navbar-container .navbar ul li {
       list-style-type: none; }
       .navbar-container .navbar ul li .active {
-        color: #a8a8a8;
+        opacity: 0.5;
         cursor: default; }
       .navbar-container .navbar ul li a {
         font-size: 12px;
         font-weight: 300;
         letter-spacing: 1px; }
         .navbar-container .navbar ul li a:hover {
-          color: #a8a8a8; }
+          opacity: 0.5; }
   .navbar-container .navbar .nav-dropdown .children-container {
     display: none; }
     .navbar-container .navbar .nav-dropdown .children-container ul {
@@ -66,7 +66,7 @@
     bottom: 10vh;
     left: 10vw;
     width: 290px;
-    height: 420px;
+    height: 380px;
     z-index: 1;
     opacity: 1;
     -webkit-transition: opacity 0.18s ease-in-out;
@@ -92,6 +92,8 @@
           position: absolute;
           bottom: 0;
           margin-bottom: 20px; }
+          .navbar-container .navbar-body .navbar .about-link:hover {
+            opacity: 0.5; }
       .navbar-container .navbar-body .about {
         width: 50%;
         position: relative;
@@ -121,6 +123,8 @@
           justify-content: center; }
           .navbar-container .navbar-body .about .hide-about-btn__wrapper:hover {
             cursor: pointer; }
+            .navbar-container .navbar-body .about .hide-about-btn__wrapper:hover .hide-about-btn {
+              opacity: 0.5; }
           .navbar-container .navbar-body .about .hide-about-btn__wrapper .hide-about-btn {
             width: 12px;
             height: 2px;
@@ -233,11 +237,11 @@
     padding: 0; }
     .social ul:hover li a {
       opacity: 0.5;
-      -webkit-transition: opacity 0.12s ease-in-out;
-      -moz-transition: opacity 0.12s ease-in-out;
-      -ms-transition: opacity 0.12s ease-in-out;
-      -o-transition: opacity 0.12s ease-in-out;
-      transition: opacity 0.12s ease-in-out; }
+      -webkit-transition: opacity 0.1s ease-in-out;
+      -moz-transition: opacity 0.1s ease-in-out;
+      -ms-transition: opacity 0.1s ease-in-out;
+      -o-transition: opacity 0.1s ease-in-out;
+      transition: opacity 0.1s ease-in-out; }
     .social ul li {
       list-style-type: none;
       display: inline-block;
@@ -246,18 +250,18 @@
         margin-right: 0; }
       .social ul li a {
         color: #333;
-        -webkit-transition: opacity 0.12s ease-in-out;
-        -moz-transition: opacity 0.12s ease-in-out;
-        -ms-transition: opacity 0.12s ease-in-out;
-        -o-transition: opacity 0.12s ease-in-out;
-        transition: opacity 0.12s ease-in-out; }
+        -webkit-transition: opacity 0.1s ease-in-out;
+        -moz-transition: opacity 0.1s ease-in-out;
+        -ms-transition: opacity 0.1s ease-in-out;
+        -o-transition: opacity 0.1s ease-in-out;
+        transition: opacity 0.1s ease-in-out; }
         .social ul li a:hover {
           opacity: 1;
-          -webkit-transition: opacity 0.12s ease-in-out;
-          -moz-transition: opacity 0.12s ease-in-out;
-          -ms-transition: opacity 0.12s ease-in-out;
-          -o-transition: opacity 0.12s ease-in-out;
-          transition: opacity 0.12s ease-in-out; }
+          -webkit-transition: opacity 0.1s ease-in-out;
+          -moz-transition: opacity 0.1s ease-in-out;
+          -ms-transition: opacity 0.1s ease-in-out;
+          -o-transition: opacity 0.1s ease-in-out;
+          transition: opacity 0.1s ease-in-out; }
 
 .main {
   -webkit-transition: opacity 0.4s ease-in-out;
