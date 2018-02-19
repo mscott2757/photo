@@ -30,35 +30,35 @@ const Nav = ({ toggleAbout, showAbout, showAboutFull, showNav, showNavFull }) =>
     <div className={navbarContainerClasses}>
       <div className="navbar-body">
         <div className="navbar">
-          <NavLink to='/'>
+          <NavLink to='/gallery/current'>
             <h1>Mason Chan</h1>
           </NavLink>
           <ul>
-            <li><NavLink exact activeClassName="active" to='/'>The Current Issue</NavLink></li>
+            <li><NavLink exact activeClassName="active" to='/gallery/current'>The Current Issue</NavLink></li>
             <li>
               <NavDropdownContainer id='japan' title="Japan">
                 <ul>
-                  <li><NavLink exact activeClassName="active" to='/tokyo'>Tokyo</NavLink></li>
-                  <li><NavLink exact activeClassName="active" to='/kyoto'>Kyoto</NavLink></li>
-                  <li><NavLink exact activeClassName="active" to='/osaka'>Osaka</NavLink></li>
+                  <li><NavLink exact activeClassName="active" to='/gallery/tokyo'>Tokyo</NavLink></li>
+                  <li><NavLink exact activeClassName="active" to='/gallery/kyoto'>Kyoto</NavLink></li>
+                  <li><NavLink exact activeClassName="active" to='/gallery/osaka'>Osaka</NavLink></li>
                 </ul>
               </NavDropdownContainer>
             </li>
-            <li><NavLink exact activeClassName="active" to='/taiwan'>Taiwan</NavLink></li>
+            <li><NavLink exact activeClassName="active" to='/gallery/taiwan'>Taiwan</NavLink></li>
             <li>
               <NavDropdownContainer id='california' title="California">
                 <ul>
-                  <li><NavLink exact activeClassName="active" to='/sf'>San Francisco</NavLink></li>
-                  <li><NavLink exact activeClassName="active" to='/berkeley'>Berkeley</NavLink></li>
-                  <li><NavLink exact activeClassName="active" to='/la'>Los Angeles</NavLink></li>
+                  <li><NavLink exact activeClassName="active" to='/gallery/sf'>San Francisco</NavLink></li>
+                  <li><NavLink exact activeClassName="active" to='/gallery/berkeley'>Berkeley</NavLink></li>
+                  <li><NavLink exact activeClassName="active" to='/gallery/la'>Los Angeles</NavLink></li>
                 </ul>
               </NavDropdownContainer>
             </li>
-            <li><NavLink exact activeClassName="active" to='/nyc'>New York</NavLink></li>
-            <li><NavLink exact activeClassName="active" to='/chicago'>Chicago</NavLink></li>
-            <li><NavLink exact activeClassName="active" to='/paris'>Paris</NavLink></li>
-            <li><NavLink activeClassName="active" to='/portraits'>Portraits</NavLink></li>
-            <li><NavLink activeClassName="active" to='/landscapes'>Landscapes</NavLink></li>
+            <li><NavLink exact activeClassName="active" to='/gallery/nyc'>New York</NavLink></li>
+            <li><NavLink exact activeClassName="active" to='/gallery/chicago'>Chicago</NavLink></li>
+            <li><NavLink exact activeClassName="active" to='/gallery/paris'>Paris</NavLink></li>
+            <li><NavLink activeClassName="active" to='/gallery/portraits'>Portraits</NavLink></li>
+            <li><NavLink activeClassName="active" to='/gallery/landscapes'>Landscapes</NavLink></li>
           </ul>
           <a className="about-link"
              href="js-about"

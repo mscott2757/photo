@@ -1,9 +1,12 @@
 import React from 'react';
 import Main from './components/Main';
 import './styles/css/App.css';
-import { withRouter, Route } from 'react-router-dom';
+import { withRouter, Route, Redirect } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import ReactGA from 'react-ga';
+import NavContainer from './containers/NavContainer';
+import { Accounts } from './content/PhotoContent';
+import Social from './components/Social';
 
 ReactGA.initialize('UA-109516063-1');
 
@@ -17,15 +20,20 @@ const App = ({ location: { key }}) => {
   return (
     <div className="App">
       <Route component={logPageView} />
+      <Route exact path="/" render={() =>
+        <Redirect to="/gallery/current" />
+      } />
+      <NavContainer />
       <TransitionGroup>
         <CSSTransition
           key={key}
           timeout={400}
           classNames='main'
         >
-          <Route path="/:id?" component={Main} />
+          <Route path="/gallery/:id?" component={Main} />
         </CSSTransition>
       </TransitionGroup>
+      <Social accounts={Accounts} />
     </div>
   );
 }
