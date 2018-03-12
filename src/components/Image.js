@@ -1,16 +1,14 @@
 import React, { Component } from 'react';
-import 'font-awesome/css/font-awesome.min.css';
 
 class Image extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       loading: true
     }
   }
 
-  hideLoader() {
+  hideLoader = () => {
     this.setState({ loading: false });
   }
 
@@ -30,7 +28,7 @@ class Image extends Component {
         {imgLoading}
         <img src={url}
              className={(this.state.loading ? "hide-img" : "")}
-             onLoad={this.hideLoader.bind(this)}
+             onLoad={this.hideLoader}
              alt=""
         />
       </div>

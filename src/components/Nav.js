@@ -57,8 +57,8 @@ const Nav = ({ toggleAbout, showAbout, showAboutFull, showNav, showNavFull }) =>
             <li><NavLink exact activeClassName="active" to='/gallery/nyc'>New York</NavLink></li>
             <li><NavLink exact activeClassName="active" to='/gallery/chicago'>Chicago</NavLink></li>
             <li><NavLink exact activeClassName="active" to='/gallery/paris'>Paris</NavLink></li>
-            <li><NavLink activeClassName="active" to='/gallery/portraits'>Portraits</NavLink></li>
-            <li><NavLink activeClassName="active" to='/gallery/landscapes'>Landscapes</NavLink></li>
+            <li><NavLink exact activeClassName="active" to='/gallery/portraits'>Portraits</NavLink></li>
+            <li><NavLink exact activeClassName="active" to='/gallery/landscapes'>Landscapes</NavLink></li>
           </ul>
           <a className="about-link"
              href="js-about"
