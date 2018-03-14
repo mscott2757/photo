@@ -2,7 +2,7 @@ import Current from './Current';
 import NewYork from './NewYork';
 import Chicago from './Chicago';
 import { Tokyo, Kyoto, Osaka } from './Japan';
-import { SanFrancisco, Berkeley, LosAngeles } from './California';
+import { SanFrancisco, Berkeley, LosAngeles, Oakland } from './California';
 import Paris from './Paris';
 import Taiwan from './Taiwan';
 import Portraits from './Portraits';
@@ -22,6 +22,7 @@ const PhotoContent = [
   { id: 'sf', gallery: SanFrancisco },
   { id: 'berkeley', gallery: Berkeley },
   { id: 'la', gallery: LosAngeles },
+  { id: 'oakland', gallery: Oakland },
   { id: 'nyc', gallery: NewYork },
   { id: 'chicago', gallery: Chicago },
   { id: 'taiwan', gallery: Taiwan },

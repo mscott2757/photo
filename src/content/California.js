@@ -31,3 +31,14 @@ export const LosAngeles = {
     { url: require("../images/la/vinyl.jpg"),     aspect: "3-by-2" },
   ]
 }
+
+export const Oakland = {
+  title: "Oakland",
+  photos: [
+    { url: require("../images/oakland/empty.jpg"),     aspect: "7-by-6" },
+    { url: require("../images/oakland/bart.jpg"),      aspect: "3-by-2" },
+    { url: require("../images/oakland/19th.jpg"),      aspect: "6-by-7" },
+    { url: require("../images/oakland/15th.jpg"),      aspect: "7-by-6" },
+    { url: require("../images/oakland/telegraph.jpg"), aspect: "6-by-7" },
+  ]
+}

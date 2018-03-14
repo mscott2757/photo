@@ -49,6 +49,7 @@ const Nav = ({ toggleAbout, showAbout, showAboutFull, showNav, showNavFull }) =>
               <NavDropdownContainer id='california' title="California">
                 <ul>
                   <li><NavLink exact activeClassName="active" to='/gallery/sf'>San Francisco</NavLink></li>
+                  <li><NavLink exact activeClassName="active" to='/gallery/oakland'>Oakland</NavLink></li>
                   <li><NavLink exact activeClassName="active" to='/gallery/berkeley'>Berkeley</NavLink></li>
                   <li><NavLink exact activeClassName="active" to='/gallery/la'>Los Angeles</NavLink></li>
                 </ul>
