@@ -9,7 +9,6 @@ const Portraits = {
     { url: require("../images/tam/estell.jpg"),           aspect: "7-by-6" },
     { url: require("../images/paris/waves2.jpg"),         aspect: "2-by-3" },
     { url: require("../images/paris/waves.jpg"),          aspect: "3-by-2" },
-    { url: require("../images/sf/deyoung.jpg"),           aspect: "3-by-2" },
   ]
 }
 

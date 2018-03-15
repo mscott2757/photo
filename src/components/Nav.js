@@ -36,16 +36,6 @@ const Nav = ({ toggleAbout, showAbout, showAboutFull, showNav, showNavFull }) =>
           <ul>
             <li><NavLink exact activeClassName="active" to='/gallery/current'>The Current Issue</NavLink></li>
             <li>
-              <NavDropdownContainer id='japan' title="Japan">
-                <ul>
-                  <li><NavLink exact activeClassName="active" to='/gallery/tokyo'>Tokyo</NavLink></li>
-                  <li><NavLink exact activeClassName="active" to='/gallery/kyoto'>Kyoto</NavLink></li>
-                  <li><NavLink exact activeClassName="active" to='/gallery/osaka'>Osaka</NavLink></li>
-                </ul>
-              </NavDropdownContainer>
-            </li>
-            <li><NavLink exact activeClassName="active" to='/gallery/taiwan'>Taiwan</NavLink></li>
-            <li>
               <NavDropdownContainer id='california' title="California">
                 <ul>
                   <li><NavLink exact activeClassName="active" to='/gallery/sf'>San Francisco</NavLink></li>
@@ -55,6 +45,16 @@ const Nav = ({ toggleAbout, showAbout, showAboutFull, showNav, showNavFull }) =>
                 </ul>
               </NavDropdownContainer>
             </li>
+            <li>
+              <NavDropdownContainer id='japan' title="Japan">
+                <ul>
+                  <li><NavLink exact activeClassName="active" to='/gallery/tokyo'>Tokyo</NavLink></li>
+                  <li><NavLink exact activeClassName="active" to='/gallery/kyoto'>Kyoto</NavLink></li>
+                  <li><NavLink exact activeClassName="active" to='/gallery/osaka'>Osaka</NavLink></li>
+                </ul>
+              </NavDropdownContainer>
+            </li>
+            <li><NavLink exact activeClassName="active" to='/gallery/taiwan'>Taiwan</NavLink></li>
             <li><NavLink exact activeClassName="active" to='/gallery/nyc'>New York</NavLink></li>
             <li><NavLink exact activeClassName="active" to='/gallery/chicago'>Chicago</NavLink></li>
             <li><NavLink exact activeClassName="active" to='/gallery/paris'>Paris</NavLink></li>
