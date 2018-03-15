@@ -18,10 +18,8 @@ const Nav = ({ toggleAbout, showAbout, showAboutFull, showNav, showNavFull, navL
   );
 
   let aboutClasses = classNames(
-    'about', {
-      'about--show': showAbout,
-      'about--show-full': showAboutFull
-    }
+    'about',
+    { 'about--show': showAbout, 'about--show-full': showAboutFull }
   );
 
   const links = (
@@ -33,8 +31,8 @@ const Nav = ({ toggleAbout, showAbout, showAboutFull, showNav, showNavFull, navL
           linkElem = <NavDropdownContainer id={id} title={name}>
             <ul>
               {dropdownLinks.map(({ name, path }) => {
-                return <li>
-                  <NavLink key={name} exact activeClassName="active" to={path}>{name}</NavLink>
+                return <li key={name}>
+                  <NavLink exact activeClassName="active" to={path}>{name}</NavLink>
                 </li>;
               })}
             </ul>

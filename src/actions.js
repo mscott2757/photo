@@ -88,17 +88,7 @@ export function toggleDropdown(id) {
 }
 
 export function setScrollPosition(scrollPosition) {
-  return {
-    type: SET_SCROLL_POSITION,
-    scrollPosition
-  }
-}
-
-export function dispatchWithTimeout(dispatch, firstAction, secondAction, duration) {
-  dispatch(firstAction);
-  setTimeout(() => {
-    dispatch(secondAction);
-  }, duration);
+  return { type: SET_SCROLL_POSITION, scrollPosition }
 }
 
 const galleryNotFound = {
