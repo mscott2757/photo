@@ -6,10 +6,14 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
 import photoApp from './reducers';
-import { createStore } from 'redux';
+import thunkMiddleware from 'redux-thunk';
+import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 
-let store = createStore(photoApp);
+let store = createStore(
+  photoApp,
+  applyMiddleware(thunkMiddleware)
+);
 
 ReactDOM.render((
   <Provider store={store}>

@@ -26,15 +26,15 @@ const Nav = ({ toggleAbout, showAbout, showAboutFull, showNav, showNavFull, navL
 
   const links = (
     <ul>
-      {navLinks.map((link, index) => {
+      {navLinks.map((link) => {
         let linkElem = null;
         if ('dropdownLinks' in link) {
           let { name, id, dropdownLinks } = link;
           linkElem = <NavDropdownContainer id={id} title={name}>
             <ul>
-              {dropdownLinks.map(({ name, path }, index) => {
+              {dropdownLinks.map(({ name, path }) => {
                 return <li>
-                  <NavLink key={index} exact activeClassName="active" to={path}>{name}</NavLink>
+                  <NavLink key={name} exact activeClassName="active" to={path}>{name}</NavLink>
                 </li>;
               })}
             </ul>
@@ -43,7 +43,7 @@ const Nav = ({ toggleAbout, showAbout, showAboutFull, showNav, showNavFull, navL
           let { name, path } = link;
           linkElem = <NavLink exact activeClassName="active" to={path}>{name}</NavLink>;
         }
-        return <li key={index}>{linkElem}</li>;
+        return <li key={link.name}>{linkElem}</li>;
       })}
     </ul>
   );
@@ -58,10 +58,7 @@ const Nav = ({ toggleAbout, showAbout, showAboutFull, showNav, showNavFull, navL
             <h1>Mason Chan</h1>
           </NavLink>
           {links}
-          <a className="about-link"
-             href="js-about"
-             onClick={onToggleAbout}
-          >
+          <a className="about-link" href="js-about" onClick={onToggleAbout}>
             About
             {aboutDropdownBtn}
           </a>
