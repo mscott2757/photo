@@ -13,7 +13,8 @@ const mapStateToProps = state => {
     showNav: state.showNav,
     showNavFull: state.showNavFull,
     showAbout: state.showAbout,
-    showAboutFull: state.showAboutFull
+    showAboutFull: state.showAboutFull,
+    navLinks: state.navLinks
   }
 }
 

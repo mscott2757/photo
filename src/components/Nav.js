@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { NavLink } from 'react-router-dom';
 import NavDropdownContainer from '../containers/NavDropdownContainer';
 
-const Nav = ({ toggleAbout, showAbout, showAboutFull, showNav, showNavFull }) => {
+const Nav = ({ toggleAbout, showAbout, showAboutFull, showNav, showNavFull, navLinks }) => {
   const onToggleAbout = (e) => {
     e.preventDefault();
     toggleAbout(showAbout);
@@ -24,6 +24,30 @@ const Nav = ({ toggleAbout, showAbout, showAboutFull, showNav, showNavFull }) =>
     }
   );
 
+  const links = (
+    <ul>
+      {navLinks.map((link, index) => {
+        let linkElem = null;
+        if ('dropdownLinks' in link) {
+          let { name, id, dropdownLinks } = link;
+          linkElem = <NavDropdownContainer id={id} title={name}>
+            <ul>
+              {dropdownLinks.map(({ name, path }, index) => {
+                return <li>
+                  <NavLink key={index} exact activeClassName="active" to={path}>{name}</NavLink>
+                </li>;
+              })}
+            </ul>
+          </NavDropdownContainer>;
+        } else {
+          let { name, path } = link;
+          linkElem = <NavLink exact activeClassName="active" to={path}>{name}</NavLink>;
+        }
+        return <li key={index}>{linkElem}</li>;
+      })}
+    </ul>
+  );
+
   let aboutDropdownBtn = showAbout ? <span className="fa fa-caret-down"></span> : null;
 
   return (
@@ -33,34 +57,7 @@ const Nav = ({ toggleAbout, showAbout, showAboutFull, showNav, showNavFull }) =>
           <NavLink to='/gallery/current'>
             <h1>Mason Chan</h1>
           </NavLink>
-          <ul>
-            <li><NavLink exact activeClassName="active" to='/gallery/current'>The Current Issue</NavLink></li>
-            <li>
-              <NavDropdownContainer id='california' title="California">
-                <ul>
-                  <li><NavLink exact activeClassName="active" to='/gallery/sf'>San Francisco</NavLink></li>
-                  <li><NavLink exact activeClassName="active" to='/gallery/oakland'>Oakland</NavLink></li>
-                  <li><NavLink exact activeClassName="active" to='/gallery/berkeley'>Berkeley</NavLink></li>
-                  <li><NavLink exact activeClassName="active" to='/gallery/la'>Los Angeles</NavLink></li>
-                </ul>
-              </NavDropdownContainer>
-            </li>
-            <li>
-              <NavDropdownContainer id='japan' title="Japan">
-                <ul>
-                  <li><NavLink exact activeClassName="active" to='/gallery/tokyo'>Tokyo</NavLink></li>
-                  <li><NavLink exact activeClassName="active" to='/gallery/kyoto'>Kyoto</NavLink></li>
-                  <li><NavLink exact activeClassName="active" to='/gallery/osaka'>Osaka</NavLink></li>
-                </ul>
-              </NavDropdownContainer>
-            </li>
-            <li><NavLink exact activeClassName="active" to='/gallery/taiwan'>Taiwan</NavLink></li>
-            <li><NavLink exact activeClassName="active" to='/gallery/nyc'>New York</NavLink></li>
-            <li><NavLink exact activeClassName="active" to='/gallery/chicago'>Chicago</NavLink></li>
-            <li><NavLink exact activeClassName="active" to='/gallery/paris'>Paris</NavLink></li>
-            <li><NavLink exact activeClassName="active" to='/gallery/portraits'>Portraits</NavLink></li>
-            <li><NavLink exact activeClassName="active" to='/gallery/landscapes'>Landscapes</NavLink></li>
-          </ul>
+          {links}
           <a className="about-link"
              href="js-about"
              onClick={onToggleAbout}
