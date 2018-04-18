@@ -17,22 +17,22 @@ export const Accounts = [
   { className: "fa-spotify", url: "https://open.spotify.com/user/122383669" },
 ];
 
-const PhotoContent = [
-  { id: CURRENT, gallery: Current },
-  { id: 'sf', gallery: SanFrancisco },
-  { id: 'berkeley', gallery: Berkeley },
-  { id: 'la', gallery: LosAngeles },
-  { id: 'oakland', gallery: Oakland },
-  { id: 'nyc', gallery: NewYork },
-  { id: 'chicago', gallery: Chicago },
-  { id: 'taiwan', gallery: Taiwan },
-  { id: 'paris', gallery: Paris },
-  { id: 'tokyo', gallery: Tokyo },
-  { id: 'kyoto', gallery: Kyoto },
-  { id: 'osaka', gallery: Osaka },
-  { id: 'portraits', gallery: Portraits },
-  { id: 'landscapes', gallery: Landscapes }
-];
+const PhotoContent = {
+  [CURRENT]: Current,
+  'sf': SanFrancisco,
+  'berkeley': Berkeley,
+  'la': LosAngeles,
+  'oakland': Oakland,
+  'nyc': NewYork,
+  'chicago': Chicago,
+  'taiwan': Taiwan,
+  'paris': Paris,
+  'tokyo': Tokyo,
+  'kyoto': Kyoto,
+  'osaka': Osaka,
+  'portraits': Portraits,
+  'landscapes': Landscapes
+};
 
 export const NavLinks = [
   { name: 'The Current Issue', path: '/gallery/current' },
