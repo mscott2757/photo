@@ -1,6 +1,7 @@
 import Current from './Current';
 import NewYork from './NewYork';
 import Chicago from './Chicago';
+import Portland from './Portland';
 import { Tokyo, Kyoto, Osaka } from './Japan';
 import { SanFrancisco, Berkeley, LosAngeles, Oakland } from './California';
 import Paris from './Paris';
@@ -25,6 +26,7 @@ const PhotoContent = {
   'oakland': Oakland,
   'nyc': NewYork,
   'chicago': Chicago,
+  'pdx': Portland,
   'taiwan': Taiwan,
   'paris': Paris,
   'tokyo': Tokyo,
@@ -36,12 +38,13 @@ const PhotoContent = {
 
 export const NavLinks = [
   { name: 'The Current Issue', path: '/gallery/current' },
+  { name: 'Portland', path: '/gallery/pdx' },
   {
     name: 'California', id: 'california', dropdownLinks: [
       { name: 'San Francisco', path: '/gallery/sf' },
-      { name: 'Oakland', path: '/gallery/oakland' },
-      { name: 'Berkeley', path: '/gallery/berkeley' },
-      { name: 'Los Angeles', path: '/gallery/la' },
+      { name: 'Oakland',       path: '/gallery/oakland' },
+      { name: 'Berkeley',      path: '/gallery/berkeley' },
+      { name: 'Los Angeles',   path: '/gallery/la' },
     ]
   },
   {
@@ -51,11 +54,11 @@ export const NavLinks = [
       { name: 'Osaka', path: '/gallery/osaka' },
     ]
   },
-  { name: 'Taiwan', path: '/gallery/taiwan' },
-  { name: 'New York', path: '/gallery/nyc' },
-  { name: 'Chicago', path: '/gallery/chicago' },
-  { name: 'Paris', path: '/gallery/paris' },
-  { name: 'Portraits', path: '/gallery/portraits' },
+  { name: 'Taiwan',     path: '/gallery/taiwan' },
+  { name: 'New York',   path: '/gallery/nyc' },
+  { name: 'Chicago',    path: '/gallery/chicago' },
+  { name: 'Paris',      path: '/gallery/paris' },
+  { name: 'Portraits',  path: '/gallery/portraits' },
   { name: 'Landscapes', path: '/gallery/landscapes' }
 ];
 
