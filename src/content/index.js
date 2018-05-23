@@ -8,17 +8,18 @@ import Paris from './Paris';
 import Taiwan from './Taiwan';
 import Portraits from './Portraits';
 import Landscapes from './Landscapes';
+import Me from './Me';
+import Grad from './Grad';
 
 export const CURRENT = 'current';
 
 export const Accounts = [
   { className: "fa-instagram", url: "https://www.instagram.com/masonchan_/" },
   { className: "fa-facebook", url: "https://www.facebook.com/profile.php?id=100000034912802" },
-  { className: "fa-github", url: "https://github.com/mscott2757/" },
   { className: "fa-spotify", url: "https://open.spotify.com/user/122383669" },
 ];
 
-const PhotoContent = {
+export const PhotoContent = {
   [CURRENT]: Current,
   'sf': SanFrancisco,
   'berkeley': Berkeley,
@@ -33,7 +34,9 @@ const PhotoContent = {
   'kyoto': Kyoto,
   'osaka': Osaka,
   'portraits': Portraits,
-  'landscapes': Landscapes
+  'landscapes': Landscapes,
+  'me': Me,
+  'grad': Grad
 };
 
 export const NavLinks = [
@@ -61,5 +64,3 @@ export const NavLinks = [
   { name: 'Portraits',  path: '/gallery/portraits' },
   { name: 'Landscapes', path: '/gallery/landscapes' }
 ];
-
-export default PhotoContent

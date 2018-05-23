@@ -17,37 +17,37 @@
     }
 
     .aspect {
-      &--2-by-3 {
+      &--23 {
         height: $width * 3/2;
         width: $width;
       }
 
-      &--3-by-2 {
+      &--32 {
         height: $width * 2/3;
         width: $width;
       }
 
-      &--6-by-7 {
+      &--67 {
         height: $width * 7/6;
         width: $width;
       }
 
-      &--7-by-6 {
+      &--76 {
         height: $width * 6/7;
         width: $width;
       }
 
-      &--3-by-4 {
+      &--34 {
         height: $width * 4/3;
         width: $width;
       }
 
-      &--4-by-3 {
+      &--43 {
         height: $width * 3/4;
         width: $width;
       }
 
-      &--6-by-6 {
+      &--66 {
         height: $width;
         width: $width;
       }
@@ -69,37 +69,37 @@
     }
 
     .aspect {
-      &--2-by-3 {
+      &--23 {
         height: $height;
         width: $height * 2/3;
       }
 
-      &--3-by-2 {
+      &--32 {
         height: $height;
         width: $height * 3/2;
       }
 
-      &--6-by-7 {
+      &--67 {
         height: $height;
         width: $height * 6/7;
       }
 
-      &--7-by-6 {
+      &--76 {
         height: $height;
         width: $height * 7/6;
       }
 
-      &--3-by-4 {
+      &--34 {
         height: $height;
         width: $height * 3/4;
       }
 
-      &--4-by-3 {
+      &--43 {
         height: $height;
         width: $height * 4/3;
       }
 
-      &--6-by-6 {
+      &--66 {
         height: $height;
         width: $height;
       }

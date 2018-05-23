@@ -11,7 +11,7 @@ import {
   TOGGLE_NAV_DROPDOWN
 } from './actions'
 
-import PhotoContent, { NavLinks } from './content/PhotoContent';
+import { PhotoContent, NavLinks } from './content/';
 
 const initialState = {
     showNav: true,

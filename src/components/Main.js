@@ -1,6 +1,6 @@
 import React from 'react';
 import GalleryContainer from '../containers/GalleryContainer';
-import { CURRENT } from '../content/PhotoContent';
+import { CURRENT } from '../content/';
 
 const Main = ({ match: { params } }) => {
   return (
