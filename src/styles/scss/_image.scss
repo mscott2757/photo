@@ -37,6 +37,16 @@
         width: $width;
       }
 
+      &--3-by-4 {
+        height: $width * 4/3;
+        width: $width;
+      }
+
+      &--4-by-3 {
+        height: $width * 3/4;
+        width: $width;
+      }
+
       &--6-by-6 {
         height: $width;
         width: $width;
@@ -77,6 +87,16 @@
       &--7-by-6 {
         height: $height;
         width: $height * 7/6;
+      }
+
+      &--3-by-4 {
+        height: $height;
+        width: $height * 3/4;
+      }
+
+      &--4-by-3 {
+        height: $height;
+        width: $height * 4/3;
       }
 
       &--6-by-6 {
