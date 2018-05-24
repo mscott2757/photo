@@ -2,10 +2,10 @@ const Grad = {
   title: "it's grad szn",
   photos: [
     { url: require("../images/grad/soph.jpg"),         aspect: "76" },
-    { url: require("../images/grad/soph-3.jpg"),       aspect: "67" },
     { url: require("../images/grad/soph-6.jpg"),       aspect: "66" },
     { url: require("../images/grad/soph-2.jpg"),       aspect: "67" },
     { url: require("../images/grad/soph-4.jpg"),       aspect: "67" },
+    { url: require("../images/grad/soph-3.jpg"),       aspect: "76" },
     { url: require("../images/grad/soph-5.jpg"),       aspect: "67" },
     { url: require("../images/grad/michael.jpg"),      aspect: "67" },
     { url: require("../images/grad/michael-3.jpg"),    aspect: "67" },
