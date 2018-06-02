@@ -21,7 +21,7 @@ const App = ({ location: { key }}) => {
     <div className="App">
       <Route component={logPageView} />
       <Route exact path="/" render={() =>
-        <Redirect to="/gallery/current" />
+        <Redirect to="/current" />
       } />
       <NavContainer />
       <TransitionGroup>
@@ -30,7 +30,7 @@ const App = ({ location: { key }}) => {
           timeout={400}
           classNames='main'
         >
-          <Route path="/gallery/:id?" component={Main} />
+          <Route path="/:id?" component={Main} />
         </CSSTransition>
       </TransitionGroup>
       <Social accounts={Accounts} />

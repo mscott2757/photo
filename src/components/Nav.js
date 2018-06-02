@@ -52,7 +52,7 @@ const Nav = ({ toggleAbout, showAbout, showAboutFull, showNav, showNavFull, navL
     <div className={navbarContainerClasses}>
       <div className="navbar-body">
         <div className="navbar">
-          <NavLink to='/gallery/current'>
+          <NavLink to='/'>
             <h1>Mason Chan</h1>
           </NavLink>
           {links}

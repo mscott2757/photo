@@ -40,27 +40,27 @@ export const PhotoContent = {
 };
 
 export const NavLinks = [
-  { name: 'The Current Issue', path: '/gallery/current' },
-  { name: 'Portland', path: '/gallery/pdx' },
+  { name: 'The Current Issue', path: '/current' },
+  { name: 'Portland', path: '/pdx' },
   {
     name: 'California', id: 'california', dropdownLinks: [
-      { name: 'San Francisco', path: '/gallery/sf' },
-      { name: 'Oakland',       path: '/gallery/oakland' },
-      { name: 'Berkeley',      path: '/gallery/berkeley' },
-      { name: 'Los Angeles',   path: '/gallery/la' },
+      { name: 'San Francisco', path: '/sf' },
+      { name: 'Oakland',       path: '/oakland' },
+      { name: 'Berkeley',      path: '/berkeley' },
+      { name: 'Los Angeles',   path: '/la' },
     ]
   },
   {
     name: 'Japan', id: 'japan', dropdownLinks: [
-      { name: 'Tokyo', path: '/gallery/tokyo' },
-      { name: 'Kyoto', path: '/gallery/kyoto' },
-      { name: 'Osaka', path: '/gallery/osaka' },
+      { name: 'Tokyo', path: '/tokyo' },
+      { name: 'Kyoto', path: '/kyoto' },
+      { name: 'Osaka', path: '/osaka' },
     ]
   },
-  { name: 'Taiwan',     path: '/gallery/taiwan' },
-  { name: 'New York',   path: '/gallery/nyc' },
-  { name: 'Chicago',    path: '/gallery/chicago' },
-  { name: 'Paris',      path: '/gallery/paris' },
-  { name: 'Portraits',  path: '/gallery/portraits' },
-  { name: 'Landscapes', path: '/gallery/landscapes' }
+  { name: 'Taiwan',     path: '/taiwan' },
+  { name: 'New York',   path: '/nyc' },
+  { name: 'Chicago',    path: '/chicago' },
+  { name: 'Paris',      path: '/paris' },
+  { name: 'Portraits',  path: '/portraits' },
+  { name: 'Landscapes', path: '/landscapes' }
 ];

@@ -144,19 +144,25 @@
       margin-bottom: 0; }
     .image img {
       width: 85vw; }
-    .image .aspect--2-by-3 {
+    .image .aspect--23 {
       height: 127.5vw;
       width: 85vw; }
-    .image .aspect--3-by-2 {
+    .image .aspect--32 {
       height: 56.66667vw;
       width: 85vw; }
-    .image .aspect--6-by-7 {
+    .image .aspect--67 {
       height: 99.16667vw;
       width: 85vw; }
-    .image .aspect--7-by-6 {
+    .image .aspect--76 {
       height: 72.85714vw;
       width: 85vw; }
-    .image .aspect--6-by-6 {
+    .image .aspect--34 {
+      height: 113.33333vw;
+      width: 85vw; }
+    .image .aspect--43 {
+      height: 63.75vw;
+      width: 85vw; }
+    .image .aspect--66 {
       height: 85vw;
       width: 85vw; } }
 
@@ -170,19 +176,25 @@
       margin-right: 0; }
     .image img {
       height: 100%; }
-    .image .aspect--2-by-3 {
+    .image .aspect--23 {
       height: 80vh;
       width: 53.33333vh; }
-    .image .aspect--3-by-2 {
+    .image .aspect--32 {
       height: 80vh;
       width: 120vh; }
-    .image .aspect--6-by-7 {
+    .image .aspect--67 {
       height: 80vh;
       width: 68.57143vh; }
-    .image .aspect--7-by-6 {
+    .image .aspect--76 {
       height: 80vh;
       width: 93.33333vh; }
-    .image .aspect--6-by-6 {
+    .image .aspect--34 {
+      height: 80vh;
+      width: 60vh; }
+    .image .aspect--43 {
+      height: 80vh;
+      width: 106.66667vh; }
+    .image .aspect--66 {
       height: 80vh;
       width: 80vh; } }
 
