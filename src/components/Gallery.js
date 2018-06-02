@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import Image from './Image';
+import { debounce } from 'lodash';
 
 class Gallery extends Component {
   componentDidMount() {
     this.props.setScrollPosition(this.refs.gallery.scrollLeft);
-
-    this.refs.gallery.addEventListener("scroll", () => {
+    let scrollHandler = () => {
       let newScrollPosition = this.refs.gallery.scrollLeft;
       if (newScrollPosition > this.props.scrollPosition) {
         this.props.onScrollRight();
@@ -13,7 +13,8 @@ class Gallery extends Component {
         this.props.onScrollLeft();
       }
       this.props.setScrollPosition(newScrollPosition);
-    }, false);
+    }
+    this.refs.gallery.addEventListener("scroll", debounce(scrollHandler, 15), false);
   }
 
   render() {
