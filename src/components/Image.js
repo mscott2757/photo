@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import propTypes from 'prop-types';
 
 class Image extends Component {
   constructor(props) {
@@ -34,6 +35,13 @@ class Image extends Component {
       </div>
     );
   }
+}
+
+Image.propTypes = {
+  picture: propTypes.shape({
+    aspect: propTypes.string.isRequired,
+    url: propTypes.string.isRequired
+  }).isRequired
 }
 
 export default Image;

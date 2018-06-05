@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Image from './Image';
 import { debounce } from 'lodash';
+import propTypes from 'prop-types';
 
 class Gallery extends Component {
   componentDidMount() {
@@ -32,6 +33,17 @@ class Gallery extends Component {
       </div>
     );
   }
+}
+
+Gallery.propTypes = {
+  gallery: propTypes.shape({
+    title: propTypes.string.isRequired,
+    photos: propTypes.array.isRequired
+  }).isRequired,
+  onScrollLeft: propTypes.func.isRequired,
+  onScrollRight: propTypes.func.isRequired,
+  scrollPosition: propTypes.number.isRequired,
+  setScrollPosition: propTypes.func.isRequired
 }
 
 export default Gallery;

@@ -1,4 +1,5 @@
 import React from 'react';
+import propTypes from 'prop-types';
 
 const Social = ({ accounts }) => {
   return (
@@ -14,6 +15,13 @@ const Social = ({ accounts }) => {
       </ul>
     </div>
   );
+}
+
+Social.propTypes = {
+  accounts: propTypes.arrayOf(propTypes.shape({
+    className: propTypes.string.isRequired,
+    url: propTypes.string.isRequired
+  })).isRequired
 }
 
 export default Social;

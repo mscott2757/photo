@@ -1,5 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
+import propTypes from 'prop-types';
 
 const NavDropdown = ({ id, active, onToggleDropdown, title, children }) => {
   const toggleDropdown = (e) => {
@@ -28,6 +29,14 @@ const NavDropdown = ({ id, active, onToggleDropdown, title, children }) => {
       </div>
     </div>
   );
+}
+
+NavDropdown.propTypes = {
+  active: propTypes.bool.isRequired,
+  title: propTypes.string.isRequired,
+  id: propTypes.string.isRequired,
+  onToggleDropdown: propTypes.func.isRequired,
+  children: propTypes.element.isRequired
 }
 
 export default NavDropdown;

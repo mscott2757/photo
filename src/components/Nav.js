@@ -1,6 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import { NavLink } from 'react-router-dom';
+import propTypes from 'prop-types';
 import NavDropdownContainer from '../containers/NavDropdownContainer';
 
 const Nav = ({ toggleAbout, showAbout, showAboutFull, showNav, showNavFull, navLinks }) => {
@@ -72,6 +73,15 @@ const Nav = ({ toggleAbout, showAbout, showAboutFull, showNav, showNavFull, navL
       </div>
     </div>
   );
+}
+
+Nav.propTypes = {
+  toggleAbout: propTypes.func.isRequired,
+  showAbout: propTypes.bool.isRequired,
+  showAboutFull: propTypes.bool.isRequired,
+  showNav: propTypes.bool.isRequired,
+  showNavFull: propTypes.bool.isRequired,
+  navLinks: propTypes.array.isRequired,
 }
 
 export default Nav;
