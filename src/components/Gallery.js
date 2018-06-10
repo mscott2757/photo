@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Image from './Image';
-import { debounce } from 'lodash';
 import propTypes from 'prop-types';
 
 class Gallery extends Component {
@@ -15,7 +14,7 @@ class Gallery extends Component {
       }
       this.props.setScrollPosition(newScrollPosition);
     }
-    this.refs.gallery.addEventListener("scroll", debounce(scrollHandler, 15), false);
+    this.refs.gallery.addEventListener("scroll", scrollHandler, false);
   }
 
   render() {
