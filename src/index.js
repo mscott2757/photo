@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from 'react-snapshot';
+import reactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import './styles/css/index.css';
 import App from './App';
@@ -15,7 +15,7 @@ let store = createStore(
   applyMiddleware(thunkMiddleware)
 );
 
-render((
+ReactDOM.render((
   <Provider store={store}>
     <BrowserRouter>
       <App />
