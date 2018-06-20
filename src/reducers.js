@@ -13,18 +13,16 @@ import {
 
 import { PhotoContent, NavLinks } from './content/';
 
-const initialState = {
-    showNav: true,
-    showNavFull: true,
-    showAbout: false,
-    showAboutFull: false,
-    scrollPosition: 0,
-    content: PhotoContent,
-    navLinks: NavLinks,
-    activeDropdown: ''
-}
-
-const photoApp = (state = initialState, action) => {
+const rootReducer = (state = {
+  showNav: true,
+  showNavFull: true,
+  showAbout: false,
+  showAboutFull: false,
+  scrollPosition: 0,
+  content: PhotoContent,
+  navLinks: NavLinks,
+  activeDropdown: ''
+}, action) => {
   switch (action.type) {
     case SHOW_NAV:
       return {...state, showNav: true }
@@ -44,17 +42,15 @@ const photoApp = (state = initialState, action) => {
       return { ...state, showAboutFull: false }
     case SET_SCROLL_POSITION:
       return {
-        ...state,
-        scrollPosition: action.scrollPosition
+        ...state, scrollPosition: action.scrollPosition
       }
     case TOGGLE_NAV_DROPDOWN:
       return {
-        ...state,
-        activeDropdown: action.id === state.activeDropdown ? '' : action.id
+        ...state, activeDropdown: action.id === state.activeDropdown ? '' : action.id
       }
     default:
       return state;
   }
 }
 
-export default photoApp;
+export default rootReducer;

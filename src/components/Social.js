@@ -8,7 +8,7 @@ const Social = ({ accounts }) => {
         {accounts.map(({ url, className }, index) =>
           <li key={index}>
             <a href={url}>
-              <i className={"fa " + className}></i>
+              <i className={`fa ${className}`}></i>
             </a>
           </li>
         )}

@@ -3,18 +3,23 @@ import Image from './Image';
 import propTypes from 'prop-types';
 
 class Gallery extends Component {
+  scrollHandler = () => {
+    let newScrollPosition = this.refs.gallery.scrollLeft;
+    if (newScrollPosition > this.props.scrollPosition) {
+      this.props.onScrollRight();
+    } else {
+      this.props.onScrollLeft();
+    }
+    this.props.setScrollPosition(newScrollPosition);
+  }
+
   componentDidMount() {
     this.props.setScrollPosition(this.refs.gallery.scrollLeft);
-    let scrollHandler = () => {
-      let newScrollPosition = this.refs.gallery.scrollLeft;
-      if (newScrollPosition > this.props.scrollPosition) {
-        this.props.onScrollRight();
-      } else {
-        this.props.onScrollLeft();
-      }
-      this.props.setScrollPosition(newScrollPosition);
-    }
-    this.refs.gallery.addEventListener("scroll", scrollHandler, false);
+    this.refs.gallery.addEventListener("scroll", this.scrollHandler, false);
+  }
+
+  componentWillUnmount() {
+    this.refs.gallery.removeEventListener("scroll", this.scrollHandler, false);
   }
 
   render() {

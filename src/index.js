@@ -5,13 +5,13 @@ import './styles/css/index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
-import photoApp from './reducers';
+import rootReducer from './reducers';
 import thunkMiddleware from 'redux-thunk';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 
 let store = createStore(
-  photoApp,
+  rootReducer,
   applyMiddleware(thunkMiddleware)
 );
 

@@ -19,11 +19,7 @@ const NavDropdown = ({ id, active, onToggleDropdown, title, children }) => {
 
   return (
     <div className="nav-dropdown">
-      <a href="dropdownLink"
-         onClick={toggleDropdown}
-      >
-        {title}
-      </a>
+      <a href="dropdownLink" onClick={toggleDropdown}>{title}</a>
       <div className={childrenContainerClasses}>
         {children}
       </div>
