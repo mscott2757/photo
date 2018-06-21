@@ -22,6 +22,10 @@ class Gallery extends Component {
     this.refs.gallery.removeEventListener("scroll", this.scrollHandler, false);
   }
 
+  shouldComponentUpdate(nextProps) {
+    return false;
+  }
+
   render() {
     const { title, photos } = this.props.gallery;
     return (
