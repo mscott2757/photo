@@ -1,7 +1,7 @@
 import React from 'react';
 import propTypes from 'prop-types';
 
-const Social = ({ accounts }) => {
+export const Social = ({ accounts }) => {
   return (
     <div className="social">
       <ul>
@@ -23,5 +23,3 @@ Social.propTypes = {
     url: propTypes.string.isRequired
   })).isRequired
 }
-
-export default Social;

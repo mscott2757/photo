@@ -3,10 +3,9 @@ import './styles/css/App.css';
 import { withRouter, Route, Redirect } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import ReactGA from 'react-ga';
-import NavContainer from './containers/NavContainer';
+import { NavContainer } from './containers';
 import { Accounts } from './content/';
-import Main from './components/Main';
-import Social from './components/Social';
+import { Social, Main } from './components';
 
 ReactGA.initialize('UA-109516063-1');
 

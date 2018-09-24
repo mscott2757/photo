@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import NavDropdown from '../components/NavDropdown';
+import { NavDropdown } from '../components';
 import { toggleDropdown } from '../actions';
 
 const mapStateToProps = (state, ownProps) => {
@@ -17,10 +17,7 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-const NavDropdownContainer = connect(
+export const NavDropdownContainer = connect(
   mapStateToProps,
   mapDispatchToProps
 )(NavDropdown);
-
-export default NavDropdownContainer;
-

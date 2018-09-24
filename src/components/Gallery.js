@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import Image from './Image';
+import { Image } from './Image';
 import propTypes from 'prop-types';
 
-class Gallery extends Component {
+export class Gallery extends Component {
   scrollHandler = () => {
     let newScrollPosition = this.refs.gallery.scrollLeft;
     if (newScrollPosition > this.props.scrollPosition) {
@@ -53,5 +53,3 @@ Gallery.propTypes = {
   scrollPosition: propTypes.number.isRequired,
   setScrollPosition: propTypes.func.isRequired
 }
-
-export default Gallery;

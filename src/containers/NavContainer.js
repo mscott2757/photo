@@ -3,7 +3,7 @@ import {
   showAbout,
   hideAbout,
 } from '../actions';
-import Nav from '../components/Nav';
+import { Nav } from '../components';
 
 const mapStateToProps = state => {
   return {
@@ -27,11 +27,9 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-const NavContainer = connect(
+export const NavContainer = connect(
   mapStateToProps,
   mapDispatchToProps,
   null,
   { pure: false }
-)(Nav)
-
-export default NavContainer;
+)(Nav);

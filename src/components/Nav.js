@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import classNames from 'classnames';
 import { NavLink } from 'react-router-dom';
 import propTypes from 'prop-types';
-import NavDropdownContainer from '../containers/NavDropdownContainer';
+import { NavDropdownContainer } from './../containers';
 
-class Nav extends Component {
+export class Nav extends Component {
   onToggleAbout = (e) => {
     e.preventDefault();
     this.props.toggleAbout(this.props.showAbout);
@@ -96,5 +96,3 @@ Nav.propTypes = {
   showNavFull: propTypes.bool.isRequired,
   navLinks: propTypes.array.isRequired,
 }
-
-export default Nav;

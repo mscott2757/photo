@@ -4,9 +4,8 @@ import {
   setScrollPosition,
   getGallery
 } from '../actions';
-
 import { connect } from 'react-redux';
-import Gallery from '../components/Gallery';
+import { Gallery } from '../components';
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -29,9 +28,7 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-const GalleryContainer = connect(
+export const GalleryContainer = connect(
   mapStateToProps,
   mapDispatchToProps
 )(Gallery)
-
-export default GalleryContainer;
