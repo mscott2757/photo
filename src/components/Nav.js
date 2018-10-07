@@ -1,20 +1,35 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
-import { NavLink } from 'react-router-dom';
+import { withRouter, NavLink } from 'react-router-dom';
+import { NavLinks } from './NavLinks';
 import propTypes from 'prop-types';
-import { NavDropdownContainer } from './../containers';
 
-export class Nav extends Component {
+const propsChanged = (prevProps, nextProps, fields) => {
+  fields.forEach((field) => {
+    if (prevProps[field] !== nextProps[field]) {
+      return true;
+    }
+  });
+  return false;
+}
+
+class NavBase extends Component {
   onToggleAbout = (e) => {
     e.preventDefault();
     this.props.toggleAbout(this.props.showAbout);
   }
 
   shouldComponentUpdate(nextProps) {
-    if (this.props.showNav === nextProps.showNav
-      && this.props.showNavFull === nextProps.showNavFull
-      && this.props.showAbout === nextProps.showAbout
-      && this.props.showAboutFull === nextProps.showAboutFull) {
+    if (this.props.location.pathname !== nextProps.location.pathname) {
+      return true;
+    }
+    if (
+      propsChanged(
+        this.props,
+        nextProps,
+        ['showNav, showNavFull', 'showAbout', 'showAboutFull'],
+      )
+    ) {
       return false;
     }
     return true;
@@ -35,30 +50,6 @@ export class Nav extends Component {
       { 'about--show': showAbout, 'about--show-full': showAboutFull }
     );
 
-    const links = (
-      <ul>
-        {navLinks.map((link) => {
-          let linkElem = null;
-          if ('dropdownLinks' in link) {
-            let { name, id, dropdownLinks } = link;
-            linkElem = <NavDropdownContainer id={id} title={name}>
-              <ul>
-                {dropdownLinks.map(({ name, path }) => {
-                  return <li key={name}>
-                    <NavLink exact activeClassName="active" to={path}>{name}</NavLink>
-                  </li>;
-                })}
-              </ul>
-            </NavDropdownContainer>;
-          } else {
-            let { name, path } = link;
-            linkElem = <NavLink exact activeClassName="active" to={path}>{name}</NavLink>;
-          }
-          return <li key={link.name}>{linkElem}</li>;
-        })}
-      </ul>
-    );
-
     let aboutDropdownBtn = showAbout ? <span className="fa fa-caret-down"></span> : null;
 
     return (
@@ -68,7 +59,7 @@ export class Nav extends Component {
             <NavLink to='/'>
               <h1>Mason Chan</h1>
             </NavLink>
-            {links}
+            <NavLinks navLinks={navLinks} />
             <a className="about-link" href="js-about" onClick={this.onToggleAbout}>
               About
               {aboutDropdownBtn}
@@ -88,7 +79,7 @@ export class Nav extends Component {
   }
 }
 
-Nav.propTypes = {
+NavBase.propTypes = {
   toggleAbout: propTypes.func.isRequired,
   showAbout: propTypes.bool.isRequired,
   showAboutFull: propTypes.bool.isRequired,
@@ -96,3 +87,5 @@ Nav.propTypes = {
   showNavFull: propTypes.bool.isRequired,
   navLinks: propTypes.array.isRequired,
 }
+
+export const Nav = withRouter(NavBase);

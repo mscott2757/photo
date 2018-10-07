@@ -1,13 +1,6 @@
 import React from 'react';
-import { withStateHandlers } from 'recompose';
+import { withLoading } from './with';
 import propTypes from 'prop-types';
-
-const withLoading = withStateHandlers(
-  { loading: true },
-  {
-    hideLoader: ({ loading }) => () => ({ loading: !loading }),
-  }
-);
 
 export const Image = withLoading(
   ({
