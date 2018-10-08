@@ -1,8 +1,12 @@
-import React, { Component } from 'react';
+import * as React from 'react';
 import classNames from 'classnames';
 import { withRouter, NavLink } from 'react-router-dom';
-import { NavLinks } from './NavLinks';
+import { compose } from 'recompose';
+import { withVisibility } from './with';
+import { NavLinks, MobileNav } from './';
+import { PlainLink } from './core';
 import propTypes from 'prop-types';
+import MediaQuery from 'react-responsive';
 
 const propsChanged = (prevProps, nextProps, fields) => {
   fields.forEach((field) => {
@@ -13,9 +17,8 @@ const propsChanged = (prevProps, nextProps, fields) => {
   return false;
 }
 
-class NavBase extends Component {
-  onToggleAbout = (e) => {
-    e.preventDefault();
+class NavBase extends React.Component {
+  onToggleAbout = (e) => { e.preventDefault();
     this.props.toggleAbout(this.props.showAbout);
   }
 
@@ -52,6 +55,7 @@ class NavBase extends Component {
 
     let aboutDropdownBtn = showAbout ? <span className="fa fa-caret-down"></span> : null;
 
+    const { visible, onToggle } = this.props;
     return (
       <div className={navbarContainerClasses}>
         <div className="navbar-body">
@@ -59,11 +63,21 @@ class NavBase extends Component {
             <NavLink to='/'>
               <h1>Mason Chan</h1>
             </NavLink>
-            <NavLinks navLinks={navLinks} />
-            <a className="about-link" href="js-about" onClick={this.onToggleAbout}>
-              About
-              {aboutDropdownBtn}
-            </a>
+            <MediaQuery query="(min-device-width: 414px)">
+              <NavLinks navLinks={navLinks} />
+              <a className="about-link" href="js-about" onClick={this.onToggleAbout}>
+                About
+                {aboutDropdownBtn}
+              </a>
+            </MediaQuery>
+
+            <MediaQuery query="(max-device-width: 414px)">
+              <PlainLink onClick={e => {
+                e.preventDefault();
+                onToggle();
+              }}>Menu</PlainLink>
+              <MobileNav visible={visible} onToggle={onToggle} navLinks={navLinks} />
+            </MediaQuery>
           </div>
           <div className={aboutClasses}>
             <p>Hello, I'm Mason.</p>
@@ -88,4 +102,7 @@ NavBase.propTypes = {
   navLinks: propTypes.array.isRequired,
 }
 
-export const Nav = withRouter(NavBase);
+export const Nav = compose(
+  withRouter,
+  withVisibility,
+)(NavBase);

@@ -14,13 +14,15 @@
     "react-dom": "^16.0.0",
     "react-ga": "^2.3.5",
     "react-redux": "^5.0.6",
+    "react-responsive": "^5.0.0",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.0.14",
     "react-transition-group": "^2.2.1",
     "recompose": "^0.30.0",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
-    "source-map-explorer": "^1.5.0"
+    "source-map-explorer": "^1.5.0",
+    "styled-components": "^3.4.9"
   },
   "scripts": {
     "analyze": "source-map-explorer build/static/js/main.*",
