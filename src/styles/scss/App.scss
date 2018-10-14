@@ -1,6 +1,5 @@
 @import "shared";
 @import "nav";
-@import "image";
 @import "gallery";
 @import "social";
 @import "main";
@@ -14,7 +13,7 @@
 .App {
   min-height: 100vh;
   min-width: 100vw;
-  font-family: Circular, Futura, Helvetica;
+  font-family: Circular, Helvetica;
 }
 
 * {

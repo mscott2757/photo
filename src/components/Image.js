@@ -1,38 +1,92 @@
 import React from 'react';
-import { withLoading } from './with';
-import propTypes from 'prop-types';
+import { withProps, compose, mapProps } from 'recompose';
+import { withDimensions, withLoading } from './with';
+import styled, { css } from 'styled-components';
 
-export const Image = withLoading(
+const Wrapper = styled('div')`
+  margin-bottom: 17px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 0;
+    margin-right: 15px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    height: 100%;
+    display: inline-block;
+    vertical-align: top;
+  }
+`;
+
+const LoadingWrapper = styled('div')`
+  position: relative;
+  height: 0;
+  padding-bottom: ${({ height, width }) => 100 * height / width}%;
+  width: 100%;
+
+  @media screen and (min-width: 768px) {
+    padding-bottom: 80vh;
+    width: ${({ height, width }) => 80 * width / height }vh;
+  }
+`;
+
+const IconWrapper = styled('div')`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0
+  left: 0;
+`;
+
+const Img = styled('img')`
+  width: 100%;
+  ${({ loading }) => loading ? css`display: none;`: ''}
+
+  @media screen and (min-width: 768px) {
+    height: 100%;
+    width: auto;
+  }
+`;
+
+const enhance = compose(
+  withLoading,
+  withDimensions,
+  withProps(({ h, w, loading }) => ({
+    renderLoading: () => loading ? (
+      <LoadingWrapper height={h} width={w}>
+        <IconWrapper>
+          <i className="fa fa-circle-o-notch fa-spin"></i>
+        </IconWrapper>
+      </LoadingWrapper>
+    ) : null,
+  })),
+);
+
+export const Image = enhance(
   ({
     loading,
     hideLoader,
-    picture: { aspect, url },
-  }) => {
-    let imgLoading = null;
-    if (loading) {
-      imgLoading = (
-        <div className={`image-loading aspect--${aspect}`}>
-          <i className="fa fa-circle-o-notch fa-spin"></i>
-        </div>
-      );
-    }
-
-    return (
-      <div className="image">
-        {imgLoading}
-        <img src={url}
-             className={(loading ? "hide-img" : "")}
-             onLoad={hideLoader}
-             alt=""
-        />
-      </div>
-    );
-  }
-)
-
-Image.propTypes = {
-  picture: propTypes.shape({
-    aspect: propTypes.string.isRequired,
-    url: propTypes.string.isRequired
-  }).isRequired
-}
+    url,
+    renderLoading,
+  }) => (
+    <Wrapper>
+      {renderLoading()}
+      <Img
+        src={url}
+        loading={loading}
+        onLoad={hideLoader}
+        alt=""
+      />
+    </Wrapper>
+  ),
+);

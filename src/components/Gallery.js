@@ -34,9 +34,7 @@ export class Gallery extends Component {
           <p>{title}</p>
         </div>
         <div className="gallery-container" ref="gallery">
-          {photos.map((photo, index) =>
-            <Image picture={photo} key={index} />
-          )}
+          {photos.map((photo, index) => <Image {...photo} key={index} /> )}
         </div>
       </div>
     );

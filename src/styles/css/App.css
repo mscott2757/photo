@@ -134,75 +134,6 @@
       .navbar-container--show-about .navbar-body .navbar {
         width: 50%; } }
 
-.image .hide-img {
-  display: none; }
-
-@media screen and (max-width: 768px) {
-  .image {
-    margin-bottom: 17px; }
-    .image:last-child {
-      margin-bottom: 0; }
-    .image img {
-      width: 85vw; }
-    .image .aspect--23 {
-      height: 127.5vw;
-      width: 85vw; }
-    .image .aspect--32 {
-      height: 56.66667vw;
-      width: 85vw; }
-    .image .aspect--67 {
-      height: 99.16667vw;
-      width: 85vw; }
-    .image .aspect--76 {
-      height: 72.85714vw;
-      width: 85vw; }
-    .image .aspect--34 {
-      height: 113.33333vw;
-      width: 85vw; }
-    .image .aspect--43 {
-      height: 63.75vw;
-      width: 85vw; }
-    .image .aspect--66 {
-      height: 85vw;
-      width: 85vw; } }
-
-@media screen and (min-width: 768px) {
-  .image {
-    margin-right: 15px;
-    height: 100%;
-    display: inline-block;
-    vertical-align: top; }
-    .image:last-child {
-      margin-right: 0; }
-    .image img {
-      height: 100%; }
-    .image .aspect--23 {
-      height: 80vh;
-      width: 53.33333vh; }
-    .image .aspect--32 {
-      height: 80vh;
-      width: 120vh; }
-    .image .aspect--67 {
-      height: 80vh;
-      width: 68.57143vh; }
-    .image .aspect--76 {
-      height: 80vh;
-      width: 93.33333vh; }
-    .image .aspect--34 {
-      height: 80vh;
-      width: 60vh; }
-    .image .aspect--43 {
-      height: 80vh;
-      width: 106.66667vh; }
-    .image .aspect--66 {
-      height: 80vh;
-      width: 80vh; } }
-
-.image .image-loading {
-  display: flex;
-  align-items: center;
-  justify-content: center; }
-
 ::-webkit-scrollbar {
   display: none; }
 
@@ -298,7 +229,7 @@
 .App {
   min-height: 100vh;
   min-width: 100vw;
-  font-family: Circular, Futura, Helvetica; }
+  font-family: Circular, Helvetica; }
 
 * {
   box-sizing: border-box; }
