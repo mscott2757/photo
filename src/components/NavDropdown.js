@@ -1,50 +1,44 @@
 import React from 'react';
-import classNames from 'classnames';
+import { compose, withHandlers } from 'recompose';
+import styled, { css } from 'styled-components';
 import { connect } from 'react-redux';
-import propTypes from 'prop-types';
 import { toggleDropdown } from '../actions';
+import { PlainLink } from './core';
 
-const Dropdown = ({ id, active, onToggleDropdown, title, children }) => {
-  const toggleDropdown = (e) => {
-    e.preventDefault();
-    onToggleDropdown(id);
-  }
+const ChildrenWrapper = styled('div')`
+  ${({ active }) => !active ? css`display: none;` : ''};
+`;
 
-  let childrenContainerClasses = classNames(
-    'children-container',
-    {
-      'children-container--show': active,
-      'children-container--show-full': false
-    }
+const Dropdown = ({
+  active,
+  toggleDropdown,
+  title,
+  children
+}) => (
+  <div>
+    <PlainLink href="dropdownLink" onClick={toggleDropdown}>{title}</PlainLink>
+    <ChildrenWrapper active={active}>
+      {children}
+    </ChildrenWrapper>
+  </div>
+);
 
-  );
-
-  return (
-    <div className="nav-dropdown">
-      <a href="dropdownLink" onClick={toggleDropdown}>{title}</a>
-      <div className={childrenContainerClasses}>
-        {children}
-      </div>
-    </div>
-  );
-}
-
-Dropdown.propTypes = {
-  active: propTypes.bool.isRequired,
-  title: propTypes.string.isRequired,
-  id: propTypes.string.isRequired,
-  onToggleDropdown: propTypes.func.isRequired,
-  children: propTypes.element.isRequired
-}
-
-export const NavDropdown = connect(
-  (state, ownProps) => ({
-    ...ownProps,
-    active: state.activeDropdown === ownProps.id
-  }),
-  dispatch => ({
-    onToggleDropdown: (id) => {
-      dispatch(toggleDropdown(id));
-    }
+export const NavDropdown = compose(
+  connect(
+    (state, ownProps) => ({
+      ...ownProps,
+      active: state.activeDropdown === ownProps.id
+    }),
+    dispatch => ({
+      onToggleDropdown: (id) => {
+        dispatch(toggleDropdown(id));
+      }
+    }),
+  ),
+  withHandlers({
+    toggleDropdown: ({ id, onToggleDropdown }) => e => {
+      e.preventDefault();
+      onToggleDropdown(id);
+    },
   }),
 )(Dropdown);

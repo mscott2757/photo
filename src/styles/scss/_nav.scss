@@ -23,59 +23,9 @@
 
 
   .navbar{
-    h1 {
-      color: $black;
-      font-weight: normal;
-      letter-spacing: 1px;
-      margin-top: 20px;
-      margin-bottom: 30px;
-    }
-
     .about-link {
       @include bodyFontStyles();
       letter-spacing: 1px;
-    }
-
-    ul {
-      margin-top: 0;
-      padding: 0;
-      line-height: 16px;
-
-      li {
-        list-style-type: none;
-
-        .active {
-          opacity: 0.5;
-          cursor: default;
-        }
-
-        a {
-          @include bodyFontStyles();
-          letter-spacing: 1px;
-
-          &:hover {
-            opacity: 0.5;
-          }
-        }
-      }
-    }
-
-    .nav-dropdown {
-      .children-container {
-
-        ul {
-          margin-bottom: 5px;
-          li {
-            margin-left: 10px;
-          }
-        }
-
-        display: none;
-        &--show {
-          display: block;
-
-        }
-      }
     }
   }
 }

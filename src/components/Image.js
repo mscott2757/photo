@@ -1,5 +1,5 @@
 import React from 'react';
-import { withProps, compose, mapProps } from 'recompose';
+import { withProps, compose } from 'recompose';
 import { withDimensions, withLoading } from './with';
 import styled, { css } from 'styled-components';
 

@@ -1,12 +1,17 @@
 import * as React from 'react';
 import classNames from 'classnames';
+import styled from 'styled-components';
 import { withRouter, NavLink } from 'react-router-dom';
 import { compose } from 'recompose';
 import { withVisibility } from './with';
 import { NavLinks, MobileNav } from './';
-import { PlainLink } from './core';
+import { PlainLink, LogoText } from './core';
 import propTypes from 'prop-types';
 import MediaQuery from 'react-responsive';
+
+const LogoWrapper = styled('div')`
+  margin: 20px 0;
+`;
 
 const propsChanged = (prevProps, nextProps, fields) => {
   fields.forEach((field) => {
@@ -60,9 +65,12 @@ class NavBase extends React.Component {
       <div className={navbarContainerClasses}>
         <div className="navbar-body">
           <div className="navbar">
-            <NavLink to='/'>
-              <h1>Mason Chan</h1>
-            </NavLink>
+            <LogoWrapper>
+              <NavLink to='/'>
+                <LogoText>Mason Chan</LogoText>
+              </NavLink>
+            </LogoWrapper>
+
             <MediaQuery query="(min-device-width: 414px)">
               <NavLinks navLinks={navLinks} />
               <a className="about-link" href="js-about" onClick={this.onToggleAbout}>
