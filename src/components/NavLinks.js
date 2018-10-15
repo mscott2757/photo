@@ -1,9 +1,8 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import { withProps, branch } from 'recompose';
-import { NavLink } from 'react-router-dom';
 import { NavDropdown } from './NavDropdown';
-import { linkStyles } from './core';
+import { NavLink } from './core';
 
 const List = styled('ul')`
   padding: 0;
@@ -14,7 +13,7 @@ const List = styled('ul')`
 const ListElem = styled('li')`
   list-style-type: none;
   @media screen and (max-width: 414px) {
-    padding-bottom: 8px;
+    padding: 8px;
   }
 
   .active {
@@ -35,10 +34,6 @@ const DropdownListElem = styled(ListElem)`
   margin-left: 10px;
 `;
 
-const StyledNavLink = styled(NavLink)`
-  ${linkStyles}
-`;
-
 const LinkElem = branch(
   ({ link }) => 'dropdownLinks' in link,
   withProps(({ link: { name, id, dropdownLinks } }) => ({
@@ -47,7 +42,7 @@ const LinkElem = branch(
         <DropdownList>
           {dropdownLinks.map(({ name, path }) => (
             <DropdownListElem key={name}>
-              <StyledNavLink exact activeClassName="active" to={path}>{name}</StyledNavLink>
+              <NavLink exact activeClassName="active" to={path}>{name}</NavLink>
             </DropdownListElem>
           ))}
         </DropdownList>
@@ -55,7 +50,7 @@ const LinkElem = branch(
     ),
   })),
   withProps(({ link: { name, path } }) => ({
-    renderLink: () => <StyledNavLink exact activeClassName="active" to={path}>{name}</StyledNavLink>,
+    renderLink: () => <NavLink exact activeClassName="active" to={path}>{name}</NavLink>,
   })),
 )(
   ({ renderLink }) => <ListElem>{renderLink()}</ListElem>

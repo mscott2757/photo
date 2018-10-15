@@ -41,7 +41,6 @@ export const PhotoContent = {
 
 export const NavLinks = [
   { name: 'The Current Issue', path: '/current' },
-  { name: 'Portland', path: '/pdx' },
   {
     name: 'California', id: 'california', dropdownLinks: [
       { name: 'San Francisco', path: '/sf' },
@@ -58,6 +57,7 @@ export const NavLinks = [
     ]
   },
   { name: 'Taiwan',     path: '/taiwan' },
+  { name: 'Portland', path: '/pdx' },
   { name: 'New York',   path: '/nyc' },
   { name: 'Chicago',    path: '/chicago' },
   { name: 'Paris',      path: '/paris' },

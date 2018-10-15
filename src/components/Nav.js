@@ -13,6 +13,14 @@ const LogoWrapper = styled('div')`
   margin: 20px 0;
 `;
 
+const MenuLink = styled(PlainLink)`
+  padding: 20px;
+  position: absolute;
+  margin-top: 20px;
+  top: 0;
+  right: 0;
+`;
+
 const propsChanged = (prevProps, nextProps, fields) => {
   fields.forEach((field) => {
     if (prevProps[field] !== nextProps[field]) {
@@ -58,8 +66,6 @@ class NavBase extends React.Component {
       { 'about--show': showAbout, 'about--show-full': showAboutFull }
     );
 
-    let aboutDropdownBtn = showAbout ? <span className="fa fa-caret-down"></span> : null;
-
     const { visible, onToggle } = this.props;
     return (
       <div className={navbarContainerClasses}>
@@ -73,17 +79,16 @@ class NavBase extends React.Component {
 
             <MediaQuery query="(min-device-width: 414px)">
               <NavLinks navLinks={navLinks} />
-              <a className="about-link" href="js-about" onClick={this.onToggleAbout}>
+              <PlainLink href="js-about" onClick={this.onToggleAbout}>
                 About
-                {aboutDropdownBtn}
-              </a>
+              </PlainLink>
             </MediaQuery>
 
             <MediaQuery query="(max-device-width: 414px)">
-              <PlainLink onClick={e => {
+              <MenuLink onClick={e => {
                 e.preventDefault();
                 onToggle();
-              }}>Menu</PlainLink>
+              }}>Menu</MenuLink>
               <MobileNav visible={visible} onToggle={onToggle} navLinks={navLinks} />
             </MediaQuery>
           </div>

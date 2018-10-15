@@ -1,6 +1,14 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
 import { Image } from './Image';
-import propTypes from 'prop-types';
+import { BodyText } from './core';
+
+const TitleText = styled(BodyText)`
+  text-align: center;
+  @media screen and (min-width: 414px) {
+    height: 4vh;
+  }
+`;
 
 export class Gallery extends Component {
   scrollHandler = () => {
@@ -30,24 +38,11 @@ export class Gallery extends Component {
     const { title, photos } = this.props.gallery;
     return (
       <div className="gallery">
-        <div className="gallery-title">
-          <p>{title}</p>
-        </div>
+        <TitleText>{title}</TitleText>
         <div className="gallery-container" ref="gallery">
           {photos.map((photo, index) => <Image {...photo} key={index} /> )}
         </div>
       </div>
     );
   }
-}
-
-Gallery.propTypes = {
-  gallery: propTypes.shape({
-    title: propTypes.string.isRequired,
-    photos: propTypes.array.isRequired
-  }).isRequired,
-  onScrollLeft: propTypes.func.isRequired,
-  onScrollRight: propTypes.func.isRequired,
-  scrollPosition: propTypes.number.isRequired,
-  setScrollPosition: propTypes.func.isRequired
-}
+};

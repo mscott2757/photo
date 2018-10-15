@@ -4,21 +4,7 @@
   display: none;
 }
 
-
 .gallery {
-  .gallery-title {
-    height: 4vh;
-
-    p {
-      font-size: 12px;
-      font-weight: 300;
-      letter-spacing: 1px;
-      text-align: center;
-      margin: 0;
-    }
-  }
-
-
   @media screen and (max-width: $mobile-break) {
     .gallery-container {
       padding: 20px;

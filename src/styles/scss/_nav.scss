@@ -20,14 +20,6 @@
       margin-bottom: 0;
     }
   }
-
-
-  .navbar{
-    .about-link {
-      @include bodyFontStyles();
-      letter-spacing: 1px;
-    }
-  }
 }
 
 @media screen and (max-width: $mobile-break) {
@@ -86,16 +78,6 @@
         background-color: $white;
         padding: 20px 40px;
         width: 100%;
-
-        .about-link {
-          position: absolute;
-          bottom: 0;
-          margin-bottom: 20px;
-
-          &:hover {
-            opacity: 0.5;
-          }
-        }
       }
 
       .about {

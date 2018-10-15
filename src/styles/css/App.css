@@ -12,10 +12,6 @@
       margin-top: 0; }
     .navbar-container p:last-child {
       margin-bottom: 0; }
-  .navbar-container .navbar .about-link {
-    font-size: 12px;
-    font-weight: 300;
-    letter-spacing: 1px; }
 
 @media screen and (max-width: 768px) {
   .navbar-container {
@@ -59,12 +55,6 @@
         background-color: #fff;
         padding: 20px 40px;
         width: 100%; }
-        .navbar-container .navbar-body .navbar .about-link {
-          position: absolute;
-          bottom: 0;
-          margin-bottom: 20px; }
-          .navbar-container .navbar-body .navbar .about-link:hover {
-            opacity: 0.5; }
       .navbar-container .navbar-body .about {
         width: 50%;
         position: relative;
@@ -107,15 +97,6 @@
 
 ::-webkit-scrollbar {
   display: none; }
-
-.gallery .gallery-title {
-  height: 4vh; }
-  .gallery .gallery-title p {
-    font-size: 12px;
-    font-weight: 300;
-    letter-spacing: 1px;
-    text-align: center;
-    margin: 0; }
 
 @media screen and (max-width: 768px) {
   .gallery .gallery-container {

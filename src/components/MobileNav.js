@@ -22,7 +22,7 @@ const MobileNavBase = ({ navLinks, handleClose }) => (
       <NavLink to='/'>
         <LogoText>Mason Chan</LogoText>
       </NavLink>
-      <PlainLink onClick={handleClose}>close</PlainLink>
+      <PlainLink onClick={handleClose}>Close</PlainLink>
     </TopWrapper>
     <NavLinks navLinks={navLinks} />
   </Wrapper>
