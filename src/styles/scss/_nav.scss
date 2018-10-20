@@ -85,16 +85,12 @@
         position: relative;
         background-color: $white;
         padding: 90px 40px 20px 0;
-        opacity: 0;
+        opacity: 1;
         display: none;
         @include transition(0.18s);
 
         &--show {
           display: block;
-        }
-
-        &--show-full {
-          opacity: 1;
         }
 
         .hide-about-btn__wrapper {

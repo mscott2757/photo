@@ -5,27 +5,27 @@ import {
 } from '../actions';
 import { Nav } from '../components';
 
-const mapStateToProps = state => {
-  return {
-    showNav: state.showNav,
-    showNavFull: state.showNavFull,
-    showAbout: state.showAbout,
-    showAboutFull: state.showAboutFull,
-    navLinks: state.navLinks
-  }
-}
+const mapStateToProps = ({
+  showNav,
+  showNavFull,
+  showAbout,
+  navLinks,
+}) => ({
+  showNav,
+  showNavFull,
+  showAbout,
+  navLinks,
+});
 
-const mapDispatchToProps = dispatch => {
-  return {
-    toggleAbout: (aboutVisible) => {
-      if (aboutVisible) {
-        dispatch(hideAbout());
-      } else {
-        dispatch(showAbout());
-      }
+const mapDispatchToProps = dispatch => ({
+  toggleAbout: (aboutVisible) => {
+    if (aboutVisible) {
+      dispatch(hideAbout());
+    } else {
+      dispatch(showAbout());
     }
-  }
-}
+  },
+});
 
 export const NavContainer = connect(
   mapStateToProps,

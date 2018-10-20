@@ -53,7 +53,7 @@ const LinkElem = branch(
     renderLink: () => <NavLink exact activeClassName="active" to={path}>{name}</NavLink>,
   })),
 )(
-  ({ renderLink }) => <ListElem>{renderLink()}</ListElem>
+  ({ renderLink }) => <ListElem>{renderLink()}</ListElem>,
 );
 
 

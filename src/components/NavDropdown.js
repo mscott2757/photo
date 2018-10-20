@@ -9,12 +9,18 @@ const ChildrenWrapper = styled('div')`
   ${({ active }) => !active ? css`display: none;` : ''};
 `;
 
+type dropdownType = {
+  active: boolean,
+  toggleDropdown: Function,
+  title: string,
+};
+
 const Dropdown = ({
   active,
   toggleDropdown,
   title,
-  children
-}) => (
+  children,
+}: dropdownType) => (
   <React.Fragment>
     <PlainLink href="dropdownLink" onClick={toggleDropdown}>{title}</PlainLink>
     <ChildrenWrapper active={active}>

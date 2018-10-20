@@ -60,7 +60,7 @@
         position: relative;
         background-color: #fff;
         padding: 90px 40px 20px 0;
-        opacity: 0;
+        opacity: 1;
         display: none;
         -webkit-transition: opacity 0.18s ease-in-out;
         -moz-transition: opacity 0.18s ease-in-out;
@@ -69,8 +69,6 @@
         transition: opacity 0.18s ease-in-out; }
         .navbar-container .navbar-body .about--show {
           display: block; }
-        .navbar-container .navbar-body .about--show-full {
-          opacity: 1; }
         .navbar-container .navbar-body .about .hide-about-btn__wrapper {
           position: absolute;
           top: 0;

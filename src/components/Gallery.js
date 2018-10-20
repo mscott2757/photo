@@ -1,7 +1,14 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import styled from 'styled-components';
 import { Image } from './Image';
 import { BodyText } from './core';
+import {
+  showNav,
+  hideNav,
+  setScrollPosition,
+  getGallery
+} from '../actions';
 
 const TitleText = styled(BodyText)`
   text-align: center;
@@ -10,7 +17,7 @@ const TitleText = styled(BodyText)`
   }
 `;
 
-export class Gallery extends Component {
+class GalleryBase extends Component {
   scrollHandler = () => {
     let newScrollPosition = this.refs.gallery.scrollLeft;
     if (newScrollPosition > this.props.scrollPosition) {
@@ -46,3 +53,21 @@ export class Gallery extends Component {
     );
   }
 };
+
+export const Gallery = connect(
+  ({ scrollPosition, ...state }, ownProps) => ({
+    scrollPosition,
+    gallery: getGallery(state, ownProps.id)
+  }),
+  dispatch => ({
+    setScrollPosition: (scrollPosition) => {
+      dispatch(setScrollPosition(scrollPosition));
+    },
+    onScrollRight: () => {
+      dispatch(hideNav());
+    },
+    onScrollLeft: () => {
+      dispatch(showNav());
+    }
+  }),
+)(GalleryBase);
