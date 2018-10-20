@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { compose, withHandlers } from 'recompose';
 import styled, { css } from 'styled-components';
 import { connect } from 'react-redux';
@@ -15,12 +15,12 @@ const Dropdown = ({
   title,
   children
 }) => (
-  <div>
+  <React.Fragment>
     <PlainLink href="dropdownLink" onClick={toggleDropdown}>{title}</PlainLink>
     <ChildrenWrapper active={active}>
       {children}
     </ChildrenWrapper>
-  </div>
+  </React.Fragment>
 );
 
 export const NavDropdown = compose(
