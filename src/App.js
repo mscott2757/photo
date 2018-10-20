@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles/css/App.css';
+import './styles/app.scss';
 import { withRouter, Route, Redirect } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import ReactGA from 'react-ga';
