@@ -4,7 +4,7 @@ import { withDimensions, withLoading } from './with';
 import styled, { css } from 'styled-components';
 
 const Wrapper = styled('div')`
-  margin-bottom: 17px;
+  margin-bottom: 12px;
 
   &:last-child {
     margin-bottom: 0;

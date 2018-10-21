@@ -6,8 +6,12 @@
 
 .gallery {
   @media screen and (max-width: $mobile-break) {
+    margin-top: 50px;
+    padding-top: 8px;
+
     .gallery-container {
-      padding: 20px;
+      padding: 12px;
+      padding-top: 16px;
       text-align: center;
     }
   }

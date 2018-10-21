@@ -14,6 +14,23 @@ const LogoWrapper = styled('div')`
   justify-content: space-between;
 `;
 
+const MobileLogoText = styled(LogoText)`
+  font-size: 18px;
+`;
+
+const MobileLogoWrapper = styled('div')`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 5001;
+  padding: 16px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+`;
+
 const propsChanged = (prevProps, nextProps, fields) => {
   fields.forEach((field) => {
     if (prevProps[field] !== nextProps[field]) {
@@ -61,26 +78,35 @@ class NavBase extends React.Component {
       },
     );
 
-    const { renderMobileLinks, renderDesktopLinks, onToggle } = this.props;
+    const { renderMobileLinks, renderDesktopLinks, onToggle, visible } = this.props;
     return (
       <div className={navbarContainerClasses}>
         <div className="navbar-body">
           <div className="navbar">
-            <LogoWrapper>
-              <NavLink to='/'>
-                <LogoText>Mason Chan</LogoText>
-              </NavLink>
-              <MediaQuery query="(max-device-width: 414px)">
+            <MediaQuery query="(min-device-width: 414px)">
+              <LogoWrapper>
+                <NavLink to='/'>
+                  <LogoText>Mason Chan</LogoText>
+                </NavLink>
+              </LogoWrapper>
+            </MediaQuery>
+            <MediaQuery query="(max-device-width: 414px)">
+              <MobileLogoWrapper>
+                <NavLink to='/'>
+                  <MobileLogoText>
+                    Mason Chan
+                  </MobileLogoText>
+                </NavLink>
                 <PlainLink
                   onClick={e => {
                     e.preventDefault();
                     onToggle();
                   }}
                 >
-                  Menu
+                  {visible ? 'Close' : 'Menu'}
                 </PlainLink>
-              </MediaQuery>
-            </LogoWrapper>
+              </MobileLogoWrapper>
+            </MediaQuery>
             {renderDesktopLinks(this.onToggleAbout)}
             {renderMobileLinks()}
           </div>
