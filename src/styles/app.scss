@@ -10,6 +10,10 @@
   src: url("./../fonts/Circular.otf") format("opentype");
 }
 
+body {
+  margin: 0;
+}
+
 .App {
   min-height: 100vh;
   min-width: 100vw;

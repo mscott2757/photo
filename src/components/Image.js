@@ -50,6 +50,7 @@ const IconWrapper = styled('div')`
 
 const Img = styled('img')`
   width: 100%;
+  display: block;
   ${({ loading }) => loading ? css`display: none;`: ''}
 
   @media screen and (min-width: 768px) {
