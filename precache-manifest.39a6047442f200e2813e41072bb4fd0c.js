@@ -4,16 +4,16 @@ self.__precacheManifest = [
     "url": "/static/media/college.1dc7073f.jpg"
   },
   {
-    "revision": "060e9a8445078cb888e2",
-    "url": "/static/css/main.a2a3893c.chunk.css"
+    "revision": "9fdb0a2c555855c28e31",
+    "url": "/static/css/main.c8ac56e7.chunk.css"
   },
   {
     "revision": "f657fffaddc507d2e61e1005202d1085",
     "url": "/static/media/james-2.f657fffa.jpg"
   },
   {
-    "revision": "8fb925526858739cdab4",
-    "url": "/static/js/1.8fb92552.chunk.js"
+    "revision": "9984d2ff87ac31ae2d9c",
+    "url": "/static/js/1.9984d2ff.chunk.js"
   },
   {
     "revision": "229c360febb4351a89df",
@@ -28,16 +28,16 @@ self.__precacheManifest = [
     "url": "/static/media/fontawesome-webfont.674f50d2.eot"
   },
   {
+    "revision": "fee66e712a8a08eef5805a46892932ad",
+    "url": "/static/media/fontawesome-webfont.fee66e71.woff"
+  },
+  {
     "revision": "af7ae505a9eed503f8b8e6982036873e",
     "url": "/static/media/fontawesome-webfont.af7ae505.woff2"
   },
   {
     "revision": "b06871f281fee6b241d60582ae9369b9",
     "url": "/static/media/fontawesome-webfont.b06871f2.ttf"
-  },
-  {
-    "revision": "fee66e712a8a08eef5805a46892932ad",
-    "url": "/static/media/fontawesome-webfont.fee66e71.woff"
   },
   {
     "revision": "912ec66d7572ff821749319396470bde",
@@ -356,8 +356,8 @@ self.__precacheManifest = [
     "url": "/static/media/durant.83862967.jpg"
   },
   {
-    "revision": "060e9a8445078cb888e2",
-    "url": "/static/js/main.060e9a84.chunk.js"
+    "revision": "9fdb0a2c555855c28e31",
+    "url": "/static/js/main.9fdb0a2c.chunk.js"
   },
   {
     "revision": "b3c421ff45b5dae1c89df91290ec7086",
@@ -708,11 +708,11 @@ self.__precacheManifest = [
     "url": "/static/media/james.54ee04ea.jpg"
   },
   {
-    "revision": "8fb925526858739cdab4",
+    "revision": "9984d2ff87ac31ae2d9c",
     "url": "/static/css/1.7bc52dcc.chunk.css"
   },
   {
-    "revision": "990898dcfc09d473f6bd0f3e8a3516c2",
+    "revision": "6e78f1734852a9652d16d9b8d59786e6",
     "url": "/index.html"
   }
 ];
