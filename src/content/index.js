@@ -35,8 +35,6 @@ export const PhotoContent = {
   'osaka': Osaka,
   'portraits': Portraits,
   'landscapes': Landscapes,
-  'me': Me,
-  'grad': Grad
 };
 
 export const NavLinks = [
@@ -44,7 +42,6 @@ export const NavLinks = [
   {
     name: 'California', id: 'california', dropdownLinks: [
       { name: 'San Francisco', path: '/sf' },
-      { name: 'Oakland',       path: '/oakland' },
       { name: 'Berkeley',      path: '/berkeley' },
       { name: 'Los Angeles',   path: '/la' },
     ]
@@ -57,10 +54,15 @@ export const NavLinks = [
     ]
   },
   { name: 'Taiwan',     path: '/taiwan' },
-  { name: 'Portland', path: '/pdx' },
-  { name: 'New York',   path: '/nyc' },
-  { name: 'Chicago',    path: '/chicago' },
-  { name: 'Paris',      path: '/paris' },
   { name: 'Portraits',  path: '/portraits' },
-  { name: 'Landscapes', path: '/landscapes' }
+  { name: 'Landscapes', path: '/landscapes' },
+  {
+    name: 'Archive', id: 'archive', dropdownLinks: [
+      { name: 'New York',   path: '/nyc' },
+      { name: 'Chicago',    path: '/chicago' },
+      { name: 'Oakland',       path: '/oakland' },
+      { name: 'Portland', path: '/pdx' },
+      { name: 'Paris',      path: '/paris' },
+    ]
+  },
 ];
