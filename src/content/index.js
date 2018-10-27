@@ -8,8 +8,6 @@ import Paris from './Paris';
 import Taiwan from './Taiwan';
 import Portraits from './Portraits';
 import Landscapes from './Landscapes';
-import Me from './Me';
-import Grad from './Grad';
 
 export const CURRENT = 'current';
 
