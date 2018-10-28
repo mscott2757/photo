@@ -15,22 +15,20 @@ export const showNavPartial = () => ({ type: SHOW_NAV });
 
 export const showNavFull = () => ({ type: SHOW_NAV_FULL });
 
-export const showNav = () => dispatch => {
+export const showNav = () => async dispatch => {
   dispatch(showNavPartial());
-  return delay(150).then(() => {
-    dispatch(showNavFull());
-  });
+  await delay(150);
+  dispatch(showNavFull());
 };
 
 export const hideNavPartial = () => ({ type: HIDE_NAV });
 
 export const hideNavFull = () => ({ type: HIDE_NAV_FULL });
 
-export const hideNav = () => dispatch => {
+export const hideNav = () => async dispatch => {
   dispatch(hideNavPartial());
-  return delay(150).then(() => {
-    dispatch(hideNavFull());
-  });
+  await delay(150);
+  dispatch(hideNavFull());
 };
 
 export const showAbout = () => ({ type: SHOW_ABOUT });

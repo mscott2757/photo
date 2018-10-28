@@ -40,7 +40,6 @@ export const NavLinks = [
   {
     name: 'California', id: 'california', dropdownLinks: [
       { name: 'San Francisco', path: '/sf' },
-      { name: 'Berkeley',      path: '/berkeley' },
       { name: 'Los Angeles',   path: '/la' },
     ]
   },
@@ -56,6 +55,7 @@ export const NavLinks = [
   { name: 'Landscapes', path: '/landscapes' },
   {
     name: 'Archive', id: 'archive', dropdownLinks: [
+      { name: 'Berkeley',      path: '/berkeley' },
       { name: 'New York',   path: '/nyc' },
       { name: 'Chicago',    path: '/chicago' },
       { name: 'Oakland',       path: '/oakland' },

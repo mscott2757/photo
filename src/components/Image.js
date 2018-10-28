@@ -1,6 +1,6 @@
 import React from 'react';
 import { withProps, compose } from 'recompose';
-import { withDimensions, withLoading } from './with';
+import { withLoading } from './with';
 import styled, { css } from 'styled-components';
 
 const Wrapper = styled('div')`
@@ -27,12 +27,12 @@ const Wrapper = styled('div')`
 const LoadingWrapper = styled('div')`
   position: relative;
   height: 0;
-  padding-bottom: ${({ height, width }) => 100 * height / width}%;
+  padding-bottom: 100%;
   width: 100%;
 
   @media screen and (min-width: 768px) {
     padding-bottom: 80vh;
-    width: ${({ height, width }) => 80 * width / height }vh;
+    width: 80vh;
   }
 `;
 
@@ -61,10 +61,9 @@ const Img = styled('img')`
 
 const enhance = compose(
   withLoading,
-  withDimensions,
-  withProps(({ h, w, loading }) => ({
+  withProps(({ loading }) => ({
     renderLoading: () => loading ? (
-      <LoadingWrapper height={h} width={w}>
+      <LoadingWrapper>
         <IconWrapper>
           <i className="fa fa-circle-o-notch fa-spin"></i>
         </IconWrapper>
