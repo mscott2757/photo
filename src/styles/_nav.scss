@@ -87,6 +87,10 @@
         display: none;
         @include transition(0.18s);
 
+        p {
+          line-height: 1.5;
+        }
+
         &--show {
           display: block;
         }
