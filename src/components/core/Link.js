@@ -7,8 +7,14 @@ export const linkStyles = css`
   font-size: 12px;
   text-decoration: none;
 
-  &:hover {
-    opacity: 0.5;
+  @media screen and (min-width: 414px) {
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
+  &:visited {
+    color: #333;
   }
 `;
 
