@@ -1,13 +1,15 @@
+import { getS3Url } from './helpers';
+
 const NewYork = {
   title: "New York",
   photos: [
-    { url: require("../images/nyc/fifty-seven.jpg"),   aspect: "32" },
-    { url: require("../images/nyc/soho-crossing.jpg"), aspect: "23" },
-    { url: require("../images/nyc/soho-foot.jpg"),     aspect: "32" },
-    { url: require("../images/nyc/soho-woman.jpg"),    aspect: "23" },
-    { url: require("../images/nyc/subway-woman.jpg"),  aspect: "32" },
-    { url: require("../images/nyc/greenwich.jpg"),     aspect: "23" },
-    { url: require("../images/nyc/couple.jpg"),        aspect: "23" }
+    { url: getS3Url("nyc/fifty-seven.jpg") },
+    { url: getS3Url("nyc/soho-crossing.jpg") },
+    { url: getS3Url("nyc/soho-foot.jpg") },
+    { url: getS3Url("nyc/soho-woman.jpg") },
+    { url: getS3Url("nyc/subway-woman.jpg") },
+    { url: getS3Url("nyc/greenwich.jpg") },
+    { url: getS3Url("nyc/couple.jpg") }
   ]
 }
 

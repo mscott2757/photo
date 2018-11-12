@@ -1,14 +1,16 @@
+import { getS3Url } from './helpers';
+
 const Portraits = {
   title: "Portraits",
   photos: [
-    { url: require('../images/sf/w-davidson.jpg') },
-    { url: require('../images/sf/w-davidson-2.jpg') },
-    { url: require('../images/kyoto/bamboo-waves.jpg') },
-    { url: require('../images/osaka/castle-waves.jpg') },
-    { url: require('../images/berkeley/sunny.jpg') },
-    { url: require("../images/tam/sunny.jpg") },
-    { url: require("../images/tam/estell.jpg") },
-  ]
+    { url: getS3Url('sf/w-davidson.jpg') },
+    { url: getS3Url('sf/w-davidson-2.jpg') },
+    { url: getS3Url('kyoto/bamboo-waves.jpg') },
+    { url: getS3Url('osaka/castle-waves.jpg') },
+    { url: getS3Url('berkeley/sunny.jpg') },
+    { url: getS3Url("tam/sunny.jpg") },
+    { url: getS3Url("tam/estell.jpg") },
+  ],
 }
 
 export default Portraits;

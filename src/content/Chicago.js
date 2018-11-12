@@ -1,14 +1,16 @@
+import { getS3Url } from './helpers';
+
 const Chicago = {
   title: 'Chicago',
   photos: [
-    { url: require("../images/chicago/undercta.jpg"),    aspect: "32" },
-    { url: require("../images/chicago/buildings.jpg"),   aspect: "23" },
-    { url: require("../images/chicago/rails.jpg"),       aspect: "23" },
-    { url: require("../images/chicago/caught.jpg"),      aspect: "32" },
-    { url: require("../images/chicago/bike.jpg"),        aspect: "23" },
-    { url: require("../images/chicago/cta-girl.jpg"),    aspect: "32" },
-    { url: require("../images/chicago/wormhole.jpg"),    aspect: "32" },
-    { url: require("../images/chicago/lincolnpark.jpg"), aspect: "23" },
+    { url: getS3Url("chicago/undercta.jpg") },
+    { url: getS3Url("chicago/buildings.jpg") },
+    { url: getS3Url("chicago/rails.jpg") },
+    { url: getS3Url("chicago/caught.jpg") },
+    { url: getS3Url("chicago/bike.jpg") },
+    { url: getS3Url("chicago/cta-girl.jpg") },
+    { url: getS3Url("chicago/wormhole.jpg") },
+    { url: getS3Url("chicago/lincolnpark.jpg") },
   ]
 }
 

@@ -1,14 +1,16 @@
+import { getS3Url } from './helpers';
+
 const Paris = {
   title: 'Paris',
   photos: [
-    { url: require("../images/paris/subway.jpg"),      aspect: "32" },
-    { url: require("../images/paris/birhakeim.jpg"),   aspect: "23" },
-    { url: require("../images/paris/accordian.jpg"),   aspect: "32" },
-    { url: require("../images/paris/ladefense.jpg"),   aspect: "32" },
-    { url: require("../images/paris/canal.jpg"),       aspect: "23" },
-    { url: require("../images/paris/fumer.jpg"),       aspect: "32" },
-    { url: require("../images/paris/canalcouple.jpg"), aspect: "32" },
-    { url: require("../images/paris/pompidou.jpg"),    aspect: "32" },
+    { url: getS3Url("paris/subway.jpg") },
+    { url: getS3Url("paris/birhakeim.jpg") },
+    { url: getS3Url("paris/accordian.jpg") },
+    { url: getS3Url("paris/ladefense.jpg") },
+    { url: getS3Url("paris/canal.jpg") },
+    { url: getS3Url("paris/fumer.jpg") },
+    { url: getS3Url("paris/canalcouple.jpg") },
+    { url: getS3Url("paris/pompidou.jpg") },
   ]
 }
 

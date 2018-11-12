@@ -1,11 +1,13 @@
+import { getS3Url } from './helpers';
+
 const Current = {
   title: 'The Current Issue',
   photos: [
-    { url: require("../images/sf/alamo.jpg") },
-    { url: require("../images/sf/hayes.jpg") },
-    { url: require("../images/sf/davidson.jpg") },
-    { url: require("../images/sf/muni-sq.jpg") },
-    { url: require("../images/sf/caltrain-sq.jpg") },
+    { url: getS3Url("sf/alamo.jpg") },
+    { url: getS3Url("sf/hayes.jpg") },
+    { url: getS3Url("sf/davidson.jpg") },
+    { url: getS3Url("sf/muni-sq.jpg") },
+    { url: getS3Url("sf/caltrain-sq.jpg") },
   ]
 }
 

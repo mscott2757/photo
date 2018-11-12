@@ -6,10 +6,10 @@ import {
   SHOW_ABOUT,
   HIDE_ABOUT,
   SET_SCROLL_POSITION,
-  TOGGLE_NAV_DROPDOWN
-} from './actions'
+  TOGGLE_NAV_DROPDOWN,
+} from './actions';
 
-import { PhotoContent, NavLinks } from './content/';
+import { PhotoContent, NavLinks } from './content';
 
 const initialState = {
   showNav: true,
@@ -18,7 +18,7 @@ const initialState = {
   scrollPosition: 0,
   content: PhotoContent,
   navLinks: NavLinks,
-  activeDropdown: ''
+  activeDropdown: '',
 };
 
 const rootReducer = (state = initialState, action) => {

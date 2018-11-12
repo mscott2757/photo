@@ -1,14 +1,16 @@
+import { getS3Url } from './helpers';
+
 const Portland = {
   title: 'Portland',
   photos: [
-    { url: require("../images/oregon/cherry.jpg") },
-    { url: require("../images/oregon/cherry-2.jpg") },
-    { url: require("../images/oregon/car.jpg") },
-    { url: require("../images/oregon/petersons.jpg") },
-    { url: require("../images/oregon/heart.jpg") },
-    { url: require("../images/oregon/blue-car.jpg") },
-    { url: require("../images/oregon/swings.jpg") },
-    { url: require("../images/oregon/powell-bus.jpg") },
+    { url: getS3Url("oregon/cherry.jpg") },
+    { url: getS3Url("oregon/cherry-2.jpg") },
+    { url: getS3Url("oregon/car.jpg") },
+    { url: getS3Url("oregon/petersons.jpg") },
+    { url: getS3Url("oregon/heart.jpg") },
+    { url: getS3Url("oregon/blue-car.jpg") },
+    { url: getS3Url("oregon/swings.jpg") },
+    { url: getS3Url("oregon/powell-bus.jpg") },
   ]
 }
 

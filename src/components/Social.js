@@ -4,13 +4,13 @@ import propTypes from 'prop-types';
 export const Social = ({ accounts }) => (
   <div className="social">
     <ul>
-      {accounts.map(({ url, className }, index) =>
-        <li key={index}>
+      {accounts.map(({ url, className }) => (
+        <li key={className}>
           <a href={url}>
-            <i className={`fa ${className}`}></i>
+            <i className={`fa ${className}`} />
           </a>
         </li>
-      )}
+      ))}
     </ul>
   </div>
 );
@@ -18,6 +18,6 @@ export const Social = ({ accounts }) => (
 Social.propTypes = {
   accounts: propTypes.arrayOf(propTypes.shape({
     className: propTypes.string.isRequired,
-    url: propTypes.string.isRequired
-  })).isRequired
-}
+    url: propTypes.string.isRequired,
+  })).isRequired,
+};
