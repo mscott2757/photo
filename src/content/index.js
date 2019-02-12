@@ -8,6 +8,7 @@ import Paris from './Paris';
 import Taiwan from './Taiwan';
 import Portraits from './Portraits';
 import Landscapes from './Landscapes';
+import Grad from './Grad';
 
 export const CURRENT = 'current';
 
@@ -33,6 +34,7 @@ export const PhotoContent = {
   'osaka': Osaka,
   'portraits': Portraits,
   'landscapes': Landscapes,
+  'grad': Grad,
 };
 
 export const NavLinks = [
@@ -61,6 +63,7 @@ export const NavLinks = [
       { name: 'Oakland',       path: '/oakland' },
       { name: 'Portland', path: '/pdx' },
       { name: 'Paris',      path: '/paris' },
+      { name: 'Grad',      path: '/grad' },
     ]
   },
 ];
