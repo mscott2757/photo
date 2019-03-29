@@ -6,6 +6,7 @@ import { Tokyo, Kyoto, Osaka } from './Japan';
 import { SanFrancisco, Berkeley, LosAngeles, Oakland } from './California';
 import Paris from './Paris';
 import Taiwan from './Taiwan';
+import { HongKong } from './HongKong';
 import Portraits from './Portraits';
 import Landscapes from './Landscapes';
 import Grad from './Grad';
@@ -35,10 +36,12 @@ export const PhotoContent = {
   'portraits': Portraits,
   'landscapes': Landscapes,
   'grad': Grad,
+  'hk': HongKong,
 };
 
 export const NavLinks = [
   { name: 'The Current Issue', path: '/current' },
+  { name: 'Hong Kong', path: '/hk' },
   {
     name: 'California', id: 'california', dropdownLinks: [
       { name: 'San Francisco', path: '/sf' },
