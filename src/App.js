@@ -1,40 +1,30 @@
-import React from 'react';
-import './styles/app.scss';
-import { withRouter, Route, Redirect } from 'react-router-dom';
-import { TransitionGroup, CSSTransition } from 'react-transition-group';
-import ReactGA from 'react-ga';
-import { NavContainer } from './containers';
-import { Accounts } from './content/';
-import { Social, Main } from './components';
+import React from "react";
+import "./styles/app.scss";
+import { Routes, useLocation, Navigate, Route } from "react-router-dom";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
+import ReactGA from "react-ga";
+import { NavContainer } from "./containers";
+import { Accounts } from "./content/";
+import { Social, Main } from "./components";
 
-ReactGA.initialize('UA-109516063-1');
+ReactGA.initialize("UA-109516063-1");
 
-const logPageView = () => {
+const LogPageView = () => {
   ReactGA.set({ page: window.location.pathname });
   ReactGA.pageview(window.location.pathname);
   return null;
 };
 
-const App = ({ location: { key }}) => {
+export default () => {
   return (
     <div className="App">
-      <Route component={logPageView} />
-      <Route exact path="/" render={() =>
-        <Redirect to="/current" />
-      } />
       <NavContainer />
-      <TransitionGroup>
-        <CSSTransition
-          key={key}
-          timeout={400}
-          classNames='main'
-        >
-          <Route path="/:id?" component={Main} />
-        </CSSTransition>
-      </TransitionGroup>
+      <Routes>
+        <Route element={<LogPageView />} />
+        <Route exact path="/" element={<Navigate replace to="/current" />} />
+        <Route path="/:id?" element={<Main />} />
+      </Routes>
       <Social accounts={Accounts} />
     </div>
   );
-}
-
-export default withRouter(App);
+};

@@ -1,7 +1,8 @@
 import * as React from 'react';
 import classNames from 'classnames';
+import { useLocation } from 'react-router-dom';
 import styled from 'styled-components';
-import { withRouter, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { compose, withProps } from 'recompose';
 import { withVisibility } from './with';
 import { NavLinks, MobileNav } from './';
@@ -115,7 +116,10 @@ class NavBase extends React.Component {
 }
 
 export const Nav = compose(
-  withRouter,
+  Comp => props => {
+    const location = useLocation();
+    return <Comp {...props} location={location} />
+  },
   withVisibility,
   withProps(({ visible, onToggle, navLinks }) => ({
     renderMobileLinks: () => (
