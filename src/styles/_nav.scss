@@ -10,7 +10,8 @@
   }
 
   p {
-    @include bodyFontStyles();
+    font-size: 12px;
+    font-weight: 300;
 
     &:first-child {
       margin-top: 0;
