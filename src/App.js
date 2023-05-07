@@ -1,14 +1,13 @@
 import React from "react";
 import "./styles/app.scss";
-import { ThemeProvider } from 'styled-styled';
-import { Routes, useLocation, Navigate, Route } from "react-router-dom";
-import { TransitionGroup, CSSTransition } from "react-transition-group";
+import { styled, createGlobalStyle, ThemeProvider } from "styled-components";
+import { Routes, Navigate, Route } from "react-router-dom";
 import ReactGA from "react-ga";
 import { NavContainer } from "./containers";
-import { Accounts } from "./content/";
 import { Social, Main } from "./components";
 import { AppContextProvider } from "./context";
-import { theme } from './theme';
+import { theme } from "./theme";
+import circular from './fonts/Circular.otf';
 
 ReactGA.initialize("UA-109516063-1");
 
@@ -18,20 +17,42 @@ const LogPageView = () => {
   return null;
 };
 
-export default () => {
-  return (
-    <AppContextProvider>
-      <ThemeProvider theme={theme}>
-      <div className="App">
+const GlobalStyle = createGlobalStyle`
+  body {
+    margin: 0;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  @import '~font-awesome/css/font-awesome.min.css';
+  @font-face(Futura, fonts/Futura);
+  @font-face {
+    font-family: "Circular";
+    src: url(${circular}) format("opentype");
+  }
+`;
+
+const AppContainer = styled.div`
+  min-height: 100vh;
+  min-width: 100vw;
+  font-family: Circular, Helvetica;
+`;
+
+export default () => (
+  <AppContextProvider>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <AppContainer>
         <NavContainer />
         <Routes>
           <Route element={<LogPageView />} />
           <Route exact path="/" element={<Navigate replace to="/current" />} />
           <Route path="/:id?" element={<Main />} />
         </Routes>
-        <Social accounts={Accounts} />
-      </div>
-      </ThemeProvider>
-    </AppContextProvider>
-  );
-};
+        <Social />
+      </AppContainer>
+    </ThemeProvider>
+  </AppContextProvider>
+);

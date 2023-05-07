@@ -4,23 +4,3 @@
 @import "social";
 @import "main";
 @import '~font-awesome/css/font-awesome.min.css';
-@font-face(Futura, fonts/Futura);
-@font-face {
-  font-family: "Circular";
-  src: url("./../fonts/Circular.otf") format("opentype");
-}
-
-body {
-  margin: 0;
-}
-
-.App {
-  min-height: 100vh;
-  min-width: 100vw;
-  font-family: Circular, Helvetica;
-}
-
-* {
-  box-sizing: border-box;
-}
-

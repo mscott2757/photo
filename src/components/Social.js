@@ -1,23 +1,22 @@
 import React from 'react';
-import propTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faInstagram, faSpotify } from '@fortawesome/free-brands-svg-icons';
 
-export const Social = ({ accounts }) => (
+const accounts = [
+  { icon: faInstagram, url: "https://www.instagram.com/masonchan_/" },
+  { icon: faSpotify, url: "https://open.spotify.com/user/122383669" },
+];
+
+export const Social = () => (
   <div className="social">
     <ul>
-      {accounts.map(({ url, className }) => (
+      {accounts.map(({ icon, url, className }) => (
         <li key={className}>
           <a href={url}>
-            <i className={`fa ${className}`} />
+            <FontAwesomeIcon icon={icon} />
           </a>
         </li>
       ))}
     </ul>
   </div>
 );
-
-Social.propTypes = {
-  accounts: propTypes.arrayOf(propTypes.shape({
-    className: propTypes.string.isRequired,
-    url: propTypes.string.isRequired,
-  })).isRequired,
-};

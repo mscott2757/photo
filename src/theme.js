@@ -1,5 +1,5 @@
-import { css } from 'styled-components';
 
+const MOBILE_BREAK = '768px';
 export const theme = {
   height: '80vh',
   width: '85vw',
@@ -8,4 +8,9 @@ export const theme = {
     black: '#333',
     white: '#fff',
   },
+  mediaQuery: {
+    mobile: `screen and (max-width: ${MOBILE_BREAK})`,
+    desktop: `screen and (min-width: ${MOBILE_BREAK})`,
+  },
 };
+
