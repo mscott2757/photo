@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-import { useEffect } from 'react';
-import { compose, branch, renderNothing, shouldUpdate } from 'recompose';
+import { useRef, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { NavLinks } from './';
 import { FixedContainer } from './core';
@@ -11,17 +10,22 @@ const Wrapper = styled(FixedContainer)`
 `;
 
 export const MobileNav = ({ onToggle, visible, navLinks }) => {
-  const { pathname } = useLocation();
+  const location = useLocation();
   const didMountRef = useRef(false);
-  useEffect(() => {
-    didMountRef.current = true;
-  }, []);
 
   useEffect(() => {
     if (didMountRef.current) {
       onToggle();
     }
-  }, [pathname]);
+  }, [location]);
+
+  useEffect(() => {
+    didMountRef.current = true;
+  }, []);
+
+  if (!visible) {
+    return null;
+  }
 
   return (
     <Wrapper>
