@@ -9,13 +9,13 @@ const Wrapper = styled(FixedContainer)`
   padding: 50px 12px;
 `;
 
-export const MobileNav = ({ onToggle, visible, navLinks }) => {
+export const MobileNav = ({ setVisible, visible, navLinks }) => {
   const location = useLocation();
   const didMountRef = useRef(false);
 
   useEffect(() => {
     if (didMountRef.current) {
-      onToggle();
+      setVisible(false);
     }
   }, [location]);
 

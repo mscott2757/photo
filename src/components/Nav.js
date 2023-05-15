@@ -121,10 +121,10 @@ export const Nav = compose(
     return <Comp {...props} location={location} />
   },
   withVisibility,
-  withProps(({ visible, onToggle, navLinks }) => ({
+  withProps(({ visible, onToggle, navLinks, setVisible }) => ({
     renderMobileLinks: () => (
       <Mobile>
-        <MobileNav visible={visible} onToggle={onToggle} navLinks={navLinks} />
+        <MobileNav visible={visible} setVisible={setVisible} navLinks={navLinks} />
       </Mobile>
     ),
     renderDesktopLinks: (toggleAbout) => (

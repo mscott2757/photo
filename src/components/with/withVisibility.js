@@ -6,5 +6,6 @@ export const withVisibility = withStateHandlers(
   },
   {
     onToggle: ({ visible }) => () => ({ visible: !visible }),
+    setVisible: () => (visible) => ({ visible }),
   },
 );
