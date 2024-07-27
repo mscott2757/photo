@@ -1,7 +1,6 @@
 import React from "react";
 import "./styles/app.scss";
-import { Routes, useLocation, Navigate, Route } from "react-router-dom";
-import { TransitionGroup, CSSTransition } from "react-transition-group";
+import { Routes, Navigate, Route } from "react-router-dom";
 import ReactGA from "react-ga";
 import { NavContainer } from "./containers";
 import { Accounts } from "./content/";

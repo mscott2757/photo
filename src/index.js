@@ -1,7 +1,7 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
-import thunkMiddleware from 'redux-thunk';
+import { thunk } from 'redux-thunk';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import App from './App';
@@ -11,7 +11,7 @@ import rootReducer from './reducers';
 
 const store = createStore(
   rootReducer,
-  applyMiddleware(thunkMiddleware),
+  applyMiddleware(thunk),
 );
 
 const container = document.getElementById('root');

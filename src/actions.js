@@ -5,7 +5,6 @@ export const HIDE_NAV_FULL = 'HIDE_NAV_FULL';
 export const SET_SCROLL_POSITION = 'SET_SCROLL_POSITION';
 export const SHOW_ABOUT = 'SHOW_ABOUT';
 export const HIDE_ABOUT = 'HIDE_ABOUT';
-export const TOGGLE_NAV_DROPDOWN = 'TOGGLE_NAV_DROPDOWN';
 
 const delay = duration => new Promise(resolve => {
   setTimeout(resolve, duration);
@@ -34,8 +33,6 @@ export const hideNav = () => async dispatch => {
 export const showAbout = () => ({ type: SHOW_ABOUT });
 
 export const hideAbout = () => ({ type: HIDE_ABOUT });
-
-export const toggleDropdown = id => ({ type: TOGGLE_NAV_DROPDOWN, id });
 
 export const setScrollPosition = scrollPosition => ({ type: SET_SCROLL_POSITION, scrollPosition });
 

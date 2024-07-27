@@ -1,16 +1,17 @@
-import * as React from 'react';
-import styled from 'styled-components';
-import { withProps, branch } from 'recompose';
-import { NavDropdown } from './NavDropdown';
-import { NavLink } from './core';
+import * as React from "react";
+import styled from "styled-components";
+import { NavDropdown } from "./NavDropdown";
+import { NavLink } from "./core";
+import { useState, useMemo } from "react";
+import { NavLinksContext } from "./navStateContext";
 
-const List = styled('ul')`
+const List = styled("ul")`
   padding: 0;
   line-height: 16px;
   margin-top: 0;
 `;
 
-const ListElem = styled('li')`
+const ListElem = styled("li")`
   list-style-type: none;
   @media screen and (max-width: 414px) {
     padding: 8px;
@@ -34,31 +35,44 @@ const DropdownListElem = styled(ListElem)`
   margin-left: 10px;
 `;
 
-const LinkElem = branch(
-  ({ link }) => 'dropdownLinks' in link,
-  withProps(({ link: { name, id, dropdownLinks } }) => ({
-    renderLink: () => (
-      <NavDropdown id={id} title={name}>
-        <DropdownList>
-          {dropdownLinks.map(({ name, path }) => (
-            <DropdownListElem key={name}>
-              <NavLink exact activeClassName="active" to={path}>{name}</NavLink>
-            </DropdownListElem>
-          ))}
-        </DropdownList>
-      </NavDropdown>
-    ),
-  })),
-  withProps(({ link: { name, path } }) => ({
-    renderLink: () => <NavLink exact activeClassName="active" to={path}>{name}</NavLink>,
-  })),
-)(
-  ({ renderLink }) => <ListElem>{renderLink()}</ListElem>,
-);
+export const NavLinks = ({ navLinks }) => {
+  const [navState, setNavState] = useState({
+    activeDropdown: "",
+  });
 
+  const contextValue = useMemo(() => ({ navState, setNavState }), [navState]);
+  return (
+    <NavLinksContext.Provider value={contextValue}>
+      <List>
+        {navLinks.map((link, i) => {
+          let component = null;
+          if ("dropdownLinks" in link) {
+            const { name, id, dropdownLinks } = link;
+            component = (
+              <NavDropdown id={id} title={name}>
+                <DropdownList>
+                  {dropdownLinks.map(({ name, path }) => (
+                    <DropdownListElem key={name}>
+                      <NavLink exact activeClassName="active" to={path}>
+                        {name}
+                      </NavLink>
+                    </DropdownListElem>
+                  ))}
+                </DropdownList>
+              </NavDropdown>
+            );
+          } else {
+            const { name, path } = link;
+            component = (
+              <NavLink exact activeClassName="active" to={path}>
+                {name}
+              </NavLink>
+            );
+          }
 
-export const NavLinks = ({ navLinks }) => (
-  <List>
-    {navLinks.map((link, i) => <LinkElem key={i} link={link} />)}
-  </List>
-);
+          return <ListElem key={i}>{component}</ListElem>;
+        })}
+      </List>
+    </NavLinksContext.Provider>
+  );
+};

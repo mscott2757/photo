@@ -10,13 +10,14 @@ import { HongKong } from './HongKong';
 import Portraits from './Portraits';
 import Landscapes from './Landscapes';
 import Grad from './Grad';
+import { faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 
 export const CURRENT = 'current';
 
 export const Accounts = [
-  { className: "fa-instagram", url: "https://www.instagram.com/masonchan_/" },
-  { className: "fa-facebook", url: "https://www.facebook.com/profile.php?id=100000034912802" },
-  { className: "fa-spotify", url: "https://open.spotify.com/user/122383669" },
+  { icon: faInstagram, url: "https://www.instagram.com/masonchan_/" },
+  { icon: faEnvelope, url: "mailto:mscott2757@gmail.com" },
 ];
 
 export const PhotoContent = {

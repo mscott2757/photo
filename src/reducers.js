@@ -6,7 +6,6 @@ import {
   SHOW_ABOUT,
   HIDE_ABOUT,
   SET_SCROLL_POSITION,
-  TOGGLE_NAV_DROPDOWN,
 } from './actions';
 
 import { PhotoContent, NavLinks } from './content';
@@ -18,7 +17,6 @@ const initialState = {
   scrollPosition: 0,
   content: PhotoContent,
   navLinks: NavLinks,
-  activeDropdown: '',
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -39,11 +37,6 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         scrollPosition: action.scrollPosition,
-      };
-    case TOGGLE_NAV_DROPDOWN:
-      return {
-        ...state,
-        activeDropdown: action.id === state.activeDropdown ? '' : action.id,
       };
     default:
       return state;
