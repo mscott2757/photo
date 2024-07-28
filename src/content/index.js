@@ -43,11 +43,6 @@ export const PhotoContent = {
 export const NavLinks = [
   { name: "The Current Issue", id: "current" },
   {
-    name: "Work",
-    id: "work",
-    dropdownLinks: [{ name: "Landscapes", id: "landscapes" }],
-  },
-  {
     name: "Personal",
     id: "personal",
     dropdownLinks: [
@@ -70,7 +65,6 @@ export const NavLinks = [
         ],
       },
       { name: "Taiwan", id: "taiwan" },
-      { name: "Portraits", id: "portraits" },
       {
         name: "Archive",
         id: "archive",
@@ -85,5 +79,10 @@ export const NavLinks = [
         ],
       },
     ],
+  },
+  {
+    name: "Work",
+    id: "work",
+    dropdownLinks: [{ name: "Portraits", id: "portraits" }],
   },
 ];

@@ -42,11 +42,11 @@ const Item = ({ id, name }) => (
 export const NavLinks = ({ navLinks }) => {
   const [top, setTop] = useState("");
   const [sub, setSub] = useState("");
-  const { params } = useMatch("/:id");
-  const queryId = params.id;
+  const match = useMatch("/:id");
+  const queryId = match?.params?.id;
 
   useEffect(() => {
-    let found = null;
+    let found = [];
     const findPath = (links, soFar) => {
       for (let i = 0; i < links.length; i++) {
         const link = links[i];
