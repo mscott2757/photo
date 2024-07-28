@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { NavDropdown } from "./NavDropdown";
 import { NavLink } from "./core";
 import { useState, useEffect } from "react";
-import { useMatch, useMatches, useParams } from "react-router-dom";
+import { useMatch } from "react-router-dom";
 
 const List = styled("ul")`
   padding: 0;

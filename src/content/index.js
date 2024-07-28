@@ -12,6 +12,8 @@ import Landscapes from "./Landscapes";
 import Grad from "./Grad";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
+import { rileySteph } from './wedding';
+import { ireneSteven } from './engagement';
 
 export const CURRENT = "current";
 
@@ -38,15 +40,39 @@ export const PhotoContent = {
   landscapes: Landscapes,
   grad: Grad,
   hk: HongKong,
+  ['riley-steph']: rileySteph,
+  ['irene-steven']: ireneSteven,
 };
 
 export const NavLinks = [
   { name: "The Current Issue", id: "current" },
   {
+    name: "Work",
+    id: "work",
+    dropdownLinks: [
+      {
+        name: "Weddings",
+        id: "wedding",
+        dropdownLinks: [
+          { name: "Riley & Steph", id: "riley-steph" },
+          { name: "Irene & Steven", id: "irene-steven-wedding" },
+          { name: "Norah & Kyuseok", id: "norah-kyu" },
+        ],
+      },
+      {
+        name: "Engagements",
+        id: "engagement",
+        dropdownLinks: [
+          { name: "Irene & Steven", id: "irene-steven" },
+          { name: "Nathanael & Gabby", id: "nathanael-gabby" },
+        ],
+      },
+    ],
+  },
+  {
     name: "Personal",
     id: "personal",
     dropdownLinks: [
-      { name: "Hong Kong", id: "hk" },
       {
         name: "California",
         id: "california",
@@ -55,6 +81,7 @@ export const NavLinks = [
           { name: "Los Angeles", id: "la" },
         ],
       },
+      { name: "New York", id: "nyc" },
       {
         name: "Japan",
         id: "japan",
@@ -64,13 +91,19 @@ export const NavLinks = [
           { name: "Osaka", id: "osaka" },
         ],
       },
-      { name: "Taiwan", id: "taiwan" },
+      {
+        name: "Travel",
+        id: "travel",
+        dropdownLinks: [
+          { name: "Hong Kong", id: "hk" },
+          { name: "Taiwan", id: "taiwan" },
+        ],
+      },
       {
         name: "Archive",
         id: "archive",
         dropdownLinks: [
           { name: "Berkeley", id: "berkeley" },
-          { name: "New York", id: "nyc" },
           { name: "Chicago", id: "chicago" },
           { name: "Oakland", id: "oakland" },
           { name: "Portland", id: "pdx" },
@@ -79,10 +112,5 @@ export const NavLinks = [
         ],
       },
     ],
-  },
-  {
-    name: "Work",
-    id: "work",
-    dropdownLinks: [{ name: "Portraits", id: "portraits" }],
   },
 ];
