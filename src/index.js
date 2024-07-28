@@ -5,7 +5,6 @@ import { thunk } from 'redux-thunk';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import App from './App';
-import registerServiceWorker from './registerServiceWorker';
 
 import rootReducer from './reducers';
 
@@ -23,5 +22,3 @@ root.render(
     </BrowserRouter>
   </Provider>
 );
-
-registerServiceWorker();
