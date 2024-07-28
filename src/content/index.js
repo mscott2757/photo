@@ -1,19 +1,19 @@
-import Current from './Current';
-import NewYork from './NewYork';
-import Chicago from './Chicago';
-import Portland from './Portland';
-import { Tokyo, Kyoto, Osaka } from './Japan';
-import { SanFrancisco, Berkeley, LosAngeles, Oakland } from './California';
-import Paris from './Paris';
-import Taiwan from './Taiwan';
-import { HongKong } from './HongKong';
-import Portraits from './Portraits';
-import Landscapes from './Landscapes';
-import Grad from './Grad';
-import { faInstagram } from '@fortawesome/free-brands-svg-icons';
-import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
+import Current from "./Current";
+import NewYork from "./NewYork";
+import Chicago from "./Chicago";
+import Portland from "./Portland";
+import { Tokyo, Kyoto, Osaka } from "./Japan";
+import { SanFrancisco, Berkeley, LosAngeles, Oakland } from "./California";
+import Paris from "./Paris";
+import Taiwan from "./Taiwan";
+import { HongKong } from "./HongKong";
+import Portraits from "./Portraits";
+import Landscapes from "./Landscapes";
+import Grad from "./Grad";
+import { faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 
-export const CURRENT = 'current';
+export const CURRENT = "current";
 
 export const Accounts = [
   { icon: faInstagram, url: "https://www.instagram.com/masonchan_/" },
@@ -22,52 +22,68 @@ export const Accounts = [
 
 export const PhotoContent = {
   [CURRENT]: Current,
-  'sf': SanFrancisco,
-  'berkeley': Berkeley,
-  'la': LosAngeles,
-  'oakland': Oakland,
-  'nyc': NewYork,
-  'chicago': Chicago,
-  'pdx': Portland,
-  'taiwan': Taiwan,
-  'paris': Paris,
-  'tokyo': Tokyo,
-  'kyoto': Kyoto,
-  'osaka': Osaka,
-  'portraits': Portraits,
-  'landscapes': Landscapes,
-  'grad': Grad,
-  'hk': HongKong,
+  sf: SanFrancisco,
+  berkeley: Berkeley,
+  la: LosAngeles,
+  oakland: Oakland,
+  nyc: NewYork,
+  chicago: Chicago,
+  pdx: Portland,
+  taiwan: Taiwan,
+  paris: Paris,
+  tokyo: Tokyo,
+  kyoto: Kyoto,
+  osaka: Osaka,
+  portraits: Portraits,
+  landscapes: Landscapes,
+  grad: Grad,
+  hk: HongKong,
 };
 
 export const NavLinks = [
-  { name: 'The Current Issue', path: '/current' },
-  { name: 'Hong Kong', path: '/hk' },
+  { name: "The Current Issue", id: "current" },
   {
-    name: 'California', id: 'california', dropdownLinks: [
-      { name: 'San Francisco', path: '/sf' },
-      { name: 'Los Angeles',   path: '/la' },
-    ]
+    name: "Work",
+    id: "work",
+    dropdownLinks: [{ name: "Landscapes", id: "landscapes" }],
   },
   {
-    name: 'Japan', id: 'japan', dropdownLinks: [
-      { name: 'Tokyo', path: '/tokyo' },
-      { name: 'Kyoto', path: '/kyoto' },
-      { name: 'Osaka', path: '/osaka' },
-    ]
-  },
-  { name: 'Taiwan',     path: '/taiwan' },
-  { name: 'Portraits',  path: '/portraits' },
-  { name: 'Landscapes', path: '/landscapes' },
-  {
-    name: 'Archive', id: 'archive', dropdownLinks: [
-      { name: 'Berkeley',      path: '/berkeley' },
-      { name: 'New York',   path: '/nyc' },
-      { name: 'Chicago',    path: '/chicago' },
-      { name: 'Oakland',       path: '/oakland' },
-      { name: 'Portland', path: '/pdx' },
-      { name: 'Paris',      path: '/paris' },
-      { name: 'Grad',      path: '/grad' },
-    ]
+    name: "Personal",
+    id: "personal",
+    dropdownLinks: [
+      { name: "Hong Kong", id: "hk" },
+      {
+        name: "California",
+        id: "california",
+        dropdownLinks: [
+          { name: "San Francisco", id: "sf" },
+          { name: "Los Angeles", id: "la" },
+        ],
+      },
+      {
+        name: "Japan",
+        id: "japan",
+        dropdownLinks: [
+          { name: "Tokyo", id: "tokyo" },
+          { name: "Kyoto", id: "kyoto" },
+          { name: "Osaka", id: "osaka" },
+        ],
+      },
+      { name: "Taiwan", id: "taiwan" },
+      { name: "Portraits", id: "portraits" },
+      {
+        name: "Archive",
+        id: "archive",
+        dropdownLinks: [
+          { name: "Berkeley", id: "berkeley" },
+          { name: "New York", id: "nyc" },
+          { name: "Chicago", id: "chicago" },
+          { name: "Oakland", id: "oakland" },
+          { name: "Portland", id: "pdx" },
+          { name: "Paris", id: "paris" },
+          { name: "Grad", id: "grad" },
+        ],
+      },
+    ],
   },
 ];

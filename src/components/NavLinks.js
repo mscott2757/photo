@@ -2,8 +2,8 @@ import * as React from "react";
 import styled from "styled-components";
 import { NavDropdown } from "./NavDropdown";
 import { NavLink } from "./core";
-import { useState, useMemo } from "react";
-import { NavLinksContext } from "./navStateContext";
+import { useState, useEffect } from "react";
+import { useMatch, useMatches, useParams } from "react-router-dom";
 
 const List = styled("ul")`
   padding: 0;
@@ -21,6 +21,8 @@ const ListElem = styled("li")`
     opacity: 0.5;
     cursor: default;
   }
+
+  ${({ level = 0 }) => `margin-left: calc(${level} * 8px)`};
 `;
 
 const DropdownList = styled(List)`
@@ -31,48 +33,103 @@ const DropdownList = styled(List)`
   }
 `;
 
-const DropdownListElem = styled(ListElem)`
-  margin-left: 10px;
-`;
+const Item = ({ id, name }) => (
+  <NavLink exact activeClassName="active" to={`/${id}`}>
+    {name}
+  </NavLink>
+);
 
 export const NavLinks = ({ navLinks }) => {
-  const [navState, setNavState] = useState({
-    activeDropdown: "",
-  });
+  const [top, setTop] = useState("");
+  const [sub, setSub] = useState("");
+  const { params } = useMatch("/:id");
+  const queryId = params.id;
 
-  const contextValue = useMemo(() => ({ navState, setNavState }), [navState]);
+  useEffect(() => {
+    let found = null;
+    const findPath = (links, soFar) => {
+      for (let i = 0; i < links.length; i++) {
+        const link = links[i];
+        if (link.dropdownLinks) {
+          findPath(link.dropdownLinks, [...soFar, link.id]);
+        } else if (link.id === queryId) {
+          found = [...soFar];
+        }
+      }
+    };
+    findPath(navLinks, []);
+    if (found.length) {
+      setTop(found[0]);
+      setSub(found[1] ?? null);
+    }
+  }, []);
+
+  const setTopValue = (id) => {
+    setTop((v) => (v === id ? null : id));
+    setSub("");
+  };
+
+  const setSubValue = (id) => {
+    setSub((v) => (v === id ? null : id));
+  };
+
   return (
-    <NavLinksContext.Provider value={contextValue}>
-      <List>
-        {navLinks.map((link, i) => {
-          let component = null;
-          if ("dropdownLinks" in link) {
-            const { name, id, dropdownLinks } = link;
-            component = (
-              <NavDropdown id={id} title={name}>
-                <DropdownList>
-                  {dropdownLinks.map(({ name, path }) => (
-                    <DropdownListElem key={name}>
-                      <NavLink exact activeClassName="active" to={path}>
-                        {name}
-                      </NavLink>
-                    </DropdownListElem>
-                  ))}
-                </DropdownList>
-              </NavDropdown>
-            );
-          } else {
-            const { name, path } = link;
-            component = (
-              <NavLink exact activeClassName="active" to={path}>
-                {name}
-              </NavLink>
-            );
-          }
+    <List>
+      {navLinks.map((link, i) => {
+        const { name, id, dropdownLinks } = link;
+        let topComp = null;
+        if (dropdownLinks) {
+          const active = top === id;
+          topComp = (
+            <NavDropdown
+              id={id}
+              title={name}
+              active={active}
+              onClick={() => {
+                setTopValue(id);
+              }}
+            >
+              <DropdownList>
+                {dropdownLinks.map(({ name, id, dropdownLinks }) => {
+                  let subComp = null;
+                  const active = sub === id;
+                  if (dropdownLinks) {
+                    subComp = (
+                      <NavDropdown
+                        id={id}
+                        title={name}
+                        active={active}
+                        onClick={() => {
+                          setSubValue(id);
+                        }}
+                      >
+                        <DropdownList>
+                          {dropdownLinks.map(({ name, id }) => (
+                            <ListElem key={name} level={2}>
+                              <Item id={id} name={name} />
+                            </ListElem>
+                          ))}
+                        </DropdownList>
+                      </NavDropdown>
+                    );
+                  } else {
+                    subComp = <Item id={id} name={name} />;
+                  }
+                  return (
+                    <ListElem key={name} level={1}>
+                      {subComp}
+                    </ListElem>
+                  );
+                })}
+              </DropdownList>
+            </NavDropdown>
+          );
+        } else {
+          topComp = <Item id={id} name={name} />;
+        }
 
-          return <ListElem key={i}>{component}</ListElem>;
-        })}
-      </List>
-    </NavLinksContext.Provider>
+        return <ListElem key={i}>{topComp}</ListElem>;
+      })}
+    </List>
   );
 };
