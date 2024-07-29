@@ -5,6 +5,8 @@ const names = [
   "22.jpg",
   "strawb.jpg",
   "garden.jpg",
+  "ueno.jpg",
+  "ueno-crossing.jpg",
   "grand-army.jpg",
   "packing.jpg",
   "palisades.jpg",
