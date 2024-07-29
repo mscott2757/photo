@@ -1,5 +1,4 @@
-
-import { getS3Url } from './helpers';
+import { getS3Url } from "./helpers";
 
 export const rileySteph = {
   title: "Riley & Steph / Del Popolo - San Francisco, CA",
@@ -16,5 +15,27 @@ export const rileySteph = {
     { url: getS3Url("riley-steph/riley-steph-5.jpg") },
     { url: getS3Url("riley-steph/riley-steph-10.jpg") },
     { url: getS3Url("riley-steph/riley-steph-12.jpg") },
-  ]
-}
+  ],
+};
+
+const ireneStevenNames = [
+  "irene-steven-hill-15.jpg",
+  "irene-steven-hill-18.jpg",
+  "irene-steven-contextual-3.jpg",
+  "irene-steven-ceremony-121.jpg",
+  "irene-steven-ceremony-123.jpg",
+  "irene-steven-ceremony-122.jpg",
+  "irene-steven-contextual-24.jpg",
+  "irene-steven-film.jpg",
+  "steven-getting-ready-13.jpg",
+  "irene-steven-bridal-party-117.jpg",
+  "irene-steven-cocktail-hour-35.jpg",
+  "irene-steve-reception-4.jpg",
+];
+
+export const ireneStevenWedding = {
+  title: "Irene & Steven / Olympia's Valley Estate - Petaluma, CA",
+  photos: ireneStevenNames.map((name) => ({
+    url: getS3Url(`irene-steven-wedding/${name}`),
+  })),
+};

@@ -3,11 +3,10 @@ import { getS3Url } from './helpers';
 export const SanFrancisco = {
   title: "San Francisco",
   photos: [
-    { url: getS3Url("sf/dogpatch.jpg") },
+    { url: getS3Url("sf/alamo.jpg") },
     { url: getS3Url("sf/potrero.jpg") },
-    { url: getS3Url("sf/22nd.jpg") },
+    { url: getS3Url("sf/hayes.jpg") },
     { url: getS3Url("sf/caltrain-2.jpg") },
-    { url: getS3Url("sf/caltrain.jpg") },
     { url: getS3Url("sf/muniman.jpg") },
     { url: getS3Url("sf/bart.jpg") },
     { url: getS3Url("sf/muni-night.jpg") },

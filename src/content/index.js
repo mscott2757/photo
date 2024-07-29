@@ -12,7 +12,7 @@ import Landscapes from "./Landscapes";
 import Grad from "./Grad";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
-import { rileySteph } from './wedding';
+import { rileySteph, ireneStevenWedding } from './wedding';
 import { ireneSteven } from './engagement';
 
 export const CURRENT = "current";
@@ -42,6 +42,7 @@ export const PhotoContent = {
   hk: HongKong,
   ['riley-steph']: rileySteph,
   ['irene-steven']: ireneSteven,
+  ['irene-steven-wedding']: ireneStevenWedding,
 };
 
 export const NavLinks = [
