@@ -102,11 +102,13 @@ class NavBase extends React.Component {
           <NotMobile>
             <div className={aboutClasses}>
               <p>Hello, I'm Mason.</p>
-              <p>I find great joy in capturing humanity in its rawest form through the medium of film photography.</p>
+              <p>I find great joy in capturing human connection in its most candid form through the medium of photography.</p>
+              <p>I also maintain a fascination for urban landscapes and public transportation.</p>
+              <p>Based in San Francisco, CA.</p>
+
               <div className="hide-about-btn__wrapper" onClick={this.onToggleAbout}>
                 <div className="hide-about-btn"></div>
               </div>
-              <p>I also maintain a fascination for urban landscapes and public transportation.</p>
             </div>
           </NotMobile>
         </div>
