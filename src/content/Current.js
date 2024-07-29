@@ -1,14 +1,20 @@
-import { getS3Url } from './helpers';
+import { getS3Url } from "./helpers";
+
+const names = [
+  "monterey.jpg",
+  "22.jpg",
+  "strawb.jpg",
+  "garden.jpg",
+  "grand-army.jpg",
+  "packing.jpg",
+  "palisades.jpg",
+];
 
 const Current = {
-  title: 'The Current Issue',
-  photos: [
-    { url: getS3Url("sf/alamo.jpg") },
-    { url: getS3Url("sf/hayes.jpg") },
-    { url: getS3Url("sf/davidson.jpg") },
-    { url: getS3Url("sf/muni-sq.jpg") },
-    { url: getS3Url("sf/caltrain-sq.jpg") },
-  ]
-}
+  title: "Recently",
+  photos: names.map((name) => ({
+    url: getS3Url(`top/${name}`),
+  })),
+};
 
 export default Current;

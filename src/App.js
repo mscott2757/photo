@@ -20,7 +20,7 @@ export default () => {
       <NavContainer />
       <Routes>
         <Route element={<LogPageView />} />
-        <Route exact path="/" element={<Navigate replace to="/current" />} />
+        <Route exact path="/" element={<Navigate replace to="/recent" />} />
         <Route path="/:id?" element={<Main />} />
       </Routes>
       <Social accounts={Accounts} />

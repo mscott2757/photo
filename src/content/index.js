@@ -15,7 +15,7 @@ import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { rileySteph, ireneStevenWedding } from './wedding';
 import { ireneSteven } from './engagement';
 
-export const CURRENT = "current";
+export const CURRENT = "recent";
 
 export const Accounts = [
   { icon: faInstagram, url: "https://www.instagram.com/masonchan_/" },
@@ -46,7 +46,7 @@ export const PhotoContent = {
 };
 
 export const NavLinks = [
-  { name: "The Current Issue", id: "current" },
+  { name: "Recent", id: CURRENT },
   {
     name: "Work",
     id: "work",
