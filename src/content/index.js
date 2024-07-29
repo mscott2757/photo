@@ -57,7 +57,7 @@ export const NavLinks = [
         dropdownLinks: [
           { name: "Riley & Steph", id: "riley-steph" },
           { name: "Irene & Steven", id: "irene-steven-wedding" },
-          { name: "Norah & Kyuseok", id: "norah-kyu" },
+          // { name: "Norah & Kyuseok", id: "norah-kyu" },
         ],
       },
       {
@@ -65,7 +65,7 @@ export const NavLinks = [
         id: "engagement",
         dropdownLinks: [
           { name: "Irene & Steven", id: "irene-steven" },
-          { name: "Nathanael & Gabby", id: "nathanael-gabby" },
+          // { name: "Nathanael & Gabby", id: "nathanael-gabby" },
         ],
       },
     ],
