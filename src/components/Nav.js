@@ -91,7 +91,7 @@ class NavBase extends React.Component {
             <NotMobile>
               <LogoWrapper>
                 <NavLink to='/'>
-                  <LogoText>Mason Chan</LogoText>
+                  <LogoText>Mason Chao-Scott</LogoText>
                 </NavLink>
               </LogoWrapper>
             </NotMobile>
@@ -142,7 +142,7 @@ export const Nav = compose(
         <MobileLogoWrapper>
           <NavLink to='/'>
             <MobileLogoText>
-              Mason Chan
+              Mason Chao-Scott
             </MobileLogoText>
           </NavLink>
           <PlainLink
