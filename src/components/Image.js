@@ -1,9 +1,9 @@
-import React from 'react';
-import { withProps, compose } from 'recompose';
-import { withLoading } from './with';
-import styled, { css } from 'styled-components';
+import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import styled, { css } from "styled-components";
+import { faCircleNotch } from "@fortawesome/free-solid-svg-icons";
 
-const Wrapper = styled('div')`
+const Wrapper = styled("div")`
   margin-bottom: 12px;
 
   &:last-child {
@@ -24,7 +24,7 @@ const Wrapper = styled('div')`
   }
 `;
 
-const LoadingWrapper = styled('div')`
+const LoadingWrapper = styled("div")`
   position: relative;
   height: 0;
   padding-bottom: 100%;
@@ -36,7 +36,7 @@ const LoadingWrapper = styled('div')`
   }
 `;
 
-const IconWrapper = styled('div')`
+const IconWrapper = styled("div")`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -48,10 +48,15 @@ const IconWrapper = styled('div')`
   left: 0;
 `;
 
-const Img = styled('img')`
+const Img = styled("img")`
   width: 100%;
   display: block;
-  ${({ loading }) => loading ? css`display: none;`: ''}
+  ${({ loading }) =>
+    loading
+      ? css`
+          display: none;
+        `
+      : ""}
 
   @media screen and (min-width: 768px) {
     height: 100%;
@@ -59,34 +64,26 @@ const Img = styled('img')`
   }
 `;
 
-const enhance = compose(
-  withLoading,
-  withProps(({ loading }) => ({
-    renderLoading: () => loading ? (
-      <LoadingWrapper>
-        <IconWrapper>
-          <i className="fa fa-circle-o-notch fa-spin"></i>
-        </IconWrapper>
-      </LoadingWrapper>
-    ) : null,
-  })),
-);
-
-export const Image = enhance(
-  ({
-    loading,
-    hideLoader,
-    url,
-    renderLoading,
-  }) => (
+export const Image = ({ url }) => {
+  const [loading, setLoading] = useState(true);
+  return (
     <Wrapper>
-      {renderLoading()}
+      {loading && (
+        <LoadingWrapper>
+          <IconWrapper>
+            <FontAwesomeIcon icon={faCircleNotch} spin />
+            <i className="fa fa-circle-o-notch fa-spin"></i>
+          </IconWrapper>
+        </LoadingWrapper>
+      )}
       <Img
         src={url}
         loading={loading}
-        onLoad={hideLoader}
+        onLoad={() => {
+          setLoading(false);
+        }}
         alt=""
       />
     </Wrapper>
-  ),
-);
+  );
+};
