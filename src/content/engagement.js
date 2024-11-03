@@ -14,5 +14,5 @@ const names = [
 ];
 export const ireneSteven = {
   title: "Irene & Steven / Bernal Heights - San Francisco, CA",
-  photos: names.map((name) => ({ url: getS3Url(`irene-steven/${name}`) })),
+  photos: names.map((name) => ({ url: getS3Url(`irene-steven-2/${name}`) })),
 };

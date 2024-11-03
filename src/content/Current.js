@@ -15,7 +15,7 @@ const names = [
 const Current = {
   title: "Recently",
   photos: names.map((name) => ({
-    url: getS3Url(`top/${name}`),
+    url: getS3Url(`top-2/${name}`),
   })),
 };
 
