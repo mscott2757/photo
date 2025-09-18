@@ -12,7 +12,7 @@ import Landscapes from "./Landscapes";
 import Grad from "./Grad";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
-import { rileySteph, ireneStevenWedding } from './wedding';
+import { rileySteph, ireneStevenWedding, nathanaelGabbyWedding } from './wedding';
 import { ireneSteven } from './engagement';
 
 export const CURRENT = "recent";
@@ -43,6 +43,7 @@ export const PhotoContent = {
   ['riley-steph']: rileySteph,
   ['irene-steven']: ireneSteven,
   ['irene-steven-wedding']: ireneStevenWedding,
+  ['nathanael-gabby-wedding']: nathanaelGabbyWedding,
 };
 
 export const NavLinks = [
@@ -57,6 +58,7 @@ export const NavLinks = [
         dropdownLinks: [
           { name: "Riley & Steph", id: "riley-steph" },
           { name: "Irene & Steven", id: "irene-steven-wedding" },
+          { name: "Nathanael & Gabby", id: "nathanael-gabby-wedding" },
           // { name: "Norah & Kyuseok", id: "norah-kyu" },
         ],
       },

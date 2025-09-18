@@ -39,3 +39,29 @@ export const ireneStevenWedding = {
     url: getS3Url(`irene-steven-wedding-2/${name}`),
   })),
 };
+
+const nathanaelGabbyNames = [
+	'portrait-wide.jpg',
+	'portrait.jpg',
+	'dress.jpg.jpg',
+	'film-1.jpg',
+	'pre-ceremony-29.jpg',
+	'pre-ceremony-57.jpg',
+  'ceremony-112.jpg',
+	'post-ceremony-11.jpg',
+	'post-ceremony-29.jpg',
+	'film-14.jpg',
+	'film-21.jpg',
+	'film-35.jpg',
+	// 'ceremony-113.jpg',
+	// 'film-7.jpg',
+	// 'pre-ceremony-56.jpg',
+	// 'pre-ceremony-58.jpg',
+];
+
+export const nathanaelGabbyWedding = {
+  title: "Nathanael & Gabby / Hacienda de las Flores - Moraga, CA",
+  photos: nathanaelGabbyNames.map((name) => ({
+    url: getS3Url(`nathanael-gabby-wedding-2/${name}`),
+  })),
+}
