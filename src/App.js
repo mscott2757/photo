@@ -1,16 +1,21 @@
-import React from "react";
+import React, {useEffect} from "react";
 import "./styles/app.scss";
 import { Routes, Navigate, Route } from "react-router-dom";
-import ReactGA from "react-ga";
+import ReactGA from "react-ga4";
 import { NavContainer } from "./containers";
 import { Accounts } from "./content/";
 import { Social, Main } from "./components";
 
-ReactGA.initialize("UA-109516063-1");
+ReactGA.initialize("G-1DTFTH6FWG");
 
 const LogPageView = () => {
-  ReactGA.set({ page: window.location.pathname });
-  ReactGA.pageview(window.location.pathname);
+  useEffect(() => {
+    console.log('sending');
+    ReactGA.send({
+      hitType: "pageview",
+      page: window.location.pathname
+    });
+  }, []);
   return null;
 };
 
@@ -18,8 +23,9 @@ export default () => {
   return (
     <div className="App">
       <NavContainer />
+      <LogPageView />
       <Routes>
-        <Route element={<LogPageView />} />
+        <Route path="*" element={<LogPageView />} />
         <Route exact path="/" element={<Navigate replace to="/recent" />} />
         <Route path="/:id?" element={<Main />} />
       </Routes>
