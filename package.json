@@ -1,6 +1,5 @@
 {
   "name": "me",
-  "homepage": "https://mscott2757.github.io",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -17,7 +16,6 @@
     "react-redux": "^9.1.2",
     "react-responsive": "^10.0.0",
     "react-router-dom": "^6.11.1",
-    "react-scripts": "5.0.1",
     "react-transition-group": "^4.4.5",
     "recompose": "npm:react-recompose@^0.33.0",
     "redux": "^5.0.1",
@@ -27,18 +25,19 @@
   },
   "scripts": {
     "analyze": "source-map-explorer build/static/js/main.*",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
     "lint": "./node_modules/.bin/eslint src/",
-    "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
+    "@vitejs/plugin-react": "^5.1.2",
     "gh-pages": "^5.0.0",
     "prettier": "2.8.8",
-    "sass": "^1.62.1"
+    "sass": "^1.62.1",
+    "vite": "^7.3.0"
   },
   "browserslist": [
     ">0.2%",
