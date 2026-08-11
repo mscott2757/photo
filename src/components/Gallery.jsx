@@ -19,7 +19,7 @@ const TitleText = styled(BodyText)`
 
 export const Gallery = ({ id }) => {
   const scrollPosition = useSelector(({ scrollPosition }) => scrollPosition);
-  const gallery = useSelector((state) => getGallery(state, id));
+  const { title, photos } = useSelector((state) => getGallery(state, id));
   const dispatch = useDispatch();
 
   const galleryRef = useRef(null);
@@ -46,8 +46,10 @@ export const Gallery = ({ id }) => {
       return () => {};
     }
 
+    const gallery = galleryRef.current;
+
     const scrollHandler = () => {
-      const newScrollPosition = galleryRef.current.scrollLeft;
+      const newScrollPosition = gallery.scrollLeft;
       if (newScrollPosition > prevScrollPosition.current) {
         onScrollRight();
       } else {
@@ -57,9 +59,9 @@ export const Gallery = ({ id }) => {
       setScrollPosition(newScrollPosition);
     };
 
-    galleryRef.current.addEventListener("scroll", scrollHandler, false);
+    gallery.addEventListener("scroll", scrollHandler, false);
     return () => {
-      galleryRef.current.removeEventListener("scroll", scrollHandler, false);
+      gallery.removeEventListener("scroll", scrollHandler, false);
     };
   }, [onScrollLeft, onScrollRight, setScrollPosition]);
 
@@ -68,24 +70,25 @@ export const Gallery = ({ id }) => {
       return () => {};
     }
 
+    const gallery = galleryRef.current;
+
     const handleWheel = (e) => {
       if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
         return;
       }
 
       e.preventDefault();
-      galleryRef.current.scrollLeft += e.deltaY;
+      gallery.scrollLeft += e.deltaY;
     };
 
-    galleryRef.current.addEventListener("wheel", handleWheel, {
+    gallery.addEventListener("wheel", handleWheel, {
       passive: false,
     });
+
     return () => {
-      galleryRef.current.remove("wheel", handleWheel);
+      gallery.removeEventListener("wheel", handleWheel);
     };
   }, []);
-
-  const { title, photos } = gallery;
 
   return (
     <div className="gallery">
