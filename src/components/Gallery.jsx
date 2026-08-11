@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import styled from 'styled-components';
-import { Image } from './Image';
-import { BodyText } from './core';
+import React, { useCallback, useEffect, useRef } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import styled from "styled-components";
+import { Image } from "./Image";
+import { BodyText } from "./core";
 import {
   showNav,
   hideNav,
-  setScrollPosition,
-  getGallery
-} from '../actions';
+  setScrollPosition as setScrollPositionAction,
+  getGallery,
+} from "../actions";
 
 const TitleText = styled(BodyText)`
   text-align: center;
@@ -17,57 +17,87 @@ const TitleText = styled(BodyText)`
   }
 `;
 
-class GalleryBase extends Component {
-  scrollHandler = () => {
-    let newScrollPosition = this.refs.gallery.scrollLeft;
-    if (newScrollPosition > this.props.scrollPosition) {
-      this.props.onScrollRight();
-    } else {
-      this.props.onScrollLeft();
+export const Gallery = ({ id }) => {
+  const scrollPosition = useSelector(({ scrollPosition }) => scrollPosition);
+  const { title, photos } = useSelector((state) => getGallery(state, id));
+  const dispatch = useDispatch();
+
+  const galleryRef = useRef(null);
+
+  const prevScrollPosition = useRef(scrollPosition);
+
+  const setScrollPosition = useCallback(
+    (scrollPosition) => {
+      dispatch(setScrollPositionAction(scrollPosition));
+    },
+    [dispatch]
+  );
+
+  const onScrollLeft = useCallback(() => {
+    dispatch(showNav());
+  }, [dispatch]);
+
+  const onScrollRight = useCallback(() => {
+    dispatch(hideNav());
+  }, [dispatch]);
+
+  useEffect(() => {
+    if (!galleryRef.current) {
+      return () => {};
     }
-    this.props.setScrollPosition(newScrollPosition);
-  }
 
-  componentDidMount() {
-    this.props.setScrollPosition(this.refs.gallery.scrollLeft);
-    this.refs.gallery.addEventListener("scroll", this.scrollHandler, false);
-  }
+    const gallery = galleryRef.current;
 
-  componentWillUnmount() {
-    this.refs.gallery.removeEventListener("scroll", this.scrollHandler, false);
-  }
+    const scrollHandler = () => {
+      const newScrollPosition = gallery.scrollLeft;
+      if (newScrollPosition > prevScrollPosition.current) {
+        onScrollRight();
+      } else {
+        onScrollLeft();
+      }
+      prevScrollPosition.current = newScrollPosition;
+      setScrollPosition(newScrollPosition);
+    };
 
-  shouldComponentUpdate(nextProps) {
-    return false;
-  }
+    gallery.addEventListener("scroll", scrollHandler, false);
+    return () => {
+      gallery.removeEventListener("scroll", scrollHandler, false);
+    };
+  }, [onScrollLeft, onScrollRight, setScrollPosition]);
 
-  render() {
-    const { title, photos } = this.props.gallery;
-    return (
-      <div className="gallery">
-        <TitleText>{title}</TitleText>
-        <div className="gallery-container" ref="gallery">
-          {photos.map((photo, index) => <Image {...photo} key={index} /> )}
-        </div>
+  useEffect(() => {
+    if (!galleryRef.current) {
+      return () => {};
+    }
+
+    const gallery = galleryRef.current;
+
+    const handleWheel = (e) => {
+      if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
+        return;
+      }
+
+      e.preventDefault();
+      gallery.scrollLeft += e.deltaY;
+    };
+
+    gallery.addEventListener("wheel", handleWheel, {
+      passive: false,
+    });
+
+    return () => {
+      gallery.removeEventListener("wheel", handleWheel);
+    };
+  }, []);
+
+  return (
+    <div className="gallery">
+      <TitleText>{title}</TitleText>
+      <div className="gallery-container" ref={galleryRef}>
+        {photos.map((photo, index) => (
+          <Image {...photo} key={index} />
+        ))}
       </div>
-    );
-  }
+    </div>
+  );
 };
-
-export const Gallery = connect(
-  ({ scrollPosition, ...state }, ownProps) => ({
-    scrollPosition,
-    gallery: getGallery(state, ownProps.id)
-  }),
-  dispatch => ({
-    setScrollPosition: (scrollPosition) => {
-      dispatch(setScrollPosition(scrollPosition));
-    },
-    onScrollRight: () => {
-      dispatch(hideNav());
-    },
-    onScrollLeft: () => {
-      dispatch(showNav());
-    }
-  }),
-)(GalleryBase);
